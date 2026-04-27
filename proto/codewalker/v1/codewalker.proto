@@ -1,0 +1,453 @@
+syntax = "proto3";
+
+package codewalker.v1;
+
+option go_package = "github.com/yourorg/codewalker/gen/codewalker/v1";
+
+// ─────────────────────────────────────────────
+// Core service definition
+// ─────────────────────────────────────────────
+
+service CodeWalker {
+  // Returns the server's version information.
+  // Clients should call this on connect and warn the user if the
+  // proto major version does not match the version they were built against.
+  rpc GetVersion(GetVersionRequest) returns (GetVersionResponse);
+
+  // Open a session against a file at a specific ref.
+  // Server parses the AST, builds the step graph, and streams back
+  // progress before emitting a final SessionReady event.
+  rpc OpenSession(OpenSessionRequest) returns (stream SessionEvent);
+
+  // Navigate within an open session. Server streams narration tokens
+  // followed by a StepComplete event.
+  rpc Navigate(NavigateRequest) returns (stream NarrateEvent);
+
+  // Request a rephrasing of the current step's narration.
+  rpc Rephrase(RephraseRequest) returns (stream NarrateEvent);
+
+  // Resolve a glossary term. Returns a full definition stream.
+  rpc ExpandTerm(ExpandTermRequest) returns (stream NarrateEvent);
+
+  // Close a session and release server-side state.
+  rpc CloseSession(CloseSessionRequest) returns (CloseSessionResponse);
+
+  // List open sessions (useful for IDE plugins managing multiple tabs).
+  rpc ListSessions(ListSessionsRequest) returns (ListSessionsResponse);
+
+  // Open a review session against a PR, commit, or branch comparison URL.
+  // Server parses the URL, fetches the diff via the appropriate ForgeHandler,
+  // and streams back progress before emitting a final ReviewReady event.
+  rpc OpenReviewSession(OpenReviewSessionRequest) returns (stream SessionEvent);
+}
+
+// ─────────────────────────────────────────────
+// Session lifecycle
+// ─────────────────────────────────────────────
+
+message OpenSessionRequest {
+  // Absolute path to the git repository root inside the container.
+  string repo_path = 1;
+
+  // File path relative to repo root.
+  string file_path = 2;
+
+  // Git ref: commit SHA, branch name, or tag. Defaults to HEAD.
+  string ref = 3;
+
+  // Optional: scope to a specific function/class/symbol by name.
+  // If empty, the whole file is walked.
+  string symbol = 4;
+
+  // Hint to the narration engine about the audience level.
+  ExperienceLevel experience_level = 5;
+
+  // If true, raw_source will be omitted from all SourceSpan messages
+  // in this session. Useful for clients that already have file access
+  // and want to reduce message size (e.g. IDE plugins).
+  bool omit_raw_source = 6;
+}
+
+// Streamed back during and after session initialisation.
+message SessionEvent {
+  oneof event {
+    SessionProgress progress     = 1; // Parsing / analysis updates
+    SessionReady    ready        = 2; // Final event — session is usable
+    ServiceError    error        = 3;
+    ReviewReady     review_ready = 4; // Final event for review sessions
+  }
+}
+
+message SessionProgress {
+  string message  = 1; // e.g. "Parsing AST", "Building step graph"
+  uint32 percent  = 2; // 0–100
+}
+
+message SessionReady {
+  string session_id = 1;
+
+  // Flat list of all steps in the graph. Clients can render the full
+  // graph immediately without traversing edges. Use entry_step_id to
+  // identify where the walkthrough begins.
+  repeated Step steps = 2;
+
+  // Initial glossary terms identified during analysis.
+  repeated GlossaryTerm glossary = 3;
+
+  // Language detected.
+  string language = 4;
+
+  // Total number of steps in the graph (for progress indicators).
+  uint32 total_steps = 5;
+
+  // ID of the entry step — the root of the walkthrough.
+  string entry_step_id = 6;
+}
+
+message CloseSessionRequest {
+  string session_id = 1;
+}
+
+message CloseSessionResponse {
+  bool ok = 1;
+}
+
+message ListSessionsRequest {}
+
+message ListSessionsResponse {
+  repeated SessionSummary sessions = 1;
+}
+
+message SessionSummary {
+  string session_id      = 1;
+  string repo_path       = 2;
+  string file_path       = 3;
+  string ref             = 4;
+  string language        = 5;
+  string current_step_id = 6;
+
+  // Current narration level on a 1–10 scale. In v1 this is derived
+  // directly from the ExperienceLevel set on OpenSessionRequest.
+  // In v2 this will reflect adaptive adjustment based on session behaviour.
+  // Read-only — clients should display but not set this directly.
+  uint32      effective_level = 7;
+  SessionKind kind            = 8;
+}
+
+enum SessionKind {
+  SESSION_KIND_UNSPECIFIED = 0;
+  SESSION_KIND_WALKTHROUGH = 1;
+  SESSION_KIND_REVIEW      = 2;
+}
+
+// ─────────────────────────────────────────────
+// Step graph
+// ─────────────────────────────────────────────
+
+// A Step is a logical unit of code — a conditional, loop, function call,
+// assignment block etc. — as determined by the AST. Steps form a graph
+// (not a simple list) to model branches.
+message Step {
+  string id    = 1;
+  string label = 2; // Short human-readable label, e.g. "Check user is authenticated"
+
+  // Source location.
+  SourceSpan span = 3;
+
+  // Navigation edges.
+  repeated StepEdge edges = 4;
+
+  // Whether this step has already been narrated in this session.
+  bool visited = 5;
+
+  StepKind kind = 6;
+
+  // Populated instead of span for review session steps.
+  HunkSpan hunk_span = 7;
+}
+
+message StepEdge {
+  string           target_step_id     = 1;
+  EdgeLabel        label              = 2; // e.g. TRUE_BRANCH, FALSE_BRANCH, NEXT, CASE
+  string           description        = 3; // Human readable, e.g. "user.role == admin"
+
+  // Whether this edge can be followed into source. False for external calls
+  // (stdlib, third-party dependencies) where no source is available in the repo.
+  bool             navigable          = 4;
+
+  // Only set when navigable = false. Provides LLM summary and best-effort
+  // documentation/source links for the external symbol.
+  ExternalCallInfo external_call_info = 5;
+}
+
+// Metadata for calls that cannot be followed into repo source.
+// llm_summary is always populated. URLs are best-effort and only
+// included if verified reachable. source_url is pinned to a specific
+// version if a package manifest was found in the repo.
+message ExternalCallInfo {
+  string package_name = 1;
+  string symbol_name  = 2;
+  string llm_summary  = 3; // Always populated — general knowledge summary
+  string docs_url     = 4; // e.g. https://pkg.go.dev/github.com/stripe/stripe-go#Charge
+  string source_url   = 5; // e.g. https://github.com/stripe/stripe-go/blob/v72.122.0/charge.go#L42
+  string version      = 6; // Resolved version if manifest found, empty otherwise
+}
+
+message SourceSpan {
+  uint32 start_line   = 1;
+  uint32 start_column = 2;
+  uint32 end_line     = 3;
+  uint32 end_column   = 4;
+  string raw_source   = 5; // The actual code slice for this step
+}
+
+enum StepKind {
+  STEP_KIND_UNSPECIFIED  = 0;
+  STEP_KIND_ENTRY        = 1; // Function/method entry
+  STEP_KIND_ASSIGNMENT   = 2;
+  STEP_KIND_CONDITIONAL  = 3; // if/switch/ternary
+  STEP_KIND_LOOP         = 4;
+  STEP_KIND_CALL         = 5; // Function/method call
+  STEP_KIND_RETURN       = 6;
+  STEP_KIND_ERROR_HANDLE = 7; // try/catch, err != nil blocks
+  STEP_KIND_EXIT         = 8;
+  STEP_KIND_HUNK         = 9; // A diff hunk in a review session
+}
+
+enum EdgeLabel {
+  EDGE_LABEL_UNSPECIFIED   = 0;
+  EDGE_LABEL_NEXT          = 1; // Sequential flow
+  EDGE_LABEL_TRUE_BRANCH   = 2;
+  EDGE_LABEL_FALSE_BRANCH  = 3;
+  EDGE_LABEL_CASE          = 4; // switch/match arm
+  EDGE_LABEL_LOOP_BODY     = 5;
+  EDGE_LABEL_LOOP_EXIT     = 6;
+  EDGE_LABEL_EXCEPTION     = 7;
+  EDGE_LABEL_CALL          = 8; // Into a callee defined in this repo
+}
+
+// ─────────────────────────────────────────────
+// Navigation
+// ─────────────────────────────────────────────
+
+message NavigateRequest {
+  string session_id = 1;
+
+  oneof destination {
+    SimpleDirection direction   = 2; // FORWARD or BACK
+    string          step_id     = 3; // Jump directly to a known step ID
+    EdgeLabel       follow_edge = 4; // Follow a specific edge type from current step
+  }
+}
+
+enum SimpleDirection {
+  SIMPLE_DIRECTION_UNSPECIFIED = 0;
+  SIMPLE_DIRECTION_FORWARD     = 1;
+  SIMPLE_DIRECTION_BACK        = 2;
+}
+
+// ─────────────────────────────────────────────
+// Narration streaming
+// ─────────────────────────────────────────────
+
+// Streamed back for Navigate, Rephrase, and ExpandTerm.
+message NarrateEvent {
+  oneof event {
+    NarrateToken    token    = 1; // Streaming LLM token
+    StepComplete    complete = 2; // Final event for this narration
+    ServiceError    error    = 3;
+  }
+}
+
+message NarrateToken {
+  string text = 1;
+}
+
+message StepComplete {
+  string step_id = 1;
+
+  // Any new glossary terms surfaced during this narration.
+  repeated GlossaryTerm new_terms = 2;
+
+  // Navigation options available from this step (for UI rendering).
+  repeated StepEdge available_edges = 3;
+
+  // Breadcrumb trail of step IDs visited so far this session.
+  repeated string breadcrumb = 4;
+}
+
+// ─────────────────────────────────────────────
+// Rephrasing
+// ─────────────────────────────────────────────
+
+message RephraseRequest {
+  string       session_id = 1;
+  RephraseMode mode       = 2;
+}
+
+enum RephraseMode {
+  REPHRASE_MODE_UNSPECIFIED = 0;
+  REPHRASE_MODE_SIMPLER     = 1; // Reduce assumed knowledge
+  REPHRASE_MODE_DEEPER      = 2; // More detail, edge cases, internals
+  REPHRASE_MODE_ANALOGY     = 3; // Explain via real-world analogy
+  REPHRASE_MODE_TLDR        = 4; // One sentence summary
+}
+
+// ─────────────────────────────────────────────
+// Glossary
+// ─────────────────────────────────────────────
+
+message GlossaryTerm {
+  string   term       = 1;
+  string   definition = 2; // Brief inline definition
+  string   step_id    = 3; // Step where this term first appeared
+  TermKind kind       = 4;
+}
+
+enum TermKind {
+  TERM_KIND_UNSPECIFIED = 0;
+  TERM_KIND_LANGUAGE    = 1; // Language feature, e.g. "goroutine"
+  TERM_KIND_PATTERN     = 2; // Design pattern, e.g. "middleware chain"
+  TERM_KIND_DOMAIN      = 3; // Business/domain term from the codebase
+  TERM_KIND_LIBRARY     = 4; // Third-party library or framework concept
+}
+
+message ExpandTermRequest {
+  string session_id = 1;
+  string term       = 2; // Must match a term in the session glossary
+}
+
+// ─────────────────────────────────────────────
+// Review session
+// ─────────────────────────────────────────────
+
+message OpenReviewSessionRequest {
+  // URL of the PR or commit to review (e.g. https://github.com/org/repo/pull/42).
+  string url = 1;
+
+  // OAuth / personal access token for the forge.
+  string forge_token = 2;
+
+  ExperienceLevel experience_level = 3;
+
+  // If true, raw_source / raw_diff will be omitted from span messages.
+  bool omit_raw_source = 4;
+}
+
+message ReviewReady {
+  string session_id = 1;
+
+  ForgeContext forge_context = 2;
+
+  // Flat list of all steps across all reviewed files.
+  repeated Step steps = 3;
+
+  repeated GlossaryTerm glossary = 4;
+
+  uint32 total_steps = 5;
+
+  // ID of the first step the client should display.
+  string entry_step_id = 6;
+
+  uint32 effective_level = 7;
+}
+
+message ForgeContext {
+  ForgeContextKind kind  = 1;
+  string forge           = 2; // e.g. "github", "gitlab"
+  string owner           = 3; // org or user
+  string repo            = 4;
+  string base_ref        = 5; // base branch/SHA (PRs and comparisons)
+  string head_ref        = 6; // head branch/SHA
+  int32  pr_number       = 7; // set for PRs, 0 otherwise
+  string pr_title        = 8; // set for PRs
+  string pr_description  = 9; // set for PRs — used as narration context
+  string pr_author       = 10;
+  string url             = 11; // original URL as provided by client
+
+  // Per-file summary — lets clients render a file list before navigating.
+  repeated ReviewFile files = 12;
+}
+
+enum ForgeContextKind {
+  FORGE_CONTEXT_KIND_UNSPECIFIED  = 0;
+  FORGE_CONTEXT_KIND_PR           = 1;
+  FORGE_CONTEXT_KIND_COMMIT       = 2;
+  FORGE_CONTEXT_KIND_COMPARISON   = 3;
+}
+
+message ReviewFile {
+  string     file_path     = 1;
+  string     language      = 2;
+  ChangeKind change        = 3;
+  uint32     hunks_total   = 4;
+  uint32     lines_added   = 5;
+  uint32     lines_removed = 6;
+  string     entry_step_id = 7; // First hunk step for this file
+}
+
+enum ChangeKind {
+  CHANGE_KIND_UNSPECIFIED = 0;
+  CHANGE_KIND_ADDED       = 1;
+  CHANGE_KIND_MODIFIED    = 2;
+  CHANGE_KIND_DELETED     = 3;
+  CHANGE_KIND_RENAMED     = 4;
+}
+
+message HunkSpan {
+  string file_path   = 1;
+  uint32 old_start   = 2;
+  uint32 old_lines   = 3;
+  uint32 new_start   = 4;
+  uint32 new_lines   = 5;
+  string raw_diff    = 6; // The unified diff text for this hunk
+  string context_before = 7;
+  string context_after  = 8;
+}
+
+// ─────────────────────────────────────────────
+// Shared
+// ─────────────────────────────────────────────
+
+enum ExperienceLevel {
+  EXPERIENCE_LEVEL_UNSPECIFIED = 0;
+  EXPERIENCE_LEVEL_JUNIOR      = 1;
+  EXPERIENCE_LEVEL_MID         = 2;
+  EXPERIENCE_LEVEL_SENIOR      = 3;
+}
+
+message ServiceError {
+  ErrorCode code    = 1;
+  string    message = 2;
+  string    details = 3;
+}
+
+enum ErrorCode {
+  ERROR_CODE_UNSPECIFIED       = 0;
+  ERROR_CODE_SESSION_NOT_FOUND  = 1;
+  ERROR_CODE_PARSE_FAILED       = 2;
+  ERROR_CODE_INVALID_REF        = 3;
+  ERROR_CODE_LLM_ERROR          = 4;
+  ERROR_CODE_UNSUPPORTED_LANG   = 5;
+  ERROR_CODE_INVALID_NAVIGATION = 6;
+  ERROR_CODE_UNSUPPORTED_FORGE  = 7;
+  ERROR_CODE_FORGE_AUTH_FAILED  = 8;
+  ERROR_CODE_FORGE_NOT_FOUND    = 9;
+  ERROR_CODE_INVALID_URL        = 10;
+}
+
+message GetVersionRequest {}
+
+message GetVersionResponse {
+  // Semantic version of the server binary e.g. "1.2.0"
+  string version = 1;
+
+  // Proto contract major version — the only part clients need to check.
+  // Increment this when breaking proto changes are made.
+  uint32 proto_major = 2;
+
+  // Minimum plugin proto_major this server is compatible with.
+  // Allows the server to declare backwards compatibility explicitly.
+  // e.g. proto_major=2, min_compatible_proto_major=1 means v1 clients still work.
+  uint32 min_compatible_proto_major = 3;
+}
