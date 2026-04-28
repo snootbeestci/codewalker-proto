@@ -39,6 +39,10 @@ service CodeWalker {
   // Server parses the URL, fetches the diff via the appropriate ForgeHandler,
   // and streams back progress before emitting a final ReviewReady event.
   rpc OpenReviewSession(OpenReviewSessionRequest) returns (stream SessionEvent);
+
+  // List available file ordering strategies. Clients can use this to
+  // populate user-facing pickers without hardcoding the strategy names.
+  rpc ListFileOrderers(ListFileOrderersRequest) returns (ListFileOrderersResponse);
 }
 
 // ─────────────────────────────────────────────
@@ -274,6 +278,40 @@ message StepComplete {
 
   // Breadcrumb trail of step IDs visited so far this session.
   repeated string breadcrumb = 4;
+
+  // Structured key/value summary for fast triage. Populated for review session
+  // steps; may be unset for walkthrough steps in v1.
+  StepSummary summary = 5;
+}
+
+// Structured summary of a hunk for code review triage.
+// All fields are populated on every review step — empty fields use "—"
+// rather than being absent, so clients can render a consistent layout.
+message StepSummary {
+  // Yes/No — whether this change breaks an existing API or contract.
+  string breaking = 1;
+
+  // Low/Medium/High with a brief reason, e.g. "Medium — touches payment flow".
+  string risk = 2;
+
+  // One-line summary of what this hunk does, e.g. "Adds retry logic to payment validation".
+  string what_changed = 3;
+
+  // What else in the codebase this change might affect.
+  string side_effects = 4;
+
+  // Added/Modified/Missing — whether tests accompany this change.
+  string tests = 5;
+
+  // What the reviewer should pay particular attention to.
+  string reviewer_focus = 6;
+
+  // Any concern the LLM thinks is worth raising. Empty if no concerns.
+  string suggestion = 7;
+
+  // How confident the LLM is about its analysis.
+  // Low/Medium/High with a brief reason if Low.
+  string confidence = 8;
 }
 
 // ─────────────────────────────────────────────
@@ -332,6 +370,11 @@ message OpenReviewSessionRequest {
 
   // If true, raw_source / raw_diff will be omitted from span messages.
   bool omit_raw_source = 4;
+
+  // Optional ordering strategy name for the file list.
+  // Defaults to "entry-points-first".
+  // Use ListFileOrderers to discover available strategies.
+  string file_ordering = 5;
 }
 
 message ReviewReady {
@@ -450,4 +493,15 @@ message GetVersionResponse {
   // Allows the server to declare backwards compatibility explicitly.
   // e.g. proto_major=2, min_compatible_proto_major=1 means v1 clients still work.
   uint32 min_compatible_proto_major = 3;
+}
+
+message ListFileOrderersRequest {}
+
+message ListFileOrderersResponse {
+  repeated FileOrderer orderers = 1;
+}
+
+message FileOrderer {
+  string name        = 1;
+  string description = 2;
 }
