@@ -1,9 +1,4 @@
 jdk:
   - openjdk17
-before_install:
-  - curl -sSL https://github.com/bufbuild/buf/releases/latest/download/buf-Linux-x86_64 -o /tmp/buf
-  - chmod +x /tmp/buf
-  - sudo mv /tmp/buf /usr/local/bin/buf
 install:
-  - buf generate --template buf.gen.kotlin.yaml
   - ./gradlew publishToMavenLocal

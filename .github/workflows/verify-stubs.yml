@@ -1,0 +1,23 @@
+name: Verify generated stubs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify-stubs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bufbuild/buf-setup-action@v1
+      - name: Regenerate stubs
+        run: buf generate --template buf.gen.kotlin.yaml
+      - name: Check for drift
+        run: |
+          if ! git diff --quiet gen/kotlin/; then
+            echo "::error::gen/kotlin/ is out of sync with the proto file."
+            echo "::error::Run 'buf generate --template buf.gen.kotlin.yaml' locally and commit the result."
+            git diff --stat gen/kotlin/
+            exit 1
+          fi
+          echo "Stubs are in sync with the proto."
