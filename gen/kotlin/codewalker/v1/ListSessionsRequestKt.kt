@@ -29,6 +29,7 @@ public object ListSessionsRequestKt {
     internal fun _build(): codewalker.v1.Codewalker.ListSessionsRequest = _builder.build()
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ListSessionsRequest.copy(block: `codewalker.v1`.ListSessionsRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ListSessionsRequest =
   `codewalker.v1`.ListSessionsRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

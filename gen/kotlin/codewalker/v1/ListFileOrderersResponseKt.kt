@@ -98,8 +98,10 @@ public object ListFileOrderersResponseKt {
     public fun com.google.protobuf.kotlin.DslList<codewalker.v1.Codewalker.FileOrderer, OrderersProxy>.clear() {
       _builder.clearOrderers()
     }
+
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ListFileOrderersResponse.copy(block: `codewalker.v1`.ListFileOrderersResponseKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ListFileOrderersResponse =
   `codewalker.v1`.ListFileOrderersResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

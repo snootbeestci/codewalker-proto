@@ -29,6 +29,7 @@ public object GetVersionRequestKt {
     internal fun _build(): codewalker.v1.Codewalker.GetVersionRequest = _builder.build()
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.GetVersionRequest.copy(block: `codewalker.v1`.GetVersionRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.GetVersionRequest =
   `codewalker.v1`.GetVersionRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

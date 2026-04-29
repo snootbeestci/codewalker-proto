@@ -158,6 +158,7 @@ public object SessionReadyKt {
       _builder.clearSteps()
     }
 
+
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
@@ -257,6 +258,7 @@ public object SessionReadyKt {
       _builder.clearGlossary()
     }
 
+
     /**
      * ```
      * Language detected.
@@ -283,11 +285,11 @@ public object SessionReadyKt {
     }
 
     /**
-     * <pre>
+     * ```
      * Total number of steps in the graph (for progress indicators).
-     * </pre>
+     * ```
      *
-     * <code>uint32 total_steps = 5 [json_name = "totalSteps"];</code>
+     * `uint32 total_steps = 5 [json_name = "totalSteps"];`
      */
     public var totalSteps: kotlin.Int
       @JvmName("getTotalSteps")
@@ -333,6 +335,7 @@ public object SessionReadyKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.SessionReady.copy(block: `codewalker.v1`.SessionReadyKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.SessionReady =
   `codewalker.v1`.SessionReadyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

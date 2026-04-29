@@ -237,6 +237,7 @@ public object StepSummaryKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.StepSummary.copy(block: `codewalker.v1`.StepSummaryKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.StepSummary =
   `codewalker.v1`.StepSummaryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

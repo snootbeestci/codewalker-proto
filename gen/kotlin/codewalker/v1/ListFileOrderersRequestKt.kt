@@ -29,6 +29,7 @@ public object ListFileOrderersRequestKt {
     internal fun _build(): codewalker.v1.Codewalker.ListFileOrderersRequest = _builder.build()
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ListFileOrderersRequest.copy(block: `codewalker.v1`.ListFileOrderersRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ListFileOrderersRequest =
   `codewalker.v1`.ListFileOrderersRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

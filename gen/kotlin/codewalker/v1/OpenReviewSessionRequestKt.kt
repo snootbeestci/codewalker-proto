@@ -103,11 +103,11 @@ public object OpenReviewSessionRequestKt {
     }
 
     /**
-     * <pre>
+     * ```
      * If true, raw_source / raw_diff will be omitted from span messages.
-     * </pre>
+     * ```
      *
-     * <code>bool omit_raw_source = 4 [json_name = "omitRawSource"];</code>
+     * `bool omit_raw_source = 4 [json_name = "omitRawSource"];`
      */
     public var omitRawSource: kotlin.Boolean
       @JvmName("getOmitRawSource")
@@ -157,6 +157,7 @@ public object OpenReviewSessionRequestKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.OpenReviewSessionRequest.copy(block: `codewalker.v1`.OpenReviewSessionRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.OpenReviewSessionRequest =
   `codewalker.v1`.OpenReviewSessionRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

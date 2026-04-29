@@ -165,13 +165,14 @@ public object SessionEventKt {
     }
     public val eventCase: codewalker.v1.Codewalker.SessionEvent.EventCase
       @JvmName("getEventCase")
-      get() = _builder.eventCase
+      get() = _builder.getEventCase()
 
     public fun clearEvent() {
       _builder.clearEvent()
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.SessionEvent.copy(block: `codewalker.v1`.SessionEventKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.SessionEvent =
   `codewalker.v1`.SessionEventKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

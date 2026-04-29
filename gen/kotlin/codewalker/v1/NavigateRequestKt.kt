@@ -168,13 +168,14 @@ public object NavigateRequestKt {
     }
     public val destinationCase: codewalker.v1.Codewalker.NavigateRequest.DestinationCase
       @JvmName("getDestinationCase")
-      get() = _builder.destinationCase
+      get() = _builder.getDestinationCase()
 
     public fun clearDestination() {
       _builder.clearDestination()
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.NavigateRequest.copy(block: `codewalker.v1`.NavigateRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.NavigateRequest =
   `codewalker.v1`.NavigateRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -213,12 +213,13 @@ public object StepKt {
       _builder.clearEdges()
     }
 
+
     /**
-     * <pre>
+     * ```
      * Whether this step has already been narrated in this session.
-     * </pre>
+     * ```
      *
-     * <code>bool visited = 5 [json_name = "visited"];</code>
+     * `bool visited = 5 [json_name = "visited"];`
      */
     public var visited: kotlin.Boolean
       @JvmName("getVisited")
@@ -301,6 +302,7 @@ public object StepKt {
       get() = _builder.hunkSpanOrNull
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.Step.copy(block: `codewalker.v1`.StepKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.Step =
   `codewalker.v1`.StepKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

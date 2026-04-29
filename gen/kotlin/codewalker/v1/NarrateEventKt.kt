@@ -129,13 +129,14 @@ public object NarrateEventKt {
     }
     public val eventCase: codewalker.v1.Codewalker.NarrateEvent.EventCase
       @JvmName("getEventCase")
-      get() = _builder.eventCase
+      get() = _builder.getEventCase()
 
     public fun clearEvent() {
       _builder.clearEvent()
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.NarrateEvent.copy(block: `codewalker.v1`.NarrateEventKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.NarrateEvent =
   `codewalker.v1`.NarrateEventKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

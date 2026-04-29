@@ -98,8 +98,10 @@ public object ListSessionsResponseKt {
     public fun com.google.protobuf.kotlin.DslList<codewalker.v1.Codewalker.SessionSummary, SessionsProxy>.clear() {
       _builder.clearSessions()
     }
+
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ListSessionsResponse.copy(block: `codewalker.v1`.ListSessionsResponseKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ListSessionsResponse =
   `codewalker.v1`.ListSessionsResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

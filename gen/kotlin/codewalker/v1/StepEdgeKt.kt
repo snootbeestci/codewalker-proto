@@ -103,12 +103,12 @@ public object StepEdgeKt {
     }
 
     /**
-     * <pre>
+     * ```
      * Whether this edge can be followed into source. False for external calls
      * (stdlib, third-party dependencies) where no source is available in the repo.
-     * </pre>
+     * ```
      *
-     * <code>bool navigable = 4 [json_name = "navigable"];</code>
+     * `bool navigable = 4 [json_name = "navigable"];`
      */
     public var navigable: kotlin.Boolean
       @JvmName("getNavigable")
@@ -171,6 +171,7 @@ public object StepEdgeKt {
       get() = _builder.externalCallInfoOrNull
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.StepEdge.copy(block: `codewalker.v1`.StepEdgeKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.StepEdge =
   `codewalker.v1`.StepEdgeKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

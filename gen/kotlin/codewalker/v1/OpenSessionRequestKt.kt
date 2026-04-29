@@ -163,13 +163,13 @@ public object OpenSessionRequestKt {
     }
 
     /**
-     * <pre>
+     * ```
      * If true, raw_source will be omitted from all SourceSpan messages
      * in this session. Useful for clients that already have file access
      * and want to reduce message size (e.g. IDE plugins).
-     * </pre>
+     * ```
      *
-     * <code>bool omit_raw_source = 6 [json_name = "omitRawSource"];</code>
+     * `bool omit_raw_source = 6 [json_name = "omitRawSource"];`
      */
     public var omitRawSource: kotlin.Boolean
       @JvmName("getOmitRawSource")
@@ -192,6 +192,7 @@ public object OpenSessionRequestKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.OpenSessionRequest.copy(block: `codewalker.v1`.OpenSessionRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.OpenSessionRequest =
   `codewalker.v1`.OpenSessionRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

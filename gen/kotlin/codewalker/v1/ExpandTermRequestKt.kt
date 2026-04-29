@@ -71,6 +71,7 @@ public object ExpandTermRequestKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ExpandTermRequest.copy(block: `codewalker.v1`.ExpandTermRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ExpandTermRequest =
   `codewalker.v1`.ExpandTermRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -87,7 +87,7 @@ public object ReviewFileKt {
     }
 
     /**
-     * <code>uint32 hunks_total = 4 [json_name = "hunksTotal"];</code>
+     * `uint32 hunks_total = 4 [json_name = "hunksTotal"];`
      */
     public var hunksTotal: kotlin.Int
       @JvmName("getHunksTotal")
@@ -104,7 +104,7 @@ public object ReviewFileKt {
     }
 
     /**
-     * <code>uint32 lines_added = 5 [json_name = "linesAdded"];</code>
+     * `uint32 lines_added = 5 [json_name = "linesAdded"];`
      */
     public var linesAdded: kotlin.Int
       @JvmName("getLinesAdded")
@@ -121,7 +121,7 @@ public object ReviewFileKt {
     }
 
     /**
-     * <code>uint32 lines_removed = 6 [json_name = "linesRemoved"];</code>
+     * `uint32 lines_removed = 6 [json_name = "linesRemoved"];`
      */
     public var linesRemoved: kotlin.Int
       @JvmName("getLinesRemoved")
@@ -163,6 +163,7 @@ public object ReviewFileKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ReviewFile.copy(block: `codewalker.v1`.ReviewFileKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ReviewFile =
   `codewalker.v1`.ReviewFileKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

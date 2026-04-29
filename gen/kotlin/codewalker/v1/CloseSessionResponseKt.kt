@@ -29,7 +29,7 @@ public object CloseSessionResponseKt {
     internal fun _build(): codewalker.v1.Codewalker.CloseSessionResponse = _builder.build()
 
     /**
-     * <code>bool ok = 1 [json_name = "ok"];</code>
+     * `bool ok = 1 [json_name = "ok"];`
      */
     public var ok: kotlin.Boolean
       @JvmName("getOk")
@@ -46,6 +46,7 @@ public object CloseSessionResponseKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.CloseSessionResponse.copy(block: `codewalker.v1`.CloseSessionResponseKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.CloseSessionResponse =
   `codewalker.v1`.CloseSessionResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

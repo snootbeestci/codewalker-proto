@@ -63,6 +63,7 @@ public object FileOrdererKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.FileOrderer.copy(block: `codewalker.v1`.FileOrdererKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.FileOrderer =
   `codewalker.v1`.FileOrdererKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

@@ -29,7 +29,7 @@ public object SourceSpanKt {
     internal fun _build(): codewalker.v1.Codewalker.SourceSpan = _builder.build()
 
     /**
-     * <code>uint32 start_line = 1 [json_name = "startLine"];</code>
+     * `uint32 start_line = 1 [json_name = "startLine"];`
      */
     public var startLine: kotlin.Int
       @JvmName("getStartLine")
@@ -46,7 +46,7 @@ public object SourceSpanKt {
     }
 
     /**
-     * <code>uint32 start_column = 2 [json_name = "startColumn"];</code>
+     * `uint32 start_column = 2 [json_name = "startColumn"];`
      */
     public var startColumn: kotlin.Int
       @JvmName("getStartColumn")
@@ -63,7 +63,7 @@ public object SourceSpanKt {
     }
 
     /**
-     * <code>uint32 end_line = 3 [json_name = "endLine"];</code>
+     * `uint32 end_line = 3 [json_name = "endLine"];`
      */
     public var endLine: kotlin.Int
       @JvmName("getEndLine")
@@ -80,7 +80,7 @@ public object SourceSpanKt {
     }
 
     /**
-     * <code>uint32 end_column = 4 [json_name = "endColumn"];</code>
+     * `uint32 end_column = 4 [json_name = "endColumn"];`
      */
     public var endColumn: kotlin.Int
       @JvmName("getEndColumn")
@@ -122,6 +122,7 @@ public object SourceSpanKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.SourceSpan.copy(block: `codewalker.v1`.SourceSpanKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.SourceSpan =
   `codewalker.v1`.SourceSpanKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

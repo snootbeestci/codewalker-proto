@@ -120,6 +120,7 @@ public object GlossaryTermKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.GlossaryTerm.copy(block: `codewalker.v1`.GlossaryTermKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.GlossaryTerm =
   `codewalker.v1`.GlossaryTermKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

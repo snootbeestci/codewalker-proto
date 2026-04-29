@@ -170,6 +170,7 @@ public object ExternalCallInfoKt {
     }
   }
 }
+@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ExternalCallInfo.copy(block: `codewalker.v1`.ExternalCallInfoKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ExternalCallInfo =
   `codewalker.v1`.ExternalCallInfoKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
