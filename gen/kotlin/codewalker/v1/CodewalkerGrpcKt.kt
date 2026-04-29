@@ -83,6 +83,11 @@ public object CodeWalkerGrpcKt {
     @JvmStatic
     get() = CodeWalkerGrpc.getListPullRequestsMethod()
 
+  public val fetchFileAtRefMethod:
+      MethodDescriptor<Codewalker.FetchFileAtRefRequest, Codewalker.FetchFileAtRefResponse>
+    @JvmStatic
+    get() = CodeWalkerGrpc.getFetchFileAtRefMethod()
+
   /**
    * A stub for issuing RPCs to a(n) codewalker.v1.CodeWalker service as suspending coroutines.
    */
@@ -313,6 +318,28 @@ public object CodeWalkerGrpcKt {
       callOptions,
       headers
     )
+
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
+     * corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @param headers Metadata to attach to the request.  Most users will not need this.
+     *
+     * @return The single response from the server.
+     */
+    public suspend fun fetchFileAtRef(request: Codewalker.FetchFileAtRefRequest, headers: Metadata =
+        Metadata()): Codewalker.FetchFileAtRefResponse = unaryRpc(
+      channel,
+      CodeWalkerGrpc.getFetchFileAtRefMethod(),
+      request,
+      callOptions,
+      headers
+    )
   }
 
   /**
@@ -476,6 +503,21 @@ public object CodeWalkerGrpcKt {
         Codewalker.ListPullRequestsResponse = throw
         StatusException(UNIMPLEMENTED.withDescription("Method codewalker.v1.CodeWalker.ListPullRequests is unimplemented"))
 
+    /**
+     * Returns the response to an RPC for codewalker.v1.CodeWalker.FetchFileAtRef.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
+     * the RPC will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    public open suspend fun fetchFileAtRef(request: Codewalker.FetchFileAtRefRequest):
+        Codewalker.FetchFileAtRefResponse = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method codewalker.v1.CodeWalker.FetchFileAtRef is unimplemented"))
+
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
@@ -526,6 +568,11 @@ public object CodeWalkerGrpcKt {
       context = this.context,
       descriptor = CodeWalkerGrpc.getListPullRequestsMethod(),
       implementation = ::listPullRequests
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = CodeWalkerGrpc.getFetchFileAtRefMethod(),
+      implementation = ::fetchFileAtRef
     )).build()
   }
 }

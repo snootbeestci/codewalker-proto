@@ -39688,6 +39688,1927 @@ public final class Codewalker {
 
   }
 
+  public interface FetchFileAtRefRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.FetchFileAtRefRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Forge host. Canonical form per forge.NormalizeHost.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <pre>
+     * Forge host. Canonical form per forge.NormalizeHost.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <pre>
+     * Repository owner.
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The owner.
+     */
+    java.lang.String getOwner();
+    /**
+     * <pre>
+     * Repository owner.
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The bytes for owner.
+     */
+    com.google.protobuf.ByteString
+        getOwnerBytes();
+
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The repo.
+     */
+    java.lang.String getRepo();
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The bytes for repo.
+     */
+    com.google.protobuf.ByteString
+        getRepoBytes();
+
+    /**
+     * <pre>
+     * File path relative to the repo root.
+     * </pre>
+     *
+     * <code>string path = 4 [json_name = "path"];</code>
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     * <pre>
+     * File path relative to the repo root.
+     * </pre>
+     *
+     * <code>string path = 4 [json_name = "path"];</code>
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+
+    /**
+     * <pre>
+     * Git ref (commit SHA, branch, or tag).
+     * </pre>
+     *
+     * <code>string ref = 5 [json_name = "ref"];</code>
+     * @return The ref.
+     */
+    java.lang.String getRef();
+    /**
+     * <pre>
+     * Git ref (commit SHA, branch, or tag).
+     * </pre>
+     *
+     * <code>string ref = 5 [json_name = "ref"];</code>
+     * @return The bytes for ref.
+     */
+    com.google.protobuf.ByteString
+        getRefBytes();
+
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated.
+     * </pre>
+     *
+     * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+     * @return The forgeToken.
+     */
+    java.lang.String getForgeToken();
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated.
+     * </pre>
+     *
+     * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+     * @return The bytes for forgeToken.
+     */
+    com.google.protobuf.ByteString
+        getForgeTokenBytes();
+  }
+  /**
+   * Protobuf type {@code codewalker.v1.FetchFileAtRefRequest}
+   */
+  public static final class FetchFileAtRefRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.FetchFileAtRefRequest)
+      FetchFileAtRefRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        FetchFileAtRefRequest.class.getName());
+    }
+    // Use FetchFileAtRefRequest.newBuilder() to construct.
+    private FetchFileAtRefRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private FetchFileAtRefRequest() {
+      host_ = "";
+      owner_ = "";
+      repo_ = "";
+      path_ = "";
+      ref_ = "";
+      forgeToken_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.FetchFileAtRefRequest.class, codewalker.v1.Codewalker.FetchFileAtRefRequest.Builder.class);
+    }
+
+    public static final int HOST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object host_ = "";
+    /**
+     * <pre>
+     * Forge host. Canonical form per forge.NormalizeHost.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Forge host. Canonical form per forge.NormalizeHost.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OWNER_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object owner_ = "";
+    /**
+     * <pre>
+     * Repository owner.
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The owner.
+     */
+    @java.lang.Override
+    public java.lang.String getOwner() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        owner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Repository owner.
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The bytes for owner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOwnerBytes() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        owner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPO_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repo_ = "";
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The repo.
+     */
+    @java.lang.Override
+    public java.lang.String getRepo() {
+      java.lang.Object ref = repo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The bytes for repo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRepoBytes() {
+      java.lang.Object ref = repo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        repo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PATH_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     * <pre>
+     * File path relative to the repo root.
+     * </pre>
+     *
+     * <code>string path = 4 [json_name = "path"];</code>
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * File path relative to the repo root.
+     * </pre>
+     *
+     * <code>string path = 4 [json_name = "path"];</code>
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REF_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object ref_ = "";
+    /**
+     * <pre>
+     * Git ref (commit SHA, branch, or tag).
+     * </pre>
+     *
+     * <code>string ref = 5 [json_name = "ref"];</code>
+     * @return The ref.
+     */
+    @java.lang.Override
+    public java.lang.String getRef() {
+      java.lang.Object ref = ref_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ref_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Git ref (commit SHA, branch, or tag).
+     * </pre>
+     *
+     * <code>string ref = 5 [json_name = "ref"];</code>
+     * @return The bytes for ref.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRefBytes() {
+      java.lang.Object ref = ref_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ref_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORGE_TOKEN_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object forgeToken_ = "";
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated.
+     * </pre>
+     *
+     * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+     * @return The forgeToken.
+     */
+    @java.lang.Override
+    public java.lang.String getForgeToken() {
+      java.lang.Object ref = forgeToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        forgeToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated.
+     * </pre>
+     *
+     * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+     * @return The bytes for forgeToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getForgeTokenBytes() {
+      java.lang.Object ref = forgeToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        forgeToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(owner_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(repo_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, repo_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ref_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, ref_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(forgeToken_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, forgeToken_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(owner_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(repo_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, repo_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, path_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(ref_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, ref_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(forgeToken_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, forgeToken_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.FetchFileAtRefRequest)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.FetchFileAtRefRequest other = (codewalker.v1.Codewalker.FetchFileAtRefRequest) obj;
+
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (!getOwner()
+          .equals(other.getOwner())) return false;
+      if (!getRepo()
+          .equals(other.getRepo())) return false;
+      if (!getPath()
+          .equals(other.getPath())) return false;
+      if (!getRef()
+          .equals(other.getRef())) return false;
+      if (!getForgeToken()
+          .equals(other.getForgeToken())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwner().hashCode();
+      hash = (37 * hash) + REPO_FIELD_NUMBER;
+      hash = (53 * hash) + getRepo().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + REF_FIELD_NUMBER;
+      hash = (53 * hash) + getRef().hashCode();
+      hash = (37 * hash) + FORGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getForgeToken().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.FetchFileAtRefRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code codewalker.v1.FetchFileAtRefRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.FetchFileAtRefRequest)
+        codewalker.v1.Codewalker.FetchFileAtRefRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.FetchFileAtRefRequest.class, codewalker.v1.Codewalker.FetchFileAtRefRequest.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.FetchFileAtRefRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        host_ = "";
+        owner_ = "";
+        repo_ = "";
+        path_ = "";
+        ref_ = "";
+        forgeToken_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefRequest getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.FetchFileAtRefRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefRequest build() {
+        codewalker.v1.Codewalker.FetchFileAtRefRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefRequest buildPartial() {
+        codewalker.v1.Codewalker.FetchFileAtRefRequest result = new codewalker.v1.Codewalker.FetchFileAtRefRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.FetchFileAtRefRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.host_ = host_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.owner_ = owner_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.repo_ = repo_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.ref_ = ref_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.forgeToken_ = forgeToken_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.FetchFileAtRefRequest) {
+          return mergeFrom((codewalker.v1.Codewalker.FetchFileAtRefRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.FetchFileAtRefRequest other) {
+        if (other == codewalker.v1.Codewalker.FetchFileAtRefRequest.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getOwner().isEmpty()) {
+          owner_ = other.owner_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getRepo().isEmpty()) {
+          repo_ = other.repo_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getRef().isEmpty()) {
+          ref_ = other.ref_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getForgeToken().isEmpty()) {
+          forgeToken_ = other.forgeToken_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                host_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                owner_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                repo_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                path_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                ref_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                forgeToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object host_ = "";
+      /**
+       * <pre>
+       * Forge host. Canonical form per forge.NormalizeHost.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Forge host. Canonical form per forge.NormalizeHost.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Forge host. Canonical form per forge.NormalizeHost.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        host_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Forge host. Canonical form per forge.NormalizeHost.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        host_ = getDefaultInstance().getHost();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Forge host. Canonical form per forge.NormalizeHost.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        host_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object owner_ = "";
+      /**
+       * <pre>
+       * Repository owner.
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return The owner.
+       */
+      public java.lang.String getOwner() {
+        java.lang.Object ref = owner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          owner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository owner.
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return The bytes for owner.
+       */
+      public com.google.protobuf.ByteString
+          getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          owner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository owner.
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @param value The owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwner(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        owner_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository owner.
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOwner() {
+        owner_ = getDefaultInstance().getOwner();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository owner.
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @param value The bytes for owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        owner_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object repo_ = "";
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return The repo.
+       */
+      public java.lang.String getRepo() {
+        java.lang.Object ref = repo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return The bytes for repo.
+       */
+      public com.google.protobuf.ByteString
+          getRepoBytes() {
+        java.lang.Object ref = repo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          repo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @param value The repo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepo(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        repo_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRepo() {
+        repo_ = getDefaultInstance().getRepo();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @param value The bytes for repo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        repo_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       * <pre>
+       * File path relative to the repo root.
+       * </pre>
+       *
+       * <code>string path = 4 [json_name = "path"];</code>
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File path relative to the repo root.
+       * </pre>
+       *
+       * <code>string path = 4 [json_name = "path"];</code>
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * File path relative to the repo root.
+       * </pre>
+       *
+       * <code>string path = 4 [json_name = "path"];</code>
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        path_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File path relative to the repo root.
+       * </pre>
+       *
+       * <code>string path = 4 [json_name = "path"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * File path relative to the repo root.
+       * </pre>
+       *
+       * <code>string path = 4 [json_name = "path"];</code>
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object ref_ = "";
+      /**
+       * <pre>
+       * Git ref (commit SHA, branch, or tag).
+       * </pre>
+       *
+       * <code>string ref = 5 [json_name = "ref"];</code>
+       * @return The ref.
+       */
+      public java.lang.String getRef() {
+        java.lang.Object ref = ref_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ref_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Git ref (commit SHA, branch, or tag).
+       * </pre>
+       *
+       * <code>string ref = 5 [json_name = "ref"];</code>
+       * @return The bytes for ref.
+       */
+      public com.google.protobuf.ByteString
+          getRefBytes() {
+        java.lang.Object ref = ref_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ref_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Git ref (commit SHA, branch, or tag).
+       * </pre>
+       *
+       * <code>string ref = 5 [json_name = "ref"];</code>
+       * @param value The ref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRef(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ref_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Git ref (commit SHA, branch, or tag).
+       * </pre>
+       *
+       * <code>string ref = 5 [json_name = "ref"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRef() {
+        ref_ = getDefaultInstance().getRef();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Git ref (commit SHA, branch, or tag).
+       * </pre>
+       *
+       * <code>string ref = 5 [json_name = "ref"];</code>
+       * @param value The bytes for ref to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ref_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object forgeToken_ = "";
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated.
+       * </pre>
+       *
+       * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+       * @return The forgeToken.
+       */
+      public java.lang.String getForgeToken() {
+        java.lang.Object ref = forgeToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          forgeToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated.
+       * </pre>
+       *
+       * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+       * @return The bytes for forgeToken.
+       */
+      public com.google.protobuf.ByteString
+          getForgeTokenBytes() {
+        java.lang.Object ref = forgeToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          forgeToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated.
+       * </pre>
+       *
+       * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+       * @param value The forgeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForgeToken(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        forgeToken_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated.
+       * </pre>
+       *
+       * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForgeToken() {
+        forgeToken_ = getDefaultInstance().getForgeToken();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated.
+       * </pre>
+       *
+       * <code>string forge_token = 6 [json_name = "forgeToken"];</code>
+       * @param value The bytes for forgeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForgeTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        forgeToken_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.FetchFileAtRefRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.FetchFileAtRefRequest)
+    private static final codewalker.v1.Codewalker.FetchFileAtRefRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.FetchFileAtRefRequest();
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FetchFileAtRefRequest>
+        PARSER = new com.google.protobuf.AbstractParser<FetchFileAtRefRequest>() {
+      @java.lang.Override
+      public FetchFileAtRefRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<FetchFileAtRefRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FetchFileAtRefRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.FetchFileAtRefRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FetchFileAtRefResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.FetchFileAtRefResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Raw file content as returned by the forge.
+     * </pre>
+     *
+     * <code>bytes content = 1 [json_name = "content"];</code>
+     * @return The content.
+     */
+    com.google.protobuf.ByteString getContent();
+  }
+  /**
+   * Protobuf type {@code codewalker.v1.FetchFileAtRefResponse}
+   */
+  public static final class FetchFileAtRefResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.FetchFileAtRefResponse)
+      FetchFileAtRefResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        FetchFileAtRefResponse.class.getName());
+    }
+    // Use FetchFileAtRefResponse.newBuilder() to construct.
+    private FetchFileAtRefResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private FetchFileAtRefResponse() {
+      content_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.FetchFileAtRefResponse.class, codewalker.v1.Codewalker.FetchFileAtRefResponse.Builder.class);
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Raw file content as returned by the forge.
+     * </pre>
+     *
+     * <code>bytes content = 1 [json_name = "content"];</code>
+     * @return The content.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getContent() {
+      return content_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!content_.isEmpty()) {
+        output.writeBytes(1, content_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!content_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, content_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.FetchFileAtRefResponse)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.FetchFileAtRefResponse other = (codewalker.v1.Codewalker.FetchFileAtRefResponse) obj;
+
+      if (!getContent()
+          .equals(other.getContent())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getContent().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.FetchFileAtRefResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code codewalker.v1.FetchFileAtRefResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.FetchFileAtRefResponse)
+        codewalker.v1.Codewalker.FetchFileAtRefResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.FetchFileAtRefResponse.class, codewalker.v1.Codewalker.FetchFileAtRefResponse.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.FetchFileAtRefResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        content_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefResponse getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.FetchFileAtRefResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefResponse build() {
+        codewalker.v1.Codewalker.FetchFileAtRefResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.FetchFileAtRefResponse buildPartial() {
+        codewalker.v1.Codewalker.FetchFileAtRefResponse result = new codewalker.v1.Codewalker.FetchFileAtRefResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.FetchFileAtRefResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.content_ = content_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.FetchFileAtRefResponse) {
+          return mergeFrom((codewalker.v1.Codewalker.FetchFileAtRefResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.FetchFileAtRefResponse other) {
+        if (other == codewalker.v1.Codewalker.FetchFileAtRefResponse.getDefaultInstance()) return this;
+        if (other.getContent() != com.google.protobuf.ByteString.EMPTY) {
+          setContent(other.getContent());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                content_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString content_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Raw file content as returned by the forge.
+       * </pre>
+       *
+       * <code>bytes content = 1 [json_name = "content"];</code>
+       * @return The content.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getContent() {
+        return content_;
+      }
+      /**
+       * <pre>
+       * Raw file content as returned by the forge.
+       * </pre>
+       *
+       * <code>bytes content = 1 [json_name = "content"];</code>
+       * @param value The content to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContent(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        content_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Raw file content as returned by the forge.
+       * </pre>
+       *
+       * <code>bytes content = 1 [json_name = "content"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContent() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.FetchFileAtRefResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.FetchFileAtRefResponse)
+    private static final codewalker.v1.Codewalker.FetchFileAtRefResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.FetchFileAtRefResponse();
+    }
+
+    public static codewalker.v1.Codewalker.FetchFileAtRefResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FetchFileAtRefResponse>
+        PARSER = new com.google.protobuf.AbstractParser<FetchFileAtRefResponse>() {
+      @java.lang.Override
+      public FetchFileAtRefResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<FetchFileAtRefResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FetchFileAtRefResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.FetchFileAtRefResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_codewalker_v1_OpenSessionRequest_descriptor;
   private static final 
@@ -39863,6 +41784,16 @@ public final class Codewalker {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_FetchFileAtRefResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -40015,75 +41946,82 @@ public final class Codewalker {
       "llRequestSummaryR\014pullRequests\"l\n\022PullRe" +
       "questSummary\022\026\n\006number\030\001 \001(\005R\006number\022\024\n\005" +
       "title\030\002 \001(\tR\005title\022\026\n\006author\030\003 \001(\tR\006auth" +
-      "or\022\020\n\003url\030\004 \001(\tR\003url*b\n\013SessionKind\022\034\n\030S" +
-      "ESSION_KIND_UNSPECIFIED\020\000\022\034\n\030SESSION_KIN" +
-      "D_WALKTHROUGH\020\001\022\027\n\023SESSION_KIND_REVIEW\020\002" +
-      "*\361\001\n\010StepKind\022\031\n\025STEP_KIND_UNSPECIFIED\020\000" +
-      "\022\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP_KIND_ASSIG" +
-      "NMENT\020\002\022\031\n\025STEP_KIND_CONDITIONAL\020\003\022\022\n\016ST" +
-      "EP_KIND_LOOP\020\004\022\022\n\016STEP_KIND_CALL\020\005\022\024\n\020ST" +
-      "EP_KIND_RETURN\020\006\022\032\n\026STEP_KIND_ERROR_HAND" +
-      "LE\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016STEP_KIND_HU" +
-      "NK\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LABEL_UNSPECI" +
-      "FIED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032\n\026EDGE_LABE" +
-      "L_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL_FALSE_BRAN" +
-      "CH\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024EDGE_LABEL_" +
-      "LOOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOOP_EXIT\020\006\022\030\n" +
-      "\024EDGE_LABEL_EXCEPTION\020\007\022\023\n\017EDGE_LABEL_CA" +
-      "LL\020\010*l\n\017SimpleDirection\022 \n\034SIMPLE_DIRECT" +
-      "ION_UNSPECIFIED\020\000\022\034\n\030SIMPLE_DIRECTION_FO" +
-      "RWARD\020\001\022\031\n\025SIMPLE_DIRECTION_BACK\020\002*\225\001\n\014R" +
-      "ephraseMode\022\035\n\031REPHRASE_MODE_UNSPECIFIED" +
-      "\020\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001\022\030\n\024REPHRAS" +
-      "E_MODE_DEEPER\020\002\022\031\n\025REPHRASE_MODE_ANALOGY" +
-      "\020\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001\n\010TermKind\022" +
-      "\031\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n\022TERM_KIND_" +
-      "LANGUAGE\020\001\022\025\n\021TERM_KIND_PATTERN\020\002\022\024\n\020TER" +
-      "M_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_LIBRARY\020\004*\223" +
-      "\001\n\020ForgeContextKind\022\"\n\036FORGE_CONTEXT_KIN" +
-      "D_UNSPECIFIED\020\000\022\031\n\025FORGE_CONTEXT_KIND_PR" +
-      "\020\001\022\035\n\031FORGE_CONTEXT_KIND_COMMIT\020\002\022!\n\035FOR" +
-      "GE_CONTEXT_KIND_COMPARISON\020\003*\214\001\n\nChangeK" +
-      "ind\022\033\n\027CHANGE_KIND_UNSPECIFIED\020\000\022\025\n\021CHAN" +
-      "GE_KIND_ADDED\020\001\022\030\n\024CHANGE_KIND_MODIFIED\020" +
-      "\002\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n\023CHANGE_KIN" +
-      "D_RENAMED\020\004*\207\001\n\017ExperienceLevel\022 \n\034EXPER" +
-      "IENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027EXPERIENCE_" +
-      "LEVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_LEVEL_MID\020\002" +
-      "\022\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003*\340\002\n\tErrorC" +
-      "ode\022\032\n\026ERROR_CODE_UNSPECIFIED\020\000\022 \n\034ERROR" +
-      "_CODE_SESSION_NOT_FOUND\020\001\022\033\n\027ERROR_CODE_" +
-      "PARSE_FAILED\020\002\022\032\n\026ERROR_CODE_INVALID_REF" +
-      "\020\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022\037\n\033ERROR_CO" +
-      "DE_UNSUPPORTED_LANG\020\005\022!\n\035ERROR_CODE_INVA" +
-      "LID_NAVIGATION\020\006\022 \n\034ERROR_CODE_UNSUPPORT" +
-      "ED_FORGE\020\007\022 \n\034ERROR_CODE_FORGE_AUTH_FAIL" +
-      "ED\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_FOUND\020\t\022\032\n\026" +
-      "ERROR_CODE_INVALID_URL\020\n2\356\006\n\nCodeWalker\022" +
-      "Q\n\nGetVersion\022 .codewalker.v1.GetVersion" +
-      "Request\032!.codewalker.v1.GetVersionRespon" +
-      "se\022O\n\013OpenSession\022!.codewalker.v1.OpenSe" +
-      "ssionRequest\032\033.codewalker.v1.SessionEven" +
-      "t0\001\022I\n\010Navigate\022\036.codewalker.v1.Navigate" +
-      "Request\032\033.codewalker.v1.NarrateEvent0\001\022I" +
-      "\n\010Rephrase\022\036.codewalker.v1.RephraseReque" +
-      "st\032\033.codewalker.v1.NarrateEvent0\001\022M\n\nExp" +
-      "andTerm\022 .codewalker.v1.ExpandTermReques" +
-      "t\032\033.codewalker.v1.NarrateEvent0\001\022W\n\014Clos" +
-      "eSession\022\".codewalker.v1.CloseSessionReq" +
-      "uest\032#.codewalker.v1.CloseSessionRespons" +
-      "e\022W\n\014ListSessions\022\".codewalker.v1.ListSe" +
-      "ssionsRequest\032#.codewalker.v1.ListSessio" +
-      "nsResponse\022[\n\021OpenReviewSession\022\'.codewa" +
-      "lker.v1.OpenReviewSessionRequest\032\033.codew" +
-      "alker.v1.SessionEvent0\001\022c\n\020ListFileOrder" +
-      "ers\022&.codewalker.v1.ListFileOrderersRequ" +
-      "est\032\'.codewalker.v1.ListFileOrderersResp" +
-      "onse\022c\n\020ListPullRequests\022&.codewalker.v1" +
-      ".ListPullRequestsRequest\032\'.codewalker.v1" +
-      ".ListPullRequestsResponseB1Z/github.com/" +
-      "yourorg/codewalker/gen/codewalker/v1b\006pr" +
-      "oto3"
+      "or\022\020\n\003url\030\004 \001(\tR\003url\"\234\001\n\025FetchFileAtRefR" +
+      "equest\022\022\n\004host\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(" +
+      "\tR\005owner\022\022\n\004repo\030\003 \001(\tR\004repo\022\022\n\004path\030\004 \001" +
+      "(\tR\004path\022\020\n\003ref\030\005 \001(\tR\003ref\022\037\n\013forge_toke" +
+      "n\030\006 \001(\tR\nforgeToken\"2\n\026FetchFileAtRefRes" +
+      "ponse\022\030\n\007content\030\001 \001(\014R\007content*b\n\013Sessi" +
+      "onKind\022\034\n\030SESSION_KIND_UNSPECIFIED\020\000\022\034\n\030" +
+      "SESSION_KIND_WALKTHROUGH\020\001\022\027\n\023SESSION_KI" +
+      "ND_REVIEW\020\002*\361\001\n\010StepKind\022\031\n\025STEP_KIND_UN" +
+      "SPECIFIED\020\000\022\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP" +
+      "_KIND_ASSIGNMENT\020\002\022\031\n\025STEP_KIND_CONDITIO" +
+      "NAL\020\003\022\022\n\016STEP_KIND_LOOP\020\004\022\022\n\016STEP_KIND_C" +
+      "ALL\020\005\022\024\n\020STEP_KIND_RETURN\020\006\022\032\n\026STEP_KIND" +
+      "_ERROR_HANDLE\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016S" +
+      "TEP_KIND_HUNK\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LA" +
+      "BEL_UNSPECIFIED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032" +
+      "\n\026EDGE_LABEL_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL" +
+      "_FALSE_BRANCH\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024" +
+      "EDGE_LABEL_LOOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOO" +
+      "P_EXIT\020\006\022\030\n\024EDGE_LABEL_EXCEPTION\020\007\022\023\n\017ED" +
+      "GE_LABEL_CALL\020\010*l\n\017SimpleDirection\022 \n\034SI" +
+      "MPLE_DIRECTION_UNSPECIFIED\020\000\022\034\n\030SIMPLE_D" +
+      "IRECTION_FORWARD\020\001\022\031\n\025SIMPLE_DIRECTION_B" +
+      "ACK\020\002*\225\001\n\014RephraseMode\022\035\n\031REPHRASE_MODE_" +
+      "UNSPECIFIED\020\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001" +
+      "\022\030\n\024REPHRASE_MODE_DEEPER\020\002\022\031\n\025REPHRASE_M" +
+      "ODE_ANALOGY\020\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001" +
+      "\n\010TermKind\022\031\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n" +
+      "\022TERM_KIND_LANGUAGE\020\001\022\025\n\021TERM_KIND_PATTE" +
+      "RN\020\002\022\024\n\020TERM_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_" +
+      "LIBRARY\020\004*\223\001\n\020ForgeContextKind\022\"\n\036FORGE_" +
+      "CONTEXT_KIND_UNSPECIFIED\020\000\022\031\n\025FORGE_CONT" +
+      "EXT_KIND_PR\020\001\022\035\n\031FORGE_CONTEXT_KIND_COMM" +
+      "IT\020\002\022!\n\035FORGE_CONTEXT_KIND_COMPARISON\020\003*" +
+      "\214\001\n\nChangeKind\022\033\n\027CHANGE_KIND_UNSPECIFIE" +
+      "D\020\000\022\025\n\021CHANGE_KIND_ADDED\020\001\022\030\n\024CHANGE_KIN" +
+      "D_MODIFIED\020\002\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n" +
+      "\023CHANGE_KIND_RENAMED\020\004*\207\001\n\017ExperienceLev" +
+      "el\022 \n\034EXPERIENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027" +
+      "EXPERIENCE_LEVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_" +
+      "LEVEL_MID\020\002\022\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003" +
+      "*\340\002\n\tErrorCode\022\032\n\026ERROR_CODE_UNSPECIFIED" +
+      "\020\000\022 \n\034ERROR_CODE_SESSION_NOT_FOUND\020\001\022\033\n\027" +
+      "ERROR_CODE_PARSE_FAILED\020\002\022\032\n\026ERROR_CODE_" +
+      "INVALID_REF\020\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022" +
+      "\037\n\033ERROR_CODE_UNSUPPORTED_LANG\020\005\022!\n\035ERRO" +
+      "R_CODE_INVALID_NAVIGATION\020\006\022 \n\034ERROR_COD" +
+      "E_UNSUPPORTED_FORGE\020\007\022 \n\034ERROR_CODE_FORG" +
+      "E_AUTH_FAILED\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_" +
+      "FOUND\020\t\022\032\n\026ERROR_CODE_INVALID_URL\020\n2\315\007\n\n" +
+      "CodeWalker\022Q\n\nGetVersion\022 .codewalker.v1" +
+      ".GetVersionRequest\032!.codewalker.v1.GetVe" +
+      "rsionResponse\022O\n\013OpenSession\022!.codewalke" +
+      "r.v1.OpenSessionRequest\032\033.codewalker.v1." +
+      "SessionEvent0\001\022I\n\010Navigate\022\036.codewalker." +
+      "v1.NavigateRequest\032\033.codewalker.v1.Narra" +
+      "teEvent0\001\022I\n\010Rephrase\022\036.codewalker.v1.Re" +
+      "phraseRequest\032\033.codewalker.v1.NarrateEve" +
+      "nt0\001\022M\n\nExpandTerm\022 .codewalker.v1.Expan" +
+      "dTermRequest\032\033.codewalker.v1.NarrateEven" +
+      "t0\001\022W\n\014CloseSession\022\".codewalker.v1.Clos" +
+      "eSessionRequest\032#.codewalker.v1.CloseSes" +
+      "sionResponse\022W\n\014ListSessions\022\".codewalke" +
+      "r.v1.ListSessionsRequest\032#.codewalker.v1" +
+      ".ListSessionsResponse\022[\n\021OpenReviewSessi" +
+      "on\022\'.codewalker.v1.OpenReviewSessionRequ" +
+      "est\032\033.codewalker.v1.SessionEvent0\001\022c\n\020Li" +
+      "stFileOrderers\022&.codewalker.v1.ListFileO" +
+      "rderersRequest\032\'.codewalker.v1.ListFileO" +
+      "rderersResponse\022c\n\020ListPullRequests\022&.co" +
+      "dewalker.v1.ListPullRequestsRequest\032\'.co" +
+      "dewalker.v1.ListPullRequestsResponse\022]\n\016" +
+      "FetchFileAtRef\022$.codewalker.v1.FetchFile" +
+      "AtRefRequest\032%.codewalker.v1.FetchFileAt" +
+      "RefResponseB1Z/github.com/yourorg/codewa" +
+      "lker/gen/codewalker/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -40299,6 +42237,18 @@ public final class Codewalker {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_PullRequestSummary_descriptor,
         new java.lang.String[] { "Number", "Title", "Author", "Url", });
+    internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor =
+      getDescriptor().getMessageTypes().get(35);
+    internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor,
+        new java.lang.String[] { "Host", "Owner", "Repo", "Path", "Ref", "ForgeToken", });
+    internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor =
+      getDescriptor().getMessageTypes().get(36);
+    internal_static_codewalker_v1_FetchFileAtRefResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor,
+        new java.lang.String[] { "Content", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

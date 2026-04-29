@@ -325,6 +325,37 @@ public final class CodeWalkerGrpc {
     return getListPullRequestsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<codewalker.v1.Codewalker.FetchFileAtRefRequest,
+      codewalker.v1.Codewalker.FetchFileAtRefResponse> getFetchFileAtRefMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "FetchFileAtRef",
+      requestType = codewalker.v1.Codewalker.FetchFileAtRefRequest.class,
+      responseType = codewalker.v1.Codewalker.FetchFileAtRefResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<codewalker.v1.Codewalker.FetchFileAtRefRequest,
+      codewalker.v1.Codewalker.FetchFileAtRefResponse> getFetchFileAtRefMethod() {
+    io.grpc.MethodDescriptor<codewalker.v1.Codewalker.FetchFileAtRefRequest, codewalker.v1.Codewalker.FetchFileAtRefResponse> getFetchFileAtRefMethod;
+    if ((getFetchFileAtRefMethod = CodeWalkerGrpc.getFetchFileAtRefMethod) == null) {
+      synchronized (CodeWalkerGrpc.class) {
+        if ((getFetchFileAtRefMethod = CodeWalkerGrpc.getFetchFileAtRefMethod) == null) {
+          CodeWalkerGrpc.getFetchFileAtRefMethod = getFetchFileAtRefMethod =
+              io.grpc.MethodDescriptor.<codewalker.v1.Codewalker.FetchFileAtRefRequest, codewalker.v1.Codewalker.FetchFileAtRefResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "FetchFileAtRef"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  codewalker.v1.Codewalker.FetchFileAtRefRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  codewalker.v1.Codewalker.FetchFileAtRefResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CodeWalkerMethodDescriptorSupplier("FetchFileAtRef"))
+              .build();
+        }
+      }
+    }
+    return getFetchFileAtRefMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -481,6 +512,18 @@ public final class CodeWalkerGrpc {
         io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListPullRequestsResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPullRequestsMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * Fetch a file's content at a specific ref via the appropriate forge.
+     * Used by clients to display the head-ref version of a file during a
+     * review session, where the working-tree copy may not match.
+     * </pre>
+     */
+    default void fetchFileAtRef(codewalker.v1.Codewalker.FetchFileAtRefRequest request,
+        io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.FetchFileAtRefResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getFetchFileAtRefMethod(), responseObserver);
+    }
   }
 
   /**
@@ -628,6 +671,19 @@ public final class CodeWalkerGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListPullRequestsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Fetch a file's content at a specific ref via the appropriate forge.
+     * Used by clients to display the head-ref version of a file during a
+     * review session, where the working-tree copy may not match.
+     * </pre>
+     */
+    public void fetchFileAtRef(codewalker.v1.Codewalker.FetchFileAtRefRequest request,
+        io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.FetchFileAtRefResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getFetchFileAtRefMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -759,6 +815,18 @@ public final class CodeWalkerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListPullRequestsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Fetch a file's content at a specific ref via the appropriate forge.
+     * Used by clients to display the head-ref version of a file during a
+     * review session, where the working-tree copy may not match.
+     * </pre>
+     */
+    public codewalker.v1.Codewalker.FetchFileAtRefResponse fetchFileAtRef(codewalker.v1.Codewalker.FetchFileAtRefRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getFetchFileAtRefMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -835,6 +903,19 @@ public final class CodeWalkerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListPullRequestsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Fetch a file's content at a specific ref via the appropriate forge.
+     * Used by clients to display the head-ref version of a file during a
+     * review session, where the working-tree copy may not match.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<codewalker.v1.Codewalker.FetchFileAtRefResponse> fetchFileAtRef(
+        codewalker.v1.Codewalker.FetchFileAtRefRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getFetchFileAtRefMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_VERSION = 0;
@@ -847,6 +928,7 @@ public final class CodeWalkerGrpc {
   private static final int METHODID_OPEN_REVIEW_SESSION = 7;
   private static final int METHODID_LIST_FILE_ORDERERS = 8;
   private static final int METHODID_LIST_PULL_REQUESTS = 9;
+  private static final int METHODID_FETCH_FILE_AT_REF = 10;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -904,6 +986,10 @@ public final class CodeWalkerGrpc {
         case METHODID_LIST_PULL_REQUESTS:
           serviceImpl.listPullRequests((codewalker.v1.Codewalker.ListPullRequestsRequest) request,
               (io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListPullRequestsResponse>) responseObserver);
+          break;
+        case METHODID_FETCH_FILE_AT_REF:
+          serviceImpl.fetchFileAtRef((codewalker.v1.Codewalker.FetchFileAtRefRequest) request,
+              (io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.FetchFileAtRefResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -993,6 +1079,13 @@ public final class CodeWalkerGrpc {
               codewalker.v1.Codewalker.ListPullRequestsRequest,
               codewalker.v1.Codewalker.ListPullRequestsResponse>(
                 service, METHODID_LIST_PULL_REQUESTS)))
+        .addMethod(
+          getFetchFileAtRefMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              codewalker.v1.Codewalker.FetchFileAtRefRequest,
+              codewalker.v1.Codewalker.FetchFileAtRefResponse>(
+                service, METHODID_FETCH_FILE_AT_REF)))
         .build();
   }
 
@@ -1051,6 +1144,7 @@ public final class CodeWalkerGrpc {
               .addMethod(getOpenReviewSessionMethod())
               .addMethod(getListFileOrderersMethod())
               .addMethod(getListPullRequestsMethod())
+              .addMethod(getFetchFileAtRefMethod())
               .build();
         }
       }
