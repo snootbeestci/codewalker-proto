@@ -46,7 +46,6 @@ public object NarrateTokenKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.NarrateToken.copy(block: `codewalker.v1`.NarrateTokenKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.NarrateToken =
   `codewalker.v1`.NarrateTokenKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

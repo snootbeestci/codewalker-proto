@@ -170,7 +170,6 @@ public object ReviewReadyKt {
       _builder.clearSteps()
     }
 
-
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
@@ -242,9 +241,8 @@ public object ReviewReadyKt {
       _builder.clearGlossary()
     }
 
-
     /**
-     * `uint32 total_steps = 5 [json_name = "totalSteps"];`
+     * <code>uint32 total_steps = 5 [json_name = "totalSteps"];</code>
      */
     public var totalSteps: kotlin.Int
       @JvmName("getTotalSteps")
@@ -286,7 +284,7 @@ public object ReviewReadyKt {
     }
 
     /**
-     * `uint32 effective_level = 7 [json_name = "effectiveLevel"];`
+     * <code>uint32 effective_level = 7 [json_name = "effectiveLevel"];</code>
      */
     public var effectiveLevel: kotlin.Int
       @JvmName("getEffectiveLevel")
@@ -303,7 +301,6 @@ public object ReviewReadyKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ReviewReady.copy(block: `codewalker.v1`.ReviewReadyKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ReviewReady =
   `codewalker.v1`.ReviewReadyKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

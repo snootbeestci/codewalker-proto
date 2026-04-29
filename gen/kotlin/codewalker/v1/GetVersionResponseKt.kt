@@ -54,12 +54,12 @@ public object GetVersionResponseKt {
     }
 
     /**
-     * ```
+     * <pre>
      * Proto contract major version — the only part clients need to check.
      * Increment this when breaking proto changes are made.
-     * ```
+     * </pre>
      *
-     * `uint32 proto_major = 2 [json_name = "protoMajor"];`
+     * <code>uint32 proto_major = 2 [json_name = "protoMajor"];</code>
      */
     public var protoMajor: kotlin.Int
       @JvmName("getProtoMajor")
@@ -81,13 +81,13 @@ public object GetVersionResponseKt {
     }
 
     /**
-     * ```
+     * <pre>
      * Minimum plugin proto_major this server is compatible with.
      * Allows the server to declare backwards compatibility explicitly.
      * e.g. proto_major=2, min_compatible_proto_major=1 means v1 clients still work.
-     * ```
+     * </pre>
      *
-     * `uint32 min_compatible_proto_major = 3 [json_name = "minCompatibleProtoMajor"];`
+     * <code>uint32 min_compatible_proto_major = 3 [json_name = "minCompatibleProtoMajor"];</code>
      */
     public var minCompatibleProtoMajor: kotlin.Int
       @JvmName("getMinCompatibleProtoMajor")
@@ -110,7 +110,6 @@ public object GetVersionResponseKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.GetVersionResponse.copy(block: `codewalker.v1`.GetVersionResponseKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.GetVersionResponse =
   `codewalker.v1`.GetVersionResponseKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

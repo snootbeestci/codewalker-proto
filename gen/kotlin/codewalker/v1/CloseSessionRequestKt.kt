@@ -46,7 +46,6 @@ public object CloseSessionRequestKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.CloseSessionRequest.copy(block: `codewalker.v1`.CloseSessionRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.CloseSessionRequest =
   `codewalker.v1`.CloseSessionRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

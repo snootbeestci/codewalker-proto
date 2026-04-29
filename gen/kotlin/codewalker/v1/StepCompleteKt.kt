@@ -144,7 +144,6 @@ public object StepCompleteKt {
       _builder.clearNewTerms()
     }
 
-
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
@@ -244,7 +243,6 @@ public object StepCompleteKt {
       _builder.clearAvailableEdges()
     }
 
-
     /**
      * An uninstantiable, behaviorless type to represent the field in
      * generics.
@@ -260,7 +258,7 @@ public object StepCompleteKt {
      * @return A list containing the breadcrumb.
      */
     public val breadcrumb: com.google.protobuf.kotlin.DslList<kotlin.String, BreadcrumbProxy>
-      @kotlin.jvm.JvmSynthetic
+    @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
       get() = com.google.protobuf.kotlin.DslList(
         _builder.breadcrumbList
       )
@@ -385,7 +383,6 @@ public object StepCompleteKt {
       get() = _builder.summaryOrNull
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.StepComplete.copy(block: `codewalker.v1`.StepCompleteKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.StepComplete =
   `codewalker.v1`.StepCompleteKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

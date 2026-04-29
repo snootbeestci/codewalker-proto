@@ -54,11 +54,11 @@ public object SessionProgressKt {
     }
 
     /**
-     * ```
+     * <pre>
      * 0–100
-     * ```
+     * </pre>
      *
-     * `uint32 percent = 2 [json_name = "percent"];`
+     * <code>uint32 percent = 2 [json_name = "percent"];</code>
      */
     public var percent: kotlin.Int
       @JvmName("getPercent")
@@ -79,7 +79,6 @@ public object SessionProgressKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.SessionProgress.copy(block: `codewalker.v1`.SessionProgressKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.SessionProgress =
   `codewalker.v1`.SessionProgressKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

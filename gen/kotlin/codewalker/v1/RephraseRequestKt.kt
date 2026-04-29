@@ -70,7 +70,6 @@ public object RephraseRequestKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.RephraseRequest.copy(block: `codewalker.v1`.RephraseRequestKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.RephraseRequest =
   `codewalker.v1`.RephraseRequestKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

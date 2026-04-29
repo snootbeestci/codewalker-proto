@@ -131,14 +131,14 @@ public object SessionSummaryKt {
     }
 
     /**
-     * ```
+     * <pre>
      * Current narration level on a 1–10 scale. In v1 this is derived
      * directly from the ExperienceLevel set on OpenSessionRequest.
      * In v2 this will reflect adaptive adjustment based on session behaviour.
      * Read-only — clients should display but not set this directly.
-     * ```
+     * </pre>
      *
-     * `uint32 effective_level = 7 [json_name = "effectiveLevel"];`
+     * <code>uint32 effective_level = 7 [json_name = "effectiveLevel"];</code>
      */
     public var effectiveLevel: kotlin.Int
       @JvmName("getEffectiveLevel")
@@ -186,7 +186,6 @@ public object SessionSummaryKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.SessionSummary.copy(block: `codewalker.v1`.SessionSummaryKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.SessionSummary =
   `codewalker.v1`.SessionSummaryKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

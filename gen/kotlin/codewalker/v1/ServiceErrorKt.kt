@@ -87,7 +87,6 @@ public object ServiceErrorKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ServiceError.copy(block: `codewalker.v1`.ServiceErrorKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ServiceError =
   `codewalker.v1`.ServiceErrorKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

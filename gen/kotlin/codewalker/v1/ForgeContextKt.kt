@@ -170,11 +170,11 @@ public object ForgeContextKt {
     }
 
     /**
-     * ```
+     * <pre>
      * set for PRs, 0 otherwise
-     * ```
+     * </pre>
      *
-     * `int32 pr_number = 7 [json_name = "prNumber"];`
+     * <code>int32 pr_number = 7 [json_name = "prNumber"];</code>
      */
     public var prNumber: kotlin.Int
       @JvmName("getPrNumber")
@@ -384,10 +384,8 @@ public object ForgeContextKt {
     public fun com.google.protobuf.kotlin.DslList<codewalker.v1.Codewalker.ReviewFile, FilesProxy>.clear() {
       _builder.clearFiles()
     }
-
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.ForgeContext.copy(block: `codewalker.v1`.ForgeContextKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.ForgeContext =
   `codewalker.v1`.ForgeContextKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 

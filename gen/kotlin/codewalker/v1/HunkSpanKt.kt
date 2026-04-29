@@ -46,7 +46,7 @@ public object HunkSpanKt {
     }
 
     /**
-     * `uint32 old_start = 2 [json_name = "oldStart"];`
+     * <code>uint32 old_start = 2 [json_name = "oldStart"];</code>
      */
     public var oldStart: kotlin.Int
       @JvmName("getOldStart")
@@ -63,7 +63,7 @@ public object HunkSpanKt {
     }
 
     /**
-     * `uint32 old_lines = 3 [json_name = "oldLines"];`
+     * <code>uint32 old_lines = 3 [json_name = "oldLines"];</code>
      */
     public var oldLines: kotlin.Int
       @JvmName("getOldLines")
@@ -80,7 +80,7 @@ public object HunkSpanKt {
     }
 
     /**
-     * `uint32 new_start = 4 [json_name = "newStart"];`
+     * <code>uint32 new_start = 4 [json_name = "newStart"];</code>
      */
     public var newStart: kotlin.Int
       @JvmName("getNewStart")
@@ -97,7 +97,7 @@ public object HunkSpanKt {
     }
 
     /**
-     * `uint32 new_lines = 5 [json_name = "newLines"];`
+     * <code>uint32 new_lines = 5 [json_name = "newLines"];</code>
      */
     public var newLines: kotlin.Int
       @JvmName("getNewLines")
@@ -173,7 +173,6 @@ public object HunkSpanKt {
     }
   }
 }
-@kotlin.jvm.JvmSynthetic
 public inline fun codewalker.v1.Codewalker.HunkSpan.copy(block: `codewalker.v1`.HunkSpanKt.Dsl.() -> kotlin.Unit): codewalker.v1.Codewalker.HunkSpan =
   `codewalker.v1`.HunkSpanKt.Dsl._create(this.toBuilder()).apply { block() }._build()
 
