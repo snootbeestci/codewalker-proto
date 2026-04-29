@@ -36954,6 +36954,2740 @@ public final class Codewalker {
 
   }
 
+  public interface ListPullRequestsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.ListPullRequestsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Forge host (e.g. "github.com"). Must be the canonical form per
+     * forge.NormalizeHost — clients are expected to normalise before sending.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    java.lang.String getHost();
+    /**
+     * <pre>
+     * Forge host (e.g. "github.com"). Must be the canonical form per
+     * forge.NormalizeHost — clients are expected to normalise before sending.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    com.google.protobuf.ByteString
+        getHostBytes();
+
+    /**
+     * <pre>
+     * Repository owner (org or user).
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The owner.
+     */
+    java.lang.String getOwner();
+    /**
+     * <pre>
+     * Repository owner (org or user).
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The bytes for owner.
+     */
+    com.google.protobuf.ByteString
+        getOwnerBytes();
+
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The repo.
+     */
+    java.lang.String getRepo();
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The bytes for repo.
+     */
+    com.google.protobuf.ByteString
+        getRepoBytes();
+
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated (public repo).
+     * The server uses this verbatim — there is no server-side resolution.
+     * </pre>
+     *
+     * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+     * @return The forgeToken.
+     */
+    java.lang.String getForgeToken();
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated (public repo).
+     * The server uses this verbatim — there is no server-side resolution.
+     * </pre>
+     *
+     * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+     * @return The bytes for forgeToken.
+     */
+    com.google.protobuf.ByteString
+        getForgeTokenBytes();
+  }
+  /**
+   * Protobuf type {@code codewalker.v1.ListPullRequestsRequest}
+   */
+  public static final class ListPullRequestsRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.ListPullRequestsRequest)
+      ListPullRequestsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        ListPullRequestsRequest.class.getName());
+    }
+    // Use ListPullRequestsRequest.newBuilder() to construct.
+    private ListPullRequestsRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ListPullRequestsRequest() {
+      host_ = "";
+      owner_ = "";
+      repo_ = "";
+      forgeToken_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.ListPullRequestsRequest.class, codewalker.v1.Codewalker.ListPullRequestsRequest.Builder.class);
+    }
+
+    public static final int HOST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object host_ = "";
+    /**
+     * <pre>
+     * Forge host (e.g. "github.com"). Must be the canonical form per
+     * forge.NormalizeHost — clients are expected to normalise before sending.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The host.
+     */
+    @java.lang.Override
+    public java.lang.String getHost() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        host_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Forge host (e.g. "github.com"). Must be the canonical form per
+     * forge.NormalizeHost — clients are expected to normalise before sending.
+     * </pre>
+     *
+     * <code>string host = 1 [json_name = "host"];</code>
+     * @return The bytes for host.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHostBytes() {
+      java.lang.Object ref = host_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        host_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OWNER_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object owner_ = "";
+    /**
+     * <pre>
+     * Repository owner (org or user).
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The owner.
+     */
+    @java.lang.Override
+    public java.lang.String getOwner() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        owner_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Repository owner (org or user).
+     * </pre>
+     *
+     * <code>string owner = 2 [json_name = "owner"];</code>
+     * @return The bytes for owner.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOwnerBytes() {
+      java.lang.Object ref = owner_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        owner_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int REPO_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object repo_ = "";
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The repo.
+     */
+    @java.lang.Override
+    public java.lang.String getRepo() {
+      java.lang.Object ref = repo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        repo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Repository name.
+     * </pre>
+     *
+     * <code>string repo = 3 [json_name = "repo"];</code>
+     * @return The bytes for repo.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getRepoBytes() {
+      java.lang.Object ref = repo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        repo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FORGE_TOKEN_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object forgeToken_ = "";
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated (public repo).
+     * The server uses this verbatim — there is no server-side resolution.
+     * </pre>
+     *
+     * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+     * @return The forgeToken.
+     */
+    @java.lang.Override
+    public java.lang.String getForgeToken() {
+      java.lang.Object ref = forgeToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        forgeToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Optional forge token. Empty means unauthenticated (public repo).
+     * The server uses this verbatim — there is no server-side resolution.
+     * </pre>
+     *
+     * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+     * @return The bytes for forgeToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getForgeTokenBytes() {
+      java.lang.Object ref = forgeToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        forgeToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(host_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(owner_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(repo_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, repo_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(forgeToken_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, forgeToken_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(host_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, host_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(owner_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, owner_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(repo_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, repo_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(forgeToken_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, forgeToken_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.ListPullRequestsRequest)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.ListPullRequestsRequest other = (codewalker.v1.Codewalker.ListPullRequestsRequest) obj;
+
+      if (!getHost()
+          .equals(other.getHost())) return false;
+      if (!getOwner()
+          .equals(other.getOwner())) return false;
+      if (!getRepo()
+          .equals(other.getRepo())) return false;
+      if (!getForgeToken()
+          .equals(other.getForgeToken())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + HOST_FIELD_NUMBER;
+      hash = (53 * hash) + getHost().hashCode();
+      hash = (37 * hash) + OWNER_FIELD_NUMBER;
+      hash = (53 * hash) + getOwner().hashCode();
+      hash = (37 * hash) + REPO_FIELD_NUMBER;
+      hash = (53 * hash) + getRepo().hashCode();
+      hash = (37 * hash) + FORGE_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getForgeToken().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.ListPullRequestsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code codewalker.v1.ListPullRequestsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.ListPullRequestsRequest)
+        codewalker.v1.Codewalker.ListPullRequestsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.ListPullRequestsRequest.class, codewalker.v1.Codewalker.ListPullRequestsRequest.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.ListPullRequestsRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        host_ = "";
+        owner_ = "";
+        repo_ = "";
+        forgeToken_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsRequest getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.ListPullRequestsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsRequest build() {
+        codewalker.v1.Codewalker.ListPullRequestsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsRequest buildPartial() {
+        codewalker.v1.Codewalker.ListPullRequestsRequest result = new codewalker.v1.Codewalker.ListPullRequestsRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.ListPullRequestsRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.host_ = host_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.owner_ = owner_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.repo_ = repo_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.forgeToken_ = forgeToken_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.ListPullRequestsRequest) {
+          return mergeFrom((codewalker.v1.Codewalker.ListPullRequestsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.ListPullRequestsRequest other) {
+        if (other == codewalker.v1.Codewalker.ListPullRequestsRequest.getDefaultInstance()) return this;
+        if (!other.getHost().isEmpty()) {
+          host_ = other.host_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getOwner().isEmpty()) {
+          owner_ = other.owner_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getRepo().isEmpty()) {
+          repo_ = other.repo_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getForgeToken().isEmpty()) {
+          forgeToken_ = other.forgeToken_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                host_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                owner_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                repo_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                forgeToken_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object host_ = "";
+      /**
+       * <pre>
+       * Forge host (e.g. "github.com"). Must be the canonical form per
+       * forge.NormalizeHost — clients are expected to normalise before sending.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The host.
+       */
+      public java.lang.String getHost() {
+        java.lang.Object ref = host_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          host_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Forge host (e.g. "github.com"). Must be the canonical form per
+       * forge.NormalizeHost — clients are expected to normalise before sending.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return The bytes for host.
+       */
+      public com.google.protobuf.ByteString
+          getHostBytes() {
+        java.lang.Object ref = host_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          host_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Forge host (e.g. "github.com"). Must be the canonical form per
+       * forge.NormalizeHost — clients are expected to normalise before sending.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHost(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        host_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Forge host (e.g. "github.com"). Must be the canonical form per
+       * forge.NormalizeHost — clients are expected to normalise before sending.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHost() {
+        host_ = getDefaultInstance().getHost();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Forge host (e.g. "github.com"). Must be the canonical form per
+       * forge.NormalizeHost — clients are expected to normalise before sending.
+       * </pre>
+       *
+       * <code>string host = 1 [json_name = "host"];</code>
+       * @param value The bytes for host to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHostBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        host_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object owner_ = "";
+      /**
+       * <pre>
+       * Repository owner (org or user).
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return The owner.
+       */
+      public java.lang.String getOwner() {
+        java.lang.Object ref = owner_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          owner_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository owner (org or user).
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return The bytes for owner.
+       */
+      public com.google.protobuf.ByteString
+          getOwnerBytes() {
+        java.lang.Object ref = owner_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          owner_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository owner (org or user).
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @param value The owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwner(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        owner_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository owner (org or user).
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOwner() {
+        owner_ = getDefaultInstance().getOwner();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository owner (org or user).
+       * </pre>
+       *
+       * <code>string owner = 2 [json_name = "owner"];</code>
+       * @param value The bytes for owner to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOwnerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        owner_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object repo_ = "";
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return The repo.
+       */
+      public java.lang.String getRepo() {
+        java.lang.Object ref = repo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          repo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return The bytes for repo.
+       */
+      public com.google.protobuf.ByteString
+          getRepoBytes() {
+        java.lang.Object ref = repo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          repo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @param value The repo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepo(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        repo_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRepo() {
+        repo_ = getDefaultInstance().getRepo();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Repository name.
+       * </pre>
+       *
+       * <code>string repo = 3 [json_name = "repo"];</code>
+       * @param value The bytes for repo to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRepoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        repo_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object forgeToken_ = "";
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated (public repo).
+       * The server uses this verbatim — there is no server-side resolution.
+       * </pre>
+       *
+       * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+       * @return The forgeToken.
+       */
+      public java.lang.String getForgeToken() {
+        java.lang.Object ref = forgeToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          forgeToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated (public repo).
+       * The server uses this verbatim — there is no server-side resolution.
+       * </pre>
+       *
+       * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+       * @return The bytes for forgeToken.
+       */
+      public com.google.protobuf.ByteString
+          getForgeTokenBytes() {
+        java.lang.Object ref = forgeToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          forgeToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated (public repo).
+       * The server uses this verbatim — there is no server-side resolution.
+       * </pre>
+       *
+       * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+       * @param value The forgeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForgeToken(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        forgeToken_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated (public repo).
+       * The server uses this verbatim — there is no server-side resolution.
+       * </pre>
+       *
+       * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearForgeToken() {
+        forgeToken_ = getDefaultInstance().getForgeToken();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Optional forge token. Empty means unauthenticated (public repo).
+       * The server uses this verbatim — there is no server-side resolution.
+       * </pre>
+       *
+       * <code>string forge_token = 4 [json_name = "forgeToken"];</code>
+       * @param value The bytes for forgeToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setForgeTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        forgeToken_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.ListPullRequestsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.ListPullRequestsRequest)
+    private static final codewalker.v1.Codewalker.ListPullRequestsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.ListPullRequestsRequest();
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListPullRequestsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListPullRequestsRequest>() {
+      @java.lang.Override
+      public ListPullRequestsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListPullRequestsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListPullRequestsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.ListPullRequestsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListPullRequestsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.ListPullRequestsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    java.util.List<codewalker.v1.Codewalker.PullRequestSummary> 
+        getPullRequestsList();
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    codewalker.v1.Codewalker.PullRequestSummary getPullRequests(int index);
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    int getPullRequestsCount();
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    java.util.List<? extends codewalker.v1.Codewalker.PullRequestSummaryOrBuilder> 
+        getPullRequestsOrBuilderList();
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    codewalker.v1.Codewalker.PullRequestSummaryOrBuilder getPullRequestsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code codewalker.v1.ListPullRequestsResponse}
+   */
+  public static final class ListPullRequestsResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.ListPullRequestsResponse)
+      ListPullRequestsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        ListPullRequestsResponse.class.getName());
+    }
+    // Use ListPullRequestsResponse.newBuilder() to construct.
+    private ListPullRequestsResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ListPullRequestsResponse() {
+      pullRequests_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.ListPullRequestsResponse.class, codewalker.v1.Codewalker.ListPullRequestsResponse.Builder.class);
+    }
+
+    public static final int PULL_REQUESTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<codewalker.v1.Codewalker.PullRequestSummary> pullRequests_;
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<codewalker.v1.Codewalker.PullRequestSummary> getPullRequestsList() {
+      return pullRequests_;
+    }
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends codewalker.v1.Codewalker.PullRequestSummaryOrBuilder> 
+        getPullRequestsOrBuilderList() {
+      return pullRequests_;
+    }
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    @java.lang.Override
+    public int getPullRequestsCount() {
+      return pullRequests_.size();
+    }
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.PullRequestSummary getPullRequests(int index) {
+      return pullRequests_.get(index);
+    }
+    /**
+     * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.PullRequestSummaryOrBuilder getPullRequestsOrBuilder(
+        int index) {
+      return pullRequests_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < pullRequests_.size(); i++) {
+        output.writeMessage(1, pullRequests_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < pullRequests_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, pullRequests_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.ListPullRequestsResponse)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.ListPullRequestsResponse other = (codewalker.v1.Codewalker.ListPullRequestsResponse) obj;
+
+      if (!getPullRequestsList()
+          .equals(other.getPullRequestsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getPullRequestsCount() > 0) {
+        hash = (37 * hash) + PULL_REQUESTS_FIELD_NUMBER;
+        hash = (53 * hash) + getPullRequestsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.ListPullRequestsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code codewalker.v1.ListPullRequestsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.ListPullRequestsResponse)
+        codewalker.v1.Codewalker.ListPullRequestsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.ListPullRequestsResponse.class, codewalker.v1.Codewalker.ListPullRequestsResponse.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.ListPullRequestsResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (pullRequestsBuilder_ == null) {
+          pullRequests_ = java.util.Collections.emptyList();
+        } else {
+          pullRequests_ = null;
+          pullRequestsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_ListPullRequestsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsResponse getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.ListPullRequestsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsResponse build() {
+        codewalker.v1.Codewalker.ListPullRequestsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.ListPullRequestsResponse buildPartial() {
+        codewalker.v1.Codewalker.ListPullRequestsResponse result = new codewalker.v1.Codewalker.ListPullRequestsResponse(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(codewalker.v1.Codewalker.ListPullRequestsResponse result) {
+        if (pullRequestsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            pullRequests_ = java.util.Collections.unmodifiableList(pullRequests_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.pullRequests_ = pullRequests_;
+        } else {
+          result.pullRequests_ = pullRequestsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.ListPullRequestsResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.ListPullRequestsResponse) {
+          return mergeFrom((codewalker.v1.Codewalker.ListPullRequestsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.ListPullRequestsResponse other) {
+        if (other == codewalker.v1.Codewalker.ListPullRequestsResponse.getDefaultInstance()) return this;
+        if (pullRequestsBuilder_ == null) {
+          if (!other.pullRequests_.isEmpty()) {
+            if (pullRequests_.isEmpty()) {
+              pullRequests_ = other.pullRequests_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensurePullRequestsIsMutable();
+              pullRequests_.addAll(other.pullRequests_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pullRequests_.isEmpty()) {
+            if (pullRequestsBuilder_.isEmpty()) {
+              pullRequestsBuilder_.dispose();
+              pullRequestsBuilder_ = null;
+              pullRequests_ = other.pullRequests_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              pullRequestsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getPullRequestsFieldBuilder() : null;
+            } else {
+              pullRequestsBuilder_.addAllMessages(other.pullRequests_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                codewalker.v1.Codewalker.PullRequestSummary m =
+                    input.readMessage(
+                        codewalker.v1.Codewalker.PullRequestSummary.parser(),
+                        extensionRegistry);
+                if (pullRequestsBuilder_ == null) {
+                  ensurePullRequestsIsMutable();
+                  pullRequests_.add(m);
+                } else {
+                  pullRequestsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<codewalker.v1.Codewalker.PullRequestSummary> pullRequests_ =
+        java.util.Collections.emptyList();
+      private void ensurePullRequestsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          pullRequests_ = new java.util.ArrayList<codewalker.v1.Codewalker.PullRequestSummary>(pullRequests_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          codewalker.v1.Codewalker.PullRequestSummary, codewalker.v1.Codewalker.PullRequestSummary.Builder, codewalker.v1.Codewalker.PullRequestSummaryOrBuilder> pullRequestsBuilder_;
+
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public java.util.List<codewalker.v1.Codewalker.PullRequestSummary> getPullRequestsList() {
+        if (pullRequestsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pullRequests_);
+        } else {
+          return pullRequestsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public int getPullRequestsCount() {
+        if (pullRequestsBuilder_ == null) {
+          return pullRequests_.size();
+        } else {
+          return pullRequestsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public codewalker.v1.Codewalker.PullRequestSummary getPullRequests(int index) {
+        if (pullRequestsBuilder_ == null) {
+          return pullRequests_.get(index);
+        } else {
+          return pullRequestsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder setPullRequests(
+          int index, codewalker.v1.Codewalker.PullRequestSummary value) {
+        if (pullRequestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePullRequestsIsMutable();
+          pullRequests_.set(index, value);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder setPullRequests(
+          int index, codewalker.v1.Codewalker.PullRequestSummary.Builder builderForValue) {
+        if (pullRequestsBuilder_ == null) {
+          ensurePullRequestsIsMutable();
+          pullRequests_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pullRequestsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder addPullRequests(codewalker.v1.Codewalker.PullRequestSummary value) {
+        if (pullRequestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePullRequestsIsMutable();
+          pullRequests_.add(value);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder addPullRequests(
+          int index, codewalker.v1.Codewalker.PullRequestSummary value) {
+        if (pullRequestsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePullRequestsIsMutable();
+          pullRequests_.add(index, value);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder addPullRequests(
+          codewalker.v1.Codewalker.PullRequestSummary.Builder builderForValue) {
+        if (pullRequestsBuilder_ == null) {
+          ensurePullRequestsIsMutable();
+          pullRequests_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pullRequestsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder addPullRequests(
+          int index, codewalker.v1.Codewalker.PullRequestSummary.Builder builderForValue) {
+        if (pullRequestsBuilder_ == null) {
+          ensurePullRequestsIsMutable();
+          pullRequests_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pullRequestsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder addAllPullRequests(
+          java.lang.Iterable<? extends codewalker.v1.Codewalker.PullRequestSummary> values) {
+        if (pullRequestsBuilder_ == null) {
+          ensurePullRequestsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pullRequests_);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder clearPullRequests() {
+        if (pullRequestsBuilder_ == null) {
+          pullRequests_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public Builder removePullRequests(int index) {
+        if (pullRequestsBuilder_ == null) {
+          ensurePullRequestsIsMutable();
+          pullRequests_.remove(index);
+          onChanged();
+        } else {
+          pullRequestsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public codewalker.v1.Codewalker.PullRequestSummary.Builder getPullRequestsBuilder(
+          int index) {
+        return getPullRequestsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public codewalker.v1.Codewalker.PullRequestSummaryOrBuilder getPullRequestsOrBuilder(
+          int index) {
+        if (pullRequestsBuilder_ == null) {
+          return pullRequests_.get(index);  } else {
+          return pullRequestsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public java.util.List<? extends codewalker.v1.Codewalker.PullRequestSummaryOrBuilder> 
+           getPullRequestsOrBuilderList() {
+        if (pullRequestsBuilder_ != null) {
+          return pullRequestsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pullRequests_);
+        }
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public codewalker.v1.Codewalker.PullRequestSummary.Builder addPullRequestsBuilder() {
+        return getPullRequestsFieldBuilder().addBuilder(
+            codewalker.v1.Codewalker.PullRequestSummary.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public codewalker.v1.Codewalker.PullRequestSummary.Builder addPullRequestsBuilder(
+          int index) {
+        return getPullRequestsFieldBuilder().addBuilder(
+            index, codewalker.v1.Codewalker.PullRequestSummary.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .codewalker.v1.PullRequestSummary pull_requests = 1 [json_name = "pullRequests"];</code>
+       */
+      public java.util.List<codewalker.v1.Codewalker.PullRequestSummary.Builder> 
+           getPullRequestsBuilderList() {
+        return getPullRequestsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          codewalker.v1.Codewalker.PullRequestSummary, codewalker.v1.Codewalker.PullRequestSummary.Builder, codewalker.v1.Codewalker.PullRequestSummaryOrBuilder> 
+          getPullRequestsFieldBuilder() {
+        if (pullRequestsBuilder_ == null) {
+          pullRequestsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              codewalker.v1.Codewalker.PullRequestSummary, codewalker.v1.Codewalker.PullRequestSummary.Builder, codewalker.v1.Codewalker.PullRequestSummaryOrBuilder>(
+                  pullRequests_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          pullRequests_ = null;
+        }
+        return pullRequestsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.ListPullRequestsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.ListPullRequestsResponse)
+    private static final codewalker.v1.Codewalker.ListPullRequestsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.ListPullRequestsResponse();
+    }
+
+    public static codewalker.v1.Codewalker.ListPullRequestsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListPullRequestsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListPullRequestsResponse>() {
+      @java.lang.Override
+      public ListPullRequestsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListPullRequestsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListPullRequestsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.ListPullRequestsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface PullRequestSummaryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.PullRequestSummary)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>int32 number = 1 [json_name = "number"];</code>
+     * @return The number.
+     */
+    int getNumber();
+
+    /**
+     * <code>string title = 2 [json_name = "title"];</code>
+     * @return The title.
+     */
+    java.lang.String getTitle();
+    /**
+     * <code>string title = 2 [json_name = "title"];</code>
+     * @return The bytes for title.
+     */
+    com.google.protobuf.ByteString
+        getTitleBytes();
+
+    /**
+     * <code>string author = 3 [json_name = "author"];</code>
+     * @return The author.
+     */
+    java.lang.String getAuthor();
+    /**
+     * <code>string author = 3 [json_name = "author"];</code>
+     * @return The bytes for author.
+     */
+    com.google.protobuf.ByteString
+        getAuthorBytes();
+
+    /**
+     * <code>string url = 4 [json_name = "url"];</code>
+     * @return The url.
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 4 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
+  }
+  /**
+   * Protobuf type {@code codewalker.v1.PullRequestSummary}
+   */
+  public static final class PullRequestSummary extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.PullRequestSummary)
+      PullRequestSummaryOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        PullRequestSummary.class.getName());
+    }
+    // Use PullRequestSummary.newBuilder() to construct.
+    private PullRequestSummary(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private PullRequestSummary() {
+      title_ = "";
+      author_ = "";
+      url_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_PullRequestSummary_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.PullRequestSummary.class, codewalker.v1.Codewalker.PullRequestSummary.Builder.class);
+    }
+
+    public static final int NUMBER_FIELD_NUMBER = 1;
+    private int number_ = 0;
+    /**
+     * <code>int32 number = 1 [json_name = "number"];</code>
+     * @return The number.
+     */
+    @java.lang.Override
+    public int getNumber() {
+      return number_;
+    }
+
+    public static final int TITLE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
+    /**
+     * <code>string title = 2 [json_name = "title"];</code>
+     * @return The title.
+     */
+    @java.lang.Override
+    public java.lang.String getTitle() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        title_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string title = 2 [json_name = "title"];</code>
+     * @return The bytes for title.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTitleBytes() {
+      java.lang.Object ref = title_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        title_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUTHOR_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object author_ = "";
+    /**
+     * <code>string author = 3 [json_name = "author"];</code>
+     * @return The author.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthor() {
+      java.lang.Object ref = author_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        author_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string author = 3 [json_name = "author"];</code>
+     * @return The bytes for author.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorBytes() {
+      java.lang.Object ref = author_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        author_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int URL_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
+    /**
+     * <code>string url = 4 [json_name = "url"];</code>
+     * @return The url.
+     */
+    @java.lang.Override
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 4 [json_name = "url"];</code>
+     * @return The bytes for url.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (number_ != 0) {
+        output.writeInt32(1, number_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(author_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, author_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, url_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (number_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, number_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(title_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, title_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(author_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, author_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, url_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.PullRequestSummary)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.PullRequestSummary other = (codewalker.v1.Codewalker.PullRequestSummary) obj;
+
+      if (getNumber()
+          != other.getNumber()) return false;
+      if (!getTitle()
+          .equals(other.getTitle())) return false;
+      if (!getAuthor()
+          .equals(other.getAuthor())) return false;
+      if (!getUrl()
+          .equals(other.getUrl())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getNumber();
+      hash = (37 * hash) + TITLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTitle().hashCode();
+      hash = (37 * hash) + AUTHOR_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthor().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.PullRequestSummary parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.PullRequestSummary parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.PullRequestSummary parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.PullRequestSummary prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code codewalker.v1.PullRequestSummary}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.PullRequestSummary)
+        codewalker.v1.Codewalker.PullRequestSummaryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_PullRequestSummary_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.PullRequestSummary.class, codewalker.v1.Codewalker.PullRequestSummary.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.PullRequestSummary.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        number_ = 0;
+        title_ = "";
+        author_ = "";
+        url_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_PullRequestSummary_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.PullRequestSummary getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.PullRequestSummary.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.PullRequestSummary build() {
+        codewalker.v1.Codewalker.PullRequestSummary result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.PullRequestSummary buildPartial() {
+        codewalker.v1.Codewalker.PullRequestSummary result = new codewalker.v1.Codewalker.PullRequestSummary(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.PullRequestSummary result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.number_ = number_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.title_ = title_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.author_ = author_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.url_ = url_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.PullRequestSummary) {
+          return mergeFrom((codewalker.v1.Codewalker.PullRequestSummary)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.PullRequestSummary other) {
+        if (other == codewalker.v1.Codewalker.PullRequestSummary.getDefaultInstance()) return this;
+        if (other.getNumber() != 0) {
+          setNumber(other.getNumber());
+        }
+        if (!other.getTitle().isEmpty()) {
+          title_ = other.title_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getAuthor().isEmpty()) {
+          author_ = other.author_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                number_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                author_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private int number_ ;
+      /**
+       * <code>int32 number = 1 [json_name = "number"];</code>
+       * @return The number.
+       */
+      @java.lang.Override
+      public int getNumber() {
+        return number_;
+      }
+      /**
+       * <code>int32 number = 1 [json_name = "number"];</code>
+       * @param value The number to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNumber(int value) {
+
+        number_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 number = 1 [json_name = "number"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNumber() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        number_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object title_ = "";
+      /**
+       * <code>string title = 2 [json_name = "title"];</code>
+       * @return The title.
+       */
+      public java.lang.String getTitle() {
+        java.lang.Object ref = title_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          title_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string title = 2 [json_name = "title"];</code>
+       * @return The bytes for title.
+       */
+      public com.google.protobuf.ByteString
+          getTitleBytes() {
+        java.lang.Object ref = title_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          title_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string title = 2 [json_name = "title"];</code>
+       * @param value The title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitle(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 2 [json_name = "title"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTitle() {
+        title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string title = 2 [json_name = "title"];</code>
+       * @param value The bytes for title to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTitleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        title_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object author_ = "";
+      /**
+       * <code>string author = 3 [json_name = "author"];</code>
+       * @return The author.
+       */
+      public java.lang.String getAuthor() {
+        java.lang.Object ref = author_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          author_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string author = 3 [json_name = "author"];</code>
+       * @return The bytes for author.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorBytes() {
+        java.lang.Object ref = author_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          author_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string author = 3 [json_name = "author"];</code>
+       * @param value The author to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthor(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        author_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string author = 3 [json_name = "author"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthor() {
+        author_ = getDefaultInstance().getAuthor();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string author = 3 [json_name = "author"];</code>
+       * @param value The bytes for author to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        author_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 4 [json_name = "url"];</code>
+       * @return The url.
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 4 [json_name = "url"];</code>
+       * @return The bytes for url.
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 4 [json_name = "url"];</code>
+       * @param value The url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        url_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 4 [json_name = "url"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUrl() {
+        url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 4 [json_name = "url"];</code>
+       * @param value The bytes for url to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        url_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.PullRequestSummary)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.PullRequestSummary)
+    private static final codewalker.v1.Codewalker.PullRequestSummary DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.PullRequestSummary();
+    }
+
+    public static codewalker.v1.Codewalker.PullRequestSummary getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PullRequestSummary>
+        PARSER = new com.google.protobuf.AbstractParser<PullRequestSummary>() {
+      @java.lang.Override
+      public PullRequestSummary parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<PullRequestSummary> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PullRequestSummary> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.PullRequestSummary getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_codewalker_v1_OpenSessionRequest_descriptor;
   private static final 
@@ -37114,6 +39848,21 @@ public final class Codewalker {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_codewalker_v1_FileOrderer_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_ListPullRequestsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_ListPullRequestsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_ListPullRequestsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_ListPullRequestsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_PullRequestSummary_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -37258,72 +40007,83 @@ public final class Codewalker {
       "nse\0226\n\010orderers\030\001 \003(\0132\032.codewalker.v1.Fi" +
       "leOrdererR\010orderers\"C\n\013FileOrderer\022\022\n\004na" +
       "me\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013des" +
-      "cription*b\n\013SessionKind\022\034\n\030SESSION_KIND_" +
-      "UNSPECIFIED\020\000\022\034\n\030SESSION_KIND_WALKTHROUG" +
-      "H\020\001\022\027\n\023SESSION_KIND_REVIEW\020\002*\361\001\n\010StepKin" +
-      "d\022\031\n\025STEP_KIND_UNSPECIFIED\020\000\022\023\n\017STEP_KIN" +
-      "D_ENTRY\020\001\022\030\n\024STEP_KIND_ASSIGNMENT\020\002\022\031\n\025S" +
-      "TEP_KIND_CONDITIONAL\020\003\022\022\n\016STEP_KIND_LOOP" +
-      "\020\004\022\022\n\016STEP_KIND_CALL\020\005\022\024\n\020STEP_KIND_RETU" +
-      "RN\020\006\022\032\n\026STEP_KIND_ERROR_HANDLE\020\007\022\022\n\016STEP" +
-      "_KIND_EXIT\020\010\022\022\n\016STEP_KIND_HUNK\020\t*\355\001\n\tEdg" +
-      "eLabel\022\032\n\026EDGE_LABEL_UNSPECIFIED\020\000\022\023\n\017ED" +
-      "GE_LABEL_NEXT\020\001\022\032\n\026EDGE_LABEL_TRUE_BRANC" +
-      "H\020\002\022\033\n\027EDGE_LABEL_FALSE_BRANCH\020\003\022\023\n\017EDGE" +
-      "_LABEL_CASE\020\004\022\030\n\024EDGE_LABEL_LOOP_BODY\020\005\022" +
-      "\030\n\024EDGE_LABEL_LOOP_EXIT\020\006\022\030\n\024EDGE_LABEL_" +
-      "EXCEPTION\020\007\022\023\n\017EDGE_LABEL_CALL\020\010*l\n\017Simp" +
-      "leDirection\022 \n\034SIMPLE_DIRECTION_UNSPECIF" +
-      "IED\020\000\022\034\n\030SIMPLE_DIRECTION_FORWARD\020\001\022\031\n\025S" +
-      "IMPLE_DIRECTION_BACK\020\002*\225\001\n\014RephraseMode\022" +
-      "\035\n\031REPHRASE_MODE_UNSPECIFIED\020\000\022\031\n\025REPHRA" +
-      "SE_MODE_SIMPLER\020\001\022\030\n\024REPHRASE_MODE_DEEPE" +
-      "R\020\002\022\031\n\025REPHRASE_MODE_ANALOGY\020\003\022\026\n\022REPHRA" +
-      "SE_MODE_TLDR\020\004*\201\001\n\010TermKind\022\031\n\025TERM_KIND" +
-      "_UNSPECIFIED\020\000\022\026\n\022TERM_KIND_LANGUAGE\020\001\022\025" +
-      "\n\021TERM_KIND_PATTERN\020\002\022\024\n\020TERM_KIND_DOMAI" +
-      "N\020\003\022\025\n\021TERM_KIND_LIBRARY\020\004*\223\001\n\020ForgeCont" +
-      "extKind\022\"\n\036FORGE_CONTEXT_KIND_UNSPECIFIE" +
-      "D\020\000\022\031\n\025FORGE_CONTEXT_KIND_PR\020\001\022\035\n\031FORGE_" +
-      "CONTEXT_KIND_COMMIT\020\002\022!\n\035FORGE_CONTEXT_K" +
-      "IND_COMPARISON\020\003*\214\001\n\nChangeKind\022\033\n\027CHANG" +
-      "E_KIND_UNSPECIFIED\020\000\022\025\n\021CHANGE_KIND_ADDE" +
-      "D\020\001\022\030\n\024CHANGE_KIND_MODIFIED\020\002\022\027\n\023CHANGE_" +
-      "KIND_DELETED\020\003\022\027\n\023CHANGE_KIND_RENAMED\020\004*" +
-      "\207\001\n\017ExperienceLevel\022 \n\034EXPERIENCE_LEVEL_" +
-      "UNSPECIFIED\020\000\022\033\n\027EXPERIENCE_LEVEL_JUNIOR" +
-      "\020\001\022\030\n\024EXPERIENCE_LEVEL_MID\020\002\022\033\n\027EXPERIEN" +
-      "CE_LEVEL_SENIOR\020\003*\340\002\n\tErrorCode\022\032\n\026ERROR" +
-      "_CODE_UNSPECIFIED\020\000\022 \n\034ERROR_CODE_SESSIO" +
-      "N_NOT_FOUND\020\001\022\033\n\027ERROR_CODE_PARSE_FAILED" +
-      "\020\002\022\032\n\026ERROR_CODE_INVALID_REF\020\003\022\030\n\024ERROR_" +
-      "CODE_LLM_ERROR\020\004\022\037\n\033ERROR_CODE_UNSUPPORT" +
-      "ED_LANG\020\005\022!\n\035ERROR_CODE_INVALID_NAVIGATI" +
-      "ON\020\006\022 \n\034ERROR_CODE_UNSUPPORTED_FORGE\020\007\022 " +
-      "\n\034ERROR_CODE_FORGE_AUTH_FAILED\020\010\022\036\n\032ERRO" +
-      "R_CODE_FORGE_NOT_FOUND\020\t\022\032\n\026ERROR_CODE_I" +
-      "NVALID_URL\020\n2\211\006\n\nCodeWalker\022Q\n\nGetVersio" +
-      "n\022 .codewalker.v1.GetVersionRequest\032!.co" +
-      "dewalker.v1.GetVersionResponse\022O\n\013OpenSe" +
-      "ssion\022!.codewalker.v1.OpenSessionRequest" +
-      "\032\033.codewalker.v1.SessionEvent0\001\022I\n\010Navig" +
-      "ate\022\036.codewalker.v1.NavigateRequest\032\033.co" +
-      "dewalker.v1.NarrateEvent0\001\022I\n\010Rephrase\022\036" +
-      ".codewalker.v1.RephraseRequest\032\033.codewal" +
-      "ker.v1.NarrateEvent0\001\022M\n\nExpandTerm\022 .co" +
-      "dewalker.v1.ExpandTermRequest\032\033.codewalk" +
-      "er.v1.NarrateEvent0\001\022W\n\014CloseSession\022\".c" +
-      "odewalker.v1.CloseSessionRequest\032#.codew" +
-      "alker.v1.CloseSessionResponse\022W\n\014ListSes" +
-      "sions\022\".codewalker.v1.ListSessionsReques" +
-      "t\032#.codewalker.v1.ListSessionsResponse\022[" +
-      "\n\021OpenReviewSession\022\'.codewalker.v1.Open" +
-      "ReviewSessionRequest\032\033.codewalker.v1.Ses" +
-      "sionEvent0\001\022c\n\020ListFileOrderers\022&.codewa" +
-      "lker.v1.ListFileOrderersRequest\032\'.codewa" +
-      "lker.v1.ListFileOrderersResponseB1Z/gith" +
-      "ub.com/yourorg/codewalker/gen/codewalker" +
-      "/v1b\006proto3"
+      "cription\"x\n\027ListPullRequestsRequest\022\022\n\004h" +
+      "ost\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(\tR\005owner\022\022\n" +
+      "\004repo\030\003 \001(\tR\004repo\022\037\n\013forge_token\030\004 \001(\tR\n" +
+      "forgeToken\"b\n\030ListPullRequestsResponse\022F" +
+      "\n\rpull_requests\030\001 \003(\0132!.codewalker.v1.Pu" +
+      "llRequestSummaryR\014pullRequests\"l\n\022PullRe" +
+      "questSummary\022\026\n\006number\030\001 \001(\005R\006number\022\024\n\005" +
+      "title\030\002 \001(\tR\005title\022\026\n\006author\030\003 \001(\tR\006auth" +
+      "or\022\020\n\003url\030\004 \001(\tR\003url*b\n\013SessionKind\022\034\n\030S" +
+      "ESSION_KIND_UNSPECIFIED\020\000\022\034\n\030SESSION_KIN" +
+      "D_WALKTHROUGH\020\001\022\027\n\023SESSION_KIND_REVIEW\020\002" +
+      "*\361\001\n\010StepKind\022\031\n\025STEP_KIND_UNSPECIFIED\020\000" +
+      "\022\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP_KIND_ASSIG" +
+      "NMENT\020\002\022\031\n\025STEP_KIND_CONDITIONAL\020\003\022\022\n\016ST" +
+      "EP_KIND_LOOP\020\004\022\022\n\016STEP_KIND_CALL\020\005\022\024\n\020ST" +
+      "EP_KIND_RETURN\020\006\022\032\n\026STEP_KIND_ERROR_HAND" +
+      "LE\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016STEP_KIND_HU" +
+      "NK\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LABEL_UNSPECI" +
+      "FIED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032\n\026EDGE_LABE" +
+      "L_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL_FALSE_BRAN" +
+      "CH\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024EDGE_LABEL_" +
+      "LOOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOOP_EXIT\020\006\022\030\n" +
+      "\024EDGE_LABEL_EXCEPTION\020\007\022\023\n\017EDGE_LABEL_CA" +
+      "LL\020\010*l\n\017SimpleDirection\022 \n\034SIMPLE_DIRECT" +
+      "ION_UNSPECIFIED\020\000\022\034\n\030SIMPLE_DIRECTION_FO" +
+      "RWARD\020\001\022\031\n\025SIMPLE_DIRECTION_BACK\020\002*\225\001\n\014R" +
+      "ephraseMode\022\035\n\031REPHRASE_MODE_UNSPECIFIED" +
+      "\020\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001\022\030\n\024REPHRAS" +
+      "E_MODE_DEEPER\020\002\022\031\n\025REPHRASE_MODE_ANALOGY" +
+      "\020\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001\n\010TermKind\022" +
+      "\031\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n\022TERM_KIND_" +
+      "LANGUAGE\020\001\022\025\n\021TERM_KIND_PATTERN\020\002\022\024\n\020TER" +
+      "M_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_LIBRARY\020\004*\223" +
+      "\001\n\020ForgeContextKind\022\"\n\036FORGE_CONTEXT_KIN" +
+      "D_UNSPECIFIED\020\000\022\031\n\025FORGE_CONTEXT_KIND_PR" +
+      "\020\001\022\035\n\031FORGE_CONTEXT_KIND_COMMIT\020\002\022!\n\035FOR" +
+      "GE_CONTEXT_KIND_COMPARISON\020\003*\214\001\n\nChangeK" +
+      "ind\022\033\n\027CHANGE_KIND_UNSPECIFIED\020\000\022\025\n\021CHAN" +
+      "GE_KIND_ADDED\020\001\022\030\n\024CHANGE_KIND_MODIFIED\020" +
+      "\002\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n\023CHANGE_KIN" +
+      "D_RENAMED\020\004*\207\001\n\017ExperienceLevel\022 \n\034EXPER" +
+      "IENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027EXPERIENCE_" +
+      "LEVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_LEVEL_MID\020\002" +
+      "\022\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003*\340\002\n\tErrorC" +
+      "ode\022\032\n\026ERROR_CODE_UNSPECIFIED\020\000\022 \n\034ERROR" +
+      "_CODE_SESSION_NOT_FOUND\020\001\022\033\n\027ERROR_CODE_" +
+      "PARSE_FAILED\020\002\022\032\n\026ERROR_CODE_INVALID_REF" +
+      "\020\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022\037\n\033ERROR_CO" +
+      "DE_UNSUPPORTED_LANG\020\005\022!\n\035ERROR_CODE_INVA" +
+      "LID_NAVIGATION\020\006\022 \n\034ERROR_CODE_UNSUPPORT" +
+      "ED_FORGE\020\007\022 \n\034ERROR_CODE_FORGE_AUTH_FAIL" +
+      "ED\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_FOUND\020\t\022\032\n\026" +
+      "ERROR_CODE_INVALID_URL\020\n2\356\006\n\nCodeWalker\022" +
+      "Q\n\nGetVersion\022 .codewalker.v1.GetVersion" +
+      "Request\032!.codewalker.v1.GetVersionRespon" +
+      "se\022O\n\013OpenSession\022!.codewalker.v1.OpenSe" +
+      "ssionRequest\032\033.codewalker.v1.SessionEven" +
+      "t0\001\022I\n\010Navigate\022\036.codewalker.v1.Navigate" +
+      "Request\032\033.codewalker.v1.NarrateEvent0\001\022I" +
+      "\n\010Rephrase\022\036.codewalker.v1.RephraseReque" +
+      "st\032\033.codewalker.v1.NarrateEvent0\001\022M\n\nExp" +
+      "andTerm\022 .codewalker.v1.ExpandTermReques" +
+      "t\032\033.codewalker.v1.NarrateEvent0\001\022W\n\014Clos" +
+      "eSession\022\".codewalker.v1.CloseSessionReq" +
+      "uest\032#.codewalker.v1.CloseSessionRespons" +
+      "e\022W\n\014ListSessions\022\".codewalker.v1.ListSe" +
+      "ssionsRequest\032#.codewalker.v1.ListSessio" +
+      "nsResponse\022[\n\021OpenReviewSession\022\'.codewa" +
+      "lker.v1.OpenReviewSessionRequest\032\033.codew" +
+      "alker.v1.SessionEvent0\001\022c\n\020ListFileOrder" +
+      "ers\022&.codewalker.v1.ListFileOrderersRequ" +
+      "est\032\'.codewalker.v1.ListFileOrderersResp" +
+      "onse\022c\n\020ListPullRequests\022&.codewalker.v1" +
+      ".ListPullRequestsRequest\032\'.codewalker.v1" +
+      ".ListPullRequestsResponseB1Z/github.com/" +
+      "yourorg/codewalker/gen/codewalker/v1b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -37521,6 +40281,24 @@ public final class Codewalker {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_FileOrderer_descriptor,
         new java.lang.String[] { "Name", "Description", });
+    internal_static_codewalker_v1_ListPullRequestsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_codewalker_v1_ListPullRequestsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_ListPullRequestsRequest_descriptor,
+        new java.lang.String[] { "Host", "Owner", "Repo", "ForgeToken", });
+    internal_static_codewalker_v1_ListPullRequestsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_codewalker_v1_ListPullRequestsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_ListPullRequestsResponse_descriptor,
+        new java.lang.String[] { "PullRequests", });
+    internal_static_codewalker_v1_PullRequestSummary_descriptor =
+      getDescriptor().getMessageTypes().get(34);
+    internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_PullRequestSummary_descriptor,
+        new java.lang.String[] { "Number", "Title", "Author", "Url", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

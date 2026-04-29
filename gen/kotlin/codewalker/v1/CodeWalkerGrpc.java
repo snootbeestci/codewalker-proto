@@ -294,6 +294,37 @@ public final class CodeWalkerGrpc {
     return getListFileOrderersMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<codewalker.v1.Codewalker.ListPullRequestsRequest,
+      codewalker.v1.Codewalker.ListPullRequestsResponse> getListPullRequestsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListPullRequests",
+      requestType = codewalker.v1.Codewalker.ListPullRequestsRequest.class,
+      responseType = codewalker.v1.Codewalker.ListPullRequestsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<codewalker.v1.Codewalker.ListPullRequestsRequest,
+      codewalker.v1.Codewalker.ListPullRequestsResponse> getListPullRequestsMethod() {
+    io.grpc.MethodDescriptor<codewalker.v1.Codewalker.ListPullRequestsRequest, codewalker.v1.Codewalker.ListPullRequestsResponse> getListPullRequestsMethod;
+    if ((getListPullRequestsMethod = CodeWalkerGrpc.getListPullRequestsMethod) == null) {
+      synchronized (CodeWalkerGrpc.class) {
+        if ((getListPullRequestsMethod = CodeWalkerGrpc.getListPullRequestsMethod) == null) {
+          CodeWalkerGrpc.getListPullRequestsMethod = getListPullRequestsMethod =
+              io.grpc.MethodDescriptor.<codewalker.v1.Codewalker.ListPullRequestsRequest, codewalker.v1.Codewalker.ListPullRequestsResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListPullRequests"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  codewalker.v1.Codewalker.ListPullRequestsRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  codewalker.v1.Codewalker.ListPullRequestsResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new CodeWalkerMethodDescriptorSupplier("ListPullRequests"))
+              .build();
+        }
+      }
+    }
+    return getListPullRequestsMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -439,6 +470,17 @@ public final class CodeWalkerGrpc {
         io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListFileOrderersResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListFileOrderersMethod(), responseObserver);
     }
+
+    /**
+     * <pre>
+     * List open pull requests for a repository.
+     * Used by clients to populate a PR picker.
+     * </pre>
+     */
+    default void listPullRequests(codewalker.v1.Codewalker.ListPullRequestsRequest request,
+        io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListPullRequestsResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListPullRequestsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -574,6 +616,18 @@ public final class CodeWalkerGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getListFileOrderersMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * List open pull requests for a repository.
+     * Used by clients to populate a PR picker.
+     * </pre>
+     */
+    public void listPullRequests(codewalker.v1.Codewalker.ListPullRequestsRequest request,
+        io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListPullRequestsResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListPullRequestsMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -694,6 +748,17 @@ public final class CodeWalkerGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListFileOrderersMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * List open pull requests for a repository.
+     * Used by clients to populate a PR picker.
+     * </pre>
+     */
+    public codewalker.v1.Codewalker.ListPullRequestsResponse listPullRequests(codewalker.v1.Codewalker.ListPullRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListPullRequestsMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -758,6 +823,18 @@ public final class CodeWalkerGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListFileOrderersMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * List open pull requests for a repository.
+     * Used by clients to populate a PR picker.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<codewalker.v1.Codewalker.ListPullRequestsResponse> listPullRequests(
+        codewalker.v1.Codewalker.ListPullRequestsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListPullRequestsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_VERSION = 0;
@@ -769,6 +846,7 @@ public final class CodeWalkerGrpc {
   private static final int METHODID_LIST_SESSIONS = 6;
   private static final int METHODID_OPEN_REVIEW_SESSION = 7;
   private static final int METHODID_LIST_FILE_ORDERERS = 8;
+  private static final int METHODID_LIST_PULL_REQUESTS = 9;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -822,6 +900,10 @@ public final class CodeWalkerGrpc {
         case METHODID_LIST_FILE_ORDERERS:
           serviceImpl.listFileOrderers((codewalker.v1.Codewalker.ListFileOrderersRequest) request,
               (io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListFileOrderersResponse>) responseObserver);
+          break;
+        case METHODID_LIST_PULL_REQUESTS:
+          serviceImpl.listPullRequests((codewalker.v1.Codewalker.ListPullRequestsRequest) request,
+              (io.grpc.stub.StreamObserver<codewalker.v1.Codewalker.ListPullRequestsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -904,6 +986,13 @@ public final class CodeWalkerGrpc {
               codewalker.v1.Codewalker.ListFileOrderersRequest,
               codewalker.v1.Codewalker.ListFileOrderersResponse>(
                 service, METHODID_LIST_FILE_ORDERERS)))
+        .addMethod(
+          getListPullRequestsMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              codewalker.v1.Codewalker.ListPullRequestsRequest,
+              codewalker.v1.Codewalker.ListPullRequestsResponse>(
+                service, METHODID_LIST_PULL_REQUESTS)))
         .build();
   }
 
@@ -961,6 +1050,7 @@ public final class CodeWalkerGrpc {
               .addMethod(getListSessionsMethod())
               .addMethod(getOpenReviewSessionMethod())
               .addMethod(getListFileOrderersMethod())
+              .addMethod(getListPullRequestsMethod())
               .build();
         }
       }
