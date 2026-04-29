@@ -12,8 +12,8 @@ repositories {
 
 dependencies {
     implementation("io.grpc:grpc-kotlin-stub:1.4.1")
-    implementation("io.grpc:grpc-protobuf:1.60.0")
-    implementation("com.google.protobuf:protobuf-kotlin:3.25.1")
+    implementation("io.grpc:grpc-protobuf:1.68.1")
+    implementation("com.google.protobuf:protobuf-kotlin:4.28.3")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 }
 
