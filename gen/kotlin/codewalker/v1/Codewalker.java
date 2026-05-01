@@ -38855,6 +38855,28 @@ public final class Codewalker {
      */
     com.google.protobuf.ByteString
         getUrlBytes();
+
+    /**
+     * <pre>
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * </pre>
+     *
+     * <code>string head_ref = 5 [json_name = "headRef"];</code>
+     * @return The headRef.
+     */
+    java.lang.String getHeadRef();
+    /**
+     * <pre>
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * </pre>
+     *
+     * <code>string head_ref = 5 [json_name = "headRef"];</code>
+     * @return The bytes for headRef.
+     */
+    com.google.protobuf.ByteString
+        getHeadRefBytes();
   }
   /**
    * Protobuf type {@code codewalker.v1.PullRequestSummary}
@@ -38881,6 +38903,7 @@ public final class Codewalker {
       title_ = "";
       author_ = "";
       url_ = "";
+      headRef_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -39024,6 +39047,55 @@ public final class Codewalker {
       }
     }
 
+    public static final int HEAD_REF_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object headRef_ = "";
+    /**
+     * <pre>
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * </pre>
+     *
+     * <code>string head_ref = 5 [json_name = "headRef"];</code>
+     * @return The headRef.
+     */
+    @java.lang.Override
+    public java.lang.String getHeadRef() {
+      java.lang.Object ref = headRef_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        headRef_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * </pre>
+     *
+     * <code>string head_ref = 5 [json_name = "headRef"];</code>
+     * @return The bytes for headRef.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getHeadRefBytes() {
+      java.lang.Object ref = headRef_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        headRef_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -39050,6 +39122,9 @@ public final class Codewalker {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, url_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(headRef_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, headRef_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -39071,6 +39146,9 @@ public final class Codewalker {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(url_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, url_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(headRef_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, headRef_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -39095,6 +39173,8 @@ public final class Codewalker {
           .equals(other.getAuthor())) return false;
       if (!getUrl()
           .equals(other.getUrl())) return false;
+      if (!getHeadRef()
+          .equals(other.getHeadRef())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -39114,6 +39194,8 @@ public final class Codewalker {
       hash = (53 * hash) + getAuthor().hashCode();
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
+      hash = (37 * hash) + HEAD_REF_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadRef().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -39249,6 +39331,7 @@ public final class Codewalker {
         title_ = "";
         author_ = "";
         url_ = "";
+        headRef_ = "";
         return this;
       }
 
@@ -39294,6 +39377,9 @@ public final class Codewalker {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.url_ = url_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.headRef_ = headRef_;
+        }
       }
 
       @java.lang.Override
@@ -39324,6 +39410,11 @@ public final class Codewalker {
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getHeadRef().isEmpty()) {
+          headRef_ = other.headRef_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -39372,6 +39463,11 @@ public final class Codewalker {
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+              case 42: {
+                headRef_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -39633,6 +39729,103 @@ public final class Codewalker {
         checkByteStringIsUtf8(value);
         url_ = value;
         bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object headRef_ = "";
+      /**
+       * <pre>
+       * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+       * operate on the working tree before opening a review session.
+       * </pre>
+       *
+       * <code>string head_ref = 5 [json_name = "headRef"];</code>
+       * @return The headRef.
+       */
+      public java.lang.String getHeadRef() {
+        java.lang.Object ref = headRef_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          headRef_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+       * operate on the working tree before opening a review session.
+       * </pre>
+       *
+       * <code>string head_ref = 5 [json_name = "headRef"];</code>
+       * @return The bytes for headRef.
+       */
+      public com.google.protobuf.ByteString
+          getHeadRefBytes() {
+        java.lang.Object ref = headRef_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          headRef_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+       * operate on the working tree before opening a review session.
+       * </pre>
+       *
+       * <code>string head_ref = 5 [json_name = "headRef"];</code>
+       * @param value The headRef to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeadRef(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        headRef_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+       * operate on the working tree before opening a review session.
+       * </pre>
+       *
+       * <code>string head_ref = 5 [json_name = "headRef"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeadRef() {
+        headRef_ = getDefaultInstance().getHeadRef();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+       * operate on the working tree before opening a review session.
+       * </pre>
+       *
+       * <code>string head_ref = 5 [json_name = "headRef"];</code>
+       * @param value The bytes for headRef to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeadRefBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        headRef_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -41943,85 +42136,86 @@ public final class Codewalker {
       "\004repo\030\003 \001(\tR\004repo\022\037\n\013forge_token\030\004 \001(\tR\n" +
       "forgeToken\"b\n\030ListPullRequestsResponse\022F" +
       "\n\rpull_requests\030\001 \003(\0132!.codewalker.v1.Pu" +
-      "llRequestSummaryR\014pullRequests\"l\n\022PullRe" +
-      "questSummary\022\026\n\006number\030\001 \001(\005R\006number\022\024\n\005" +
-      "title\030\002 \001(\tR\005title\022\026\n\006author\030\003 \001(\tR\006auth" +
-      "or\022\020\n\003url\030\004 \001(\tR\003url\"\234\001\n\025FetchFileAtRefR" +
-      "equest\022\022\n\004host\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(" +
-      "\tR\005owner\022\022\n\004repo\030\003 \001(\tR\004repo\022\022\n\004path\030\004 \001" +
-      "(\tR\004path\022\020\n\003ref\030\005 \001(\tR\003ref\022\037\n\013forge_toke" +
-      "n\030\006 \001(\tR\nforgeToken\"2\n\026FetchFileAtRefRes" +
-      "ponse\022\030\n\007content\030\001 \001(\014R\007content*b\n\013Sessi" +
-      "onKind\022\034\n\030SESSION_KIND_UNSPECIFIED\020\000\022\034\n\030" +
-      "SESSION_KIND_WALKTHROUGH\020\001\022\027\n\023SESSION_KI" +
-      "ND_REVIEW\020\002*\361\001\n\010StepKind\022\031\n\025STEP_KIND_UN" +
-      "SPECIFIED\020\000\022\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP" +
-      "_KIND_ASSIGNMENT\020\002\022\031\n\025STEP_KIND_CONDITIO" +
-      "NAL\020\003\022\022\n\016STEP_KIND_LOOP\020\004\022\022\n\016STEP_KIND_C" +
-      "ALL\020\005\022\024\n\020STEP_KIND_RETURN\020\006\022\032\n\026STEP_KIND" +
-      "_ERROR_HANDLE\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016S" +
-      "TEP_KIND_HUNK\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LA" +
-      "BEL_UNSPECIFIED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032" +
-      "\n\026EDGE_LABEL_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL" +
-      "_FALSE_BRANCH\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024" +
-      "EDGE_LABEL_LOOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOO" +
-      "P_EXIT\020\006\022\030\n\024EDGE_LABEL_EXCEPTION\020\007\022\023\n\017ED" +
-      "GE_LABEL_CALL\020\010*l\n\017SimpleDirection\022 \n\034SI" +
-      "MPLE_DIRECTION_UNSPECIFIED\020\000\022\034\n\030SIMPLE_D" +
-      "IRECTION_FORWARD\020\001\022\031\n\025SIMPLE_DIRECTION_B" +
-      "ACK\020\002*\225\001\n\014RephraseMode\022\035\n\031REPHRASE_MODE_" +
-      "UNSPECIFIED\020\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001" +
-      "\022\030\n\024REPHRASE_MODE_DEEPER\020\002\022\031\n\025REPHRASE_M" +
-      "ODE_ANALOGY\020\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001" +
-      "\n\010TermKind\022\031\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n" +
-      "\022TERM_KIND_LANGUAGE\020\001\022\025\n\021TERM_KIND_PATTE" +
-      "RN\020\002\022\024\n\020TERM_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_" +
-      "LIBRARY\020\004*\223\001\n\020ForgeContextKind\022\"\n\036FORGE_" +
-      "CONTEXT_KIND_UNSPECIFIED\020\000\022\031\n\025FORGE_CONT" +
-      "EXT_KIND_PR\020\001\022\035\n\031FORGE_CONTEXT_KIND_COMM" +
-      "IT\020\002\022!\n\035FORGE_CONTEXT_KIND_COMPARISON\020\003*" +
-      "\214\001\n\nChangeKind\022\033\n\027CHANGE_KIND_UNSPECIFIE" +
-      "D\020\000\022\025\n\021CHANGE_KIND_ADDED\020\001\022\030\n\024CHANGE_KIN" +
-      "D_MODIFIED\020\002\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n" +
-      "\023CHANGE_KIND_RENAMED\020\004*\207\001\n\017ExperienceLev" +
-      "el\022 \n\034EXPERIENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027" +
-      "EXPERIENCE_LEVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_" +
-      "LEVEL_MID\020\002\022\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003" +
-      "*\340\002\n\tErrorCode\022\032\n\026ERROR_CODE_UNSPECIFIED" +
-      "\020\000\022 \n\034ERROR_CODE_SESSION_NOT_FOUND\020\001\022\033\n\027" +
-      "ERROR_CODE_PARSE_FAILED\020\002\022\032\n\026ERROR_CODE_" +
-      "INVALID_REF\020\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022" +
-      "\037\n\033ERROR_CODE_UNSUPPORTED_LANG\020\005\022!\n\035ERRO" +
-      "R_CODE_INVALID_NAVIGATION\020\006\022 \n\034ERROR_COD" +
-      "E_UNSUPPORTED_FORGE\020\007\022 \n\034ERROR_CODE_FORG" +
-      "E_AUTH_FAILED\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_" +
-      "FOUND\020\t\022\032\n\026ERROR_CODE_INVALID_URL\020\n2\315\007\n\n" +
-      "CodeWalker\022Q\n\nGetVersion\022 .codewalker.v1" +
-      ".GetVersionRequest\032!.codewalker.v1.GetVe" +
-      "rsionResponse\022O\n\013OpenSession\022!.codewalke" +
-      "r.v1.OpenSessionRequest\032\033.codewalker.v1." +
-      "SessionEvent0\001\022I\n\010Navigate\022\036.codewalker." +
-      "v1.NavigateRequest\032\033.codewalker.v1.Narra" +
-      "teEvent0\001\022I\n\010Rephrase\022\036.codewalker.v1.Re" +
-      "phraseRequest\032\033.codewalker.v1.NarrateEve" +
-      "nt0\001\022M\n\nExpandTerm\022 .codewalker.v1.Expan" +
-      "dTermRequest\032\033.codewalker.v1.NarrateEven" +
-      "t0\001\022W\n\014CloseSession\022\".codewalker.v1.Clos" +
-      "eSessionRequest\032#.codewalker.v1.CloseSes" +
-      "sionResponse\022W\n\014ListSessions\022\".codewalke" +
-      "r.v1.ListSessionsRequest\032#.codewalker.v1" +
-      ".ListSessionsResponse\022[\n\021OpenReviewSessi" +
-      "on\022\'.codewalker.v1.OpenReviewSessionRequ" +
-      "est\032\033.codewalker.v1.SessionEvent0\001\022c\n\020Li" +
-      "stFileOrderers\022&.codewalker.v1.ListFileO" +
-      "rderersRequest\032\'.codewalker.v1.ListFileO" +
-      "rderersResponse\022c\n\020ListPullRequests\022&.co" +
-      "dewalker.v1.ListPullRequestsRequest\032\'.co" +
-      "dewalker.v1.ListPullRequestsResponse\022]\n\016" +
-      "FetchFileAtRef\022$.codewalker.v1.FetchFile" +
-      "AtRefRequest\032%.codewalker.v1.FetchFileAt" +
-      "RefResponseB1Z/github.com/yourorg/codewa" +
-      "lker/gen/codewalker/v1b\006proto3"
+      "llRequestSummaryR\014pullRequests\"\207\001\n\022PullR" +
+      "equestSummary\022\026\n\006number\030\001 \001(\005R\006number\022\024\n" +
+      "\005title\030\002 \001(\tR\005title\022\026\n\006author\030\003 \001(\tR\006aut" +
+      "hor\022\020\n\003url\030\004 \001(\tR\003url\022\031\n\010head_ref\030\005 \001(\tR" +
+      "\007headRef\"\234\001\n\025FetchFileAtRefRequest\022\022\n\004ho" +
+      "st\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(\tR\005owner\022\022\n\004" +
+      "repo\030\003 \001(\tR\004repo\022\022\n\004path\030\004 \001(\tR\004path\022\020\n\003" +
+      "ref\030\005 \001(\tR\003ref\022\037\n\013forge_token\030\006 \001(\tR\nfor" +
+      "geToken\"2\n\026FetchFileAtRefResponse\022\030\n\007con" +
+      "tent\030\001 \001(\014R\007content*b\n\013SessionKind\022\034\n\030SE" +
+      "SSION_KIND_UNSPECIFIED\020\000\022\034\n\030SESSION_KIND" +
+      "_WALKTHROUGH\020\001\022\027\n\023SESSION_KIND_REVIEW\020\002*" +
+      "\361\001\n\010StepKind\022\031\n\025STEP_KIND_UNSPECIFIED\020\000\022" +
+      "\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP_KIND_ASSIGN" +
+      "MENT\020\002\022\031\n\025STEP_KIND_CONDITIONAL\020\003\022\022\n\016STE" +
+      "P_KIND_LOOP\020\004\022\022\n\016STEP_KIND_CALL\020\005\022\024\n\020STE" +
+      "P_KIND_RETURN\020\006\022\032\n\026STEP_KIND_ERROR_HANDL" +
+      "E\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016STEP_KIND_HUN" +
+      "K\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LABEL_UNSPECIF" +
+      "IED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032\n\026EDGE_LABEL" +
+      "_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL_FALSE_BRANC" +
+      "H\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024EDGE_LABEL_L" +
+      "OOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOOP_EXIT\020\006\022\030\n\024" +
+      "EDGE_LABEL_EXCEPTION\020\007\022\023\n\017EDGE_LABEL_CAL" +
+      "L\020\010*l\n\017SimpleDirection\022 \n\034SIMPLE_DIRECTI" +
+      "ON_UNSPECIFIED\020\000\022\034\n\030SIMPLE_DIRECTION_FOR" +
+      "WARD\020\001\022\031\n\025SIMPLE_DIRECTION_BACK\020\002*\225\001\n\014Re" +
+      "phraseMode\022\035\n\031REPHRASE_MODE_UNSPECIFIED\020" +
+      "\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001\022\030\n\024REPHRASE" +
+      "_MODE_DEEPER\020\002\022\031\n\025REPHRASE_MODE_ANALOGY\020" +
+      "\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001\n\010TermKind\022\031" +
+      "\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n\022TERM_KIND_L" +
+      "ANGUAGE\020\001\022\025\n\021TERM_KIND_PATTERN\020\002\022\024\n\020TERM" +
+      "_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_LIBRARY\020\004*\223\001" +
+      "\n\020ForgeContextKind\022\"\n\036FORGE_CONTEXT_KIND" +
+      "_UNSPECIFIED\020\000\022\031\n\025FORGE_CONTEXT_KIND_PR\020" +
+      "\001\022\035\n\031FORGE_CONTEXT_KIND_COMMIT\020\002\022!\n\035FORG" +
+      "E_CONTEXT_KIND_COMPARISON\020\003*\214\001\n\nChangeKi" +
+      "nd\022\033\n\027CHANGE_KIND_UNSPECIFIED\020\000\022\025\n\021CHANG" +
+      "E_KIND_ADDED\020\001\022\030\n\024CHANGE_KIND_MODIFIED\020\002" +
+      "\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n\023CHANGE_KIND" +
+      "_RENAMED\020\004*\207\001\n\017ExperienceLevel\022 \n\034EXPERI" +
+      "ENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027EXPERIENCE_L" +
+      "EVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_LEVEL_MID\020\002\022" +
+      "\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003*\340\002\n\tErrorCo" +
+      "de\022\032\n\026ERROR_CODE_UNSPECIFIED\020\000\022 \n\034ERROR_" +
+      "CODE_SESSION_NOT_FOUND\020\001\022\033\n\027ERROR_CODE_P" +
+      "ARSE_FAILED\020\002\022\032\n\026ERROR_CODE_INVALID_REF\020" +
+      "\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022\037\n\033ERROR_COD" +
+      "E_UNSUPPORTED_LANG\020\005\022!\n\035ERROR_CODE_INVAL" +
+      "ID_NAVIGATION\020\006\022 \n\034ERROR_CODE_UNSUPPORTE" +
+      "D_FORGE\020\007\022 \n\034ERROR_CODE_FORGE_AUTH_FAILE" +
+      "D\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_FOUND\020\t\022\032\n\026E" +
+      "RROR_CODE_INVALID_URL\020\n2\315\007\n\nCodeWalker\022Q" +
+      "\n\nGetVersion\022 .codewalker.v1.GetVersionR" +
+      "equest\032!.codewalker.v1.GetVersionRespons" +
+      "e\022O\n\013OpenSession\022!.codewalker.v1.OpenSes" +
+      "sionRequest\032\033.codewalker.v1.SessionEvent" +
+      "0\001\022I\n\010Navigate\022\036.codewalker.v1.NavigateR" +
+      "equest\032\033.codewalker.v1.NarrateEvent0\001\022I\n" +
+      "\010Rephrase\022\036.codewalker.v1.RephraseReques" +
+      "t\032\033.codewalker.v1.NarrateEvent0\001\022M\n\nExpa" +
+      "ndTerm\022 .codewalker.v1.ExpandTermRequest" +
+      "\032\033.codewalker.v1.NarrateEvent0\001\022W\n\014Close" +
+      "Session\022\".codewalker.v1.CloseSessionRequ" +
+      "est\032#.codewalker.v1.CloseSessionResponse" +
+      "\022W\n\014ListSessions\022\".codewalker.v1.ListSes" +
+      "sionsRequest\032#.codewalker.v1.ListSession" +
+      "sResponse\022[\n\021OpenReviewSession\022\'.codewal" +
+      "ker.v1.OpenReviewSessionRequest\032\033.codewa" +
+      "lker.v1.SessionEvent0\001\022c\n\020ListFileOrdere" +
+      "rs\022&.codewalker.v1.ListFileOrderersReque" +
+      "st\032\'.codewalker.v1.ListFileOrderersRespo" +
+      "nse\022c\n\020ListPullRequests\022&.codewalker.v1." +
+      "ListPullRequestsRequest\032\'.codewalker.v1." +
+      "ListPullRequestsResponse\022]\n\016FetchFileAtR" +
+      "ef\022$.codewalker.v1.FetchFileAtRefRequest" +
+      "\032%.codewalker.v1.FetchFileAtRefResponseB" +
+      "1Z/github.com/yourorg/codewalker/gen/cod" +
+      "ewalker/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -42236,7 +42430,7 @@ public final class Codewalker {
     internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_PullRequestSummary_descriptor,
-        new java.lang.String[] { "Number", "Title", "Author", "Url", });
+        new java.lang.String[] { "Number", "Title", "Author", "Url", "HeadRef", });
     internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable = new

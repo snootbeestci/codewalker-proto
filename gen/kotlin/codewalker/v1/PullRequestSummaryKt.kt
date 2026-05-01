@@ -95,6 +95,33 @@ public object PullRequestSummaryKt {
     public fun clearUrl() {
       _builder.clearUrl()
     }
+
+    /**
+     * ```
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * ```
+     *
+     * `string head_ref = 5 [json_name = "headRef"];`
+     */
+    public var headRef: kotlin.String
+      @JvmName("getHeadRef")
+      get() = _builder.headRef
+      @JvmName("setHeadRef")
+      set(value) {
+        _builder.headRef = value
+      }
+    /**
+     * ```
+     * The PR's head branch name (e.g. "feature/foo"). Used by clients to
+     * operate on the working tree before opening a review session.
+     * ```
+     *
+     * `string head_ref = 5 [json_name = "headRef"];`
+     */
+    public fun clearHeadRef() {
+      _builder.clearHeadRef()
+    }
   }
 }
 @kotlin.jvm.JvmSynthetic
