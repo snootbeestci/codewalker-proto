@@ -127,6 +127,42 @@ public object NarrateEventKt {
     public fun hasError(): kotlin.Boolean {
       return _builder.hasError()
     }
+
+    /**
+     * ```
+     * Structured summary, sent as soon as available
+     * ```
+     *
+     * `.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];`
+     */
+    public var summaryReady: codewalker.v1.Codewalker.SummaryReady
+      @JvmName("getSummaryReady")
+      get() = _builder.summaryReady
+      @JvmName("setSummaryReady")
+      set(value) {
+        _builder.summaryReady = value
+      }
+    /**
+     * ```
+     * Structured summary, sent as soon as available
+     * ```
+     *
+     * `.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];`
+     */
+    public fun clearSummaryReady() {
+      _builder.clearSummaryReady()
+    }
+    /**
+     * ```
+     * Structured summary, sent as soon as available
+     * ```
+     *
+     * `.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];`
+     * @return Whether the summaryReady field is set.
+     */
+    public fun hasSummaryReady(): kotlin.Boolean {
+      return _builder.hasSummaryReady()
+    }
     public val eventCase: codewalker.v1.Codewalker.NarrateEvent.EventCase
       @JvmName("getEventCase")
       get() = _builder.getEventCase()
@@ -148,4 +184,7 @@ public val codewalker.v1.Codewalker.NarrateEventOrBuilder.completeOrNull: codewa
 
 public val codewalker.v1.Codewalker.NarrateEventOrBuilder.errorOrNull: codewalker.v1.Codewalker.ServiceError?
   get() = if (hasError()) getError() else null
+
+public val codewalker.v1.Codewalker.NarrateEventOrBuilder.summaryReadyOrNull: codewalker.v1.Codewalker.SummaryReady?
+  get() = if (hasSummaryReady()) getSummaryReady() else null
 

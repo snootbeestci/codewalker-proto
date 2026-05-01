@@ -17349,6 +17349,33 @@ public final class Codewalker {
      */
     codewalker.v1.Codewalker.ServiceErrorOrBuilder getErrorOrBuilder();
 
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     * @return Whether the summaryReady field is set.
+     */
+    boolean hasSummaryReady();
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     * @return The summaryReady.
+     */
+    codewalker.v1.Codewalker.SummaryReady getSummaryReady();
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     */
+    codewalker.v1.Codewalker.SummaryReadyOrBuilder getSummaryReadyOrBuilder();
+
     codewalker.v1.Codewalker.NarrateEvent.EventCase getEventCase();
   }
   /**
@@ -17401,6 +17428,7 @@ public final class Codewalker {
       TOKEN(1),
       COMPLETE(2),
       ERROR(3),
+      SUMMARY_READY(4),
       EVENT_NOT_SET(0);
       private final int value;
       private EventCase(int value) {
@@ -17421,6 +17449,7 @@ public final class Codewalker {
           case 1: return TOKEN;
           case 2: return COMPLETE;
           case 3: return ERROR;
+          case 4: return SUMMARY_READY;
           case 0: return EVENT_NOT_SET;
           default: return null;
         }
@@ -17553,6 +17582,49 @@ public final class Codewalker {
       return codewalker.v1.Codewalker.ServiceError.getDefaultInstance();
     }
 
+    public static final int SUMMARY_READY_FIELD_NUMBER = 4;
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     * @return Whether the summaryReady field is set.
+     */
+    @java.lang.Override
+    public boolean hasSummaryReady() {
+      return eventCase_ == 4;
+    }
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     * @return The summaryReady.
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.SummaryReady getSummaryReady() {
+      if (eventCase_ == 4) {
+         return (codewalker.v1.Codewalker.SummaryReady) event_;
+      }
+      return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+    }
+    /**
+     * <pre>
+     * Structured summary, sent as soon as available
+     * </pre>
+     *
+     * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.SummaryReadyOrBuilder getSummaryReadyOrBuilder() {
+      if (eventCase_ == 4) {
+         return (codewalker.v1.Codewalker.SummaryReady) event_;
+      }
+      return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -17576,6 +17648,9 @@ public final class Codewalker {
       if (eventCase_ == 3) {
         output.writeMessage(3, (codewalker.v1.Codewalker.ServiceError) event_);
       }
+      if (eventCase_ == 4) {
+        output.writeMessage(4, (codewalker.v1.Codewalker.SummaryReady) event_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -17596,6 +17671,10 @@ public final class Codewalker {
       if (eventCase_ == 3) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, (codewalker.v1.Codewalker.ServiceError) event_);
+      }
+      if (eventCase_ == 4) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(4, (codewalker.v1.Codewalker.SummaryReady) event_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -17626,6 +17705,10 @@ public final class Codewalker {
           if (!getError()
               .equals(other.getError())) return false;
           break;
+        case 4:
+          if (!getSummaryReady()
+              .equals(other.getSummaryReady())) return false;
+          break;
         case 0:
         default:
       }
@@ -17652,6 +17735,10 @@ public final class Codewalker {
         case 3:
           hash = (37 * hash) + ERROR_FIELD_NUMBER;
           hash = (53 * hash) + getError().hashCode();
+          break;
+        case 4:
+          hash = (37 * hash) + SUMMARY_READY_FIELD_NUMBER;
+          hash = (53 * hash) + getSummaryReady().hashCode();
           break;
         case 0:
         default:
@@ -17800,6 +17887,9 @@ public final class Codewalker {
         if (errorBuilder_ != null) {
           errorBuilder_.clear();
         }
+        if (summaryReadyBuilder_ != null) {
+          summaryReadyBuilder_.clear();
+        }
         eventCase_ = 0;
         event_ = null;
         return this;
@@ -17853,6 +17943,10 @@ public final class Codewalker {
             errorBuilder_ != null) {
           result.event_ = errorBuilder_.build();
         }
+        if (eventCase_ == 4 &&
+            summaryReadyBuilder_ != null) {
+          result.event_ = summaryReadyBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -17878,6 +17972,10 @@ public final class Codewalker {
           }
           case ERROR: {
             mergeError(other.getError());
+            break;
+          }
+          case SUMMARY_READY: {
+            mergeSummaryReady(other.getSummaryReady());
             break;
           }
           case EVENT_NOT_SET: {
@@ -17931,6 +18029,13 @@ public final class Codewalker {
                 eventCase_ = 3;
                 break;
               } // case 26
+              case 34: {
+                input.readMessage(
+                    getSummaryReadyFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                eventCase_ = 4;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -18461,6 +18566,184 @@ public final class Codewalker {
         return errorBuilder_;
       }
 
+      private com.google.protobuf.SingleFieldBuilder<
+          codewalker.v1.Codewalker.SummaryReady, codewalker.v1.Codewalker.SummaryReady.Builder, codewalker.v1.Codewalker.SummaryReadyOrBuilder> summaryReadyBuilder_;
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       * @return Whether the summaryReady field is set.
+       */
+      @java.lang.Override
+      public boolean hasSummaryReady() {
+        return eventCase_ == 4;
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       * @return The summaryReady.
+       */
+      @java.lang.Override
+      public codewalker.v1.Codewalker.SummaryReady getSummaryReady() {
+        if (summaryReadyBuilder_ == null) {
+          if (eventCase_ == 4) {
+            return (codewalker.v1.Codewalker.SummaryReady) event_;
+          }
+          return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+        } else {
+          if (eventCase_ == 4) {
+            return summaryReadyBuilder_.getMessage();
+          }
+          return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      public Builder setSummaryReady(codewalker.v1.Codewalker.SummaryReady value) {
+        if (summaryReadyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          event_ = value;
+          onChanged();
+        } else {
+          summaryReadyBuilder_.setMessage(value);
+        }
+        eventCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      public Builder setSummaryReady(
+          codewalker.v1.Codewalker.SummaryReady.Builder builderForValue) {
+        if (summaryReadyBuilder_ == null) {
+          event_ = builderForValue.build();
+          onChanged();
+        } else {
+          summaryReadyBuilder_.setMessage(builderForValue.build());
+        }
+        eventCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      public Builder mergeSummaryReady(codewalker.v1.Codewalker.SummaryReady value) {
+        if (summaryReadyBuilder_ == null) {
+          if (eventCase_ == 4 &&
+              event_ != codewalker.v1.Codewalker.SummaryReady.getDefaultInstance()) {
+            event_ = codewalker.v1.Codewalker.SummaryReady.newBuilder((codewalker.v1.Codewalker.SummaryReady) event_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            event_ = value;
+          }
+          onChanged();
+        } else {
+          if (eventCase_ == 4) {
+            summaryReadyBuilder_.mergeFrom(value);
+          } else {
+            summaryReadyBuilder_.setMessage(value);
+          }
+        }
+        eventCase_ = 4;
+        return this;
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      public Builder clearSummaryReady() {
+        if (summaryReadyBuilder_ == null) {
+          if (eventCase_ == 4) {
+            eventCase_ = 0;
+            event_ = null;
+            onChanged();
+          }
+        } else {
+          if (eventCase_ == 4) {
+            eventCase_ = 0;
+            event_ = null;
+          }
+          summaryReadyBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      public codewalker.v1.Codewalker.SummaryReady.Builder getSummaryReadyBuilder() {
+        return getSummaryReadyFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      @java.lang.Override
+      public codewalker.v1.Codewalker.SummaryReadyOrBuilder getSummaryReadyOrBuilder() {
+        if ((eventCase_ == 4) && (summaryReadyBuilder_ != null)) {
+          return summaryReadyBuilder_.getMessageOrBuilder();
+        } else {
+          if (eventCase_ == 4) {
+            return (codewalker.v1.Codewalker.SummaryReady) event_;
+          }
+          return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+        }
+      }
+      /**
+       * <pre>
+       * Structured summary, sent as soon as available
+       * </pre>
+       *
+       * <code>.codewalker.v1.SummaryReady summary_ready = 4 [json_name = "summaryReady"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          codewalker.v1.Codewalker.SummaryReady, codewalker.v1.Codewalker.SummaryReady.Builder, codewalker.v1.Codewalker.SummaryReadyOrBuilder> 
+          getSummaryReadyFieldBuilder() {
+        if (summaryReadyBuilder_ == null) {
+          if (!(eventCase_ == 4)) {
+            event_ = codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+          }
+          summaryReadyBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              codewalker.v1.Codewalker.SummaryReady, codewalker.v1.Codewalker.SummaryReady.Builder, codewalker.v1.Codewalker.SummaryReadyOrBuilder>(
+                  (codewalker.v1.Codewalker.SummaryReady) event_,
+                  getParentForChildren(),
+                  isClean());
+          event_ = null;
+        }
+        eventCase_ = 4;
+        onChanged();
+        return summaryReadyBuilder_;
+      }
+
       // @@protoc_insertion_point(builder_scope:codewalker.v1.NarrateEvent)
     }
 
@@ -18507,6 +18790,592 @@ public final class Codewalker {
 
     @java.lang.Override
     public codewalker.v1.Codewalker.NarrateEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SummaryReadyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:codewalker.v1.SummaryReady)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     * @return Whether the summary field is set.
+     */
+    boolean hasSummary();
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     * @return The summary.
+     */
+    codewalker.v1.Codewalker.StepSummary getSummary();
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     */
+    codewalker.v1.Codewalker.StepSummaryOrBuilder getSummaryOrBuilder();
+  }
+  /**
+   * <pre>
+   * Emitted by Navigate as soon as the structured summary is available, which is
+   * typically before narration tokens finish streaming. New clients should
+   * prefer this over reading StepComplete.summary so the summary can render
+   * without waiting for the full narration stream. StepComplete.summary
+   * continues to be populated for backward compatibility.
+   * </pre>
+   *
+   * Protobuf type {@code codewalker.v1.SummaryReady}
+   */
+  public static final class SummaryReady extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:codewalker.v1.SummaryReady)
+      SummaryReadyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 28,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        SummaryReady.class.getName());
+    }
+    // Use SummaryReady.newBuilder() to construct.
+    private SummaryReady(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SummaryReady() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_SummaryReady_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return codewalker.v1.Codewalker.internal_static_codewalker_v1_SummaryReady_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              codewalker.v1.Codewalker.SummaryReady.class, codewalker.v1.Codewalker.SummaryReady.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int SUMMARY_FIELD_NUMBER = 1;
+    private codewalker.v1.Codewalker.StepSummary summary_;
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     * @return Whether the summary field is set.
+     */
+    @java.lang.Override
+    public boolean hasSummary() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     * @return The summary.
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.StepSummary getSummary() {
+      return summary_ == null ? codewalker.v1.Codewalker.StepSummary.getDefaultInstance() : summary_;
+    }
+    /**
+     * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+     */
+    @java.lang.Override
+    public codewalker.v1.Codewalker.StepSummaryOrBuilder getSummaryOrBuilder() {
+      return summary_ == null ? codewalker.v1.Codewalker.StepSummary.getDefaultInstance() : summary_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getSummary());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getSummary());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof codewalker.v1.Codewalker.SummaryReady)) {
+        return super.equals(obj);
+      }
+      codewalker.v1.Codewalker.SummaryReady other = (codewalker.v1.Codewalker.SummaryReady) obj;
+
+      if (hasSummary() != other.hasSummary()) return false;
+      if (hasSummary()) {
+        if (!getSummary()
+            .equals(other.getSummary())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasSummary()) {
+        hash = (37 * hash) + SUMMARY_FIELD_NUMBER;
+        hash = (53 * hash) + getSummary().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static codewalker.v1.Codewalker.SummaryReady parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static codewalker.v1.Codewalker.SummaryReady parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static codewalker.v1.Codewalker.SummaryReady parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(codewalker.v1.Codewalker.SummaryReady prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Emitted by Navigate as soon as the structured summary is available, which is
+     * typically before narration tokens finish streaming. New clients should
+     * prefer this over reading StepComplete.summary so the summary can render
+     * without waiting for the full narration stream. StepComplete.summary
+     * continues to be populated for backward compatibility.
+     * </pre>
+     *
+     * Protobuf type {@code codewalker.v1.SummaryReady}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:codewalker.v1.SummaryReady)
+        codewalker.v1.Codewalker.SummaryReadyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_SummaryReady_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_SummaryReady_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                codewalker.v1.Codewalker.SummaryReady.class, codewalker.v1.Codewalker.SummaryReady.Builder.class);
+      }
+
+      // Construct using codewalker.v1.Codewalker.SummaryReady.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          getSummaryFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        summary_ = null;
+        if (summaryBuilder_ != null) {
+          summaryBuilder_.dispose();
+          summaryBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return codewalker.v1.Codewalker.internal_static_codewalker_v1_SummaryReady_descriptor;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.SummaryReady getDefaultInstanceForType() {
+        return codewalker.v1.Codewalker.SummaryReady.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.SummaryReady build() {
+        codewalker.v1.Codewalker.SummaryReady result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public codewalker.v1.Codewalker.SummaryReady buildPartial() {
+        codewalker.v1.Codewalker.SummaryReady result = new codewalker.v1.Codewalker.SummaryReady(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(codewalker.v1.Codewalker.SummaryReady result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.summary_ = summaryBuilder_ == null
+              ? summary_
+              : summaryBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof codewalker.v1.Codewalker.SummaryReady) {
+          return mergeFrom((codewalker.v1.Codewalker.SummaryReady)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(codewalker.v1.Codewalker.SummaryReady other) {
+        if (other == codewalker.v1.Codewalker.SummaryReady.getDefaultInstance()) return this;
+        if (other.hasSummary()) {
+          mergeSummary(other.getSummary());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getSummaryFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private codewalker.v1.Codewalker.StepSummary summary_;
+      private com.google.protobuf.SingleFieldBuilder<
+          codewalker.v1.Codewalker.StepSummary, codewalker.v1.Codewalker.StepSummary.Builder, codewalker.v1.Codewalker.StepSummaryOrBuilder> summaryBuilder_;
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       * @return Whether the summary field is set.
+       */
+      public boolean hasSummary() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       * @return The summary.
+       */
+      public codewalker.v1.Codewalker.StepSummary getSummary() {
+        if (summaryBuilder_ == null) {
+          return summary_ == null ? codewalker.v1.Codewalker.StepSummary.getDefaultInstance() : summary_;
+        } else {
+          return summaryBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public Builder setSummary(codewalker.v1.Codewalker.StepSummary value) {
+        if (summaryBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          summary_ = value;
+        } else {
+          summaryBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public Builder setSummary(
+          codewalker.v1.Codewalker.StepSummary.Builder builderForValue) {
+        if (summaryBuilder_ == null) {
+          summary_ = builderForValue.build();
+        } else {
+          summaryBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public Builder mergeSummary(codewalker.v1.Codewalker.StepSummary value) {
+        if (summaryBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0) &&
+            summary_ != null &&
+            summary_ != codewalker.v1.Codewalker.StepSummary.getDefaultInstance()) {
+            getSummaryBuilder().mergeFrom(value);
+          } else {
+            summary_ = value;
+          }
+        } else {
+          summaryBuilder_.mergeFrom(value);
+        }
+        if (summary_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public Builder clearSummary() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        summary_ = null;
+        if (summaryBuilder_ != null) {
+          summaryBuilder_.dispose();
+          summaryBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public codewalker.v1.Codewalker.StepSummary.Builder getSummaryBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getSummaryFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      public codewalker.v1.Codewalker.StepSummaryOrBuilder getSummaryOrBuilder() {
+        if (summaryBuilder_ != null) {
+          return summaryBuilder_.getMessageOrBuilder();
+        } else {
+          return summary_ == null ?
+              codewalker.v1.Codewalker.StepSummary.getDefaultInstance() : summary_;
+        }
+      }
+      /**
+       * <code>.codewalker.v1.StepSummary summary = 1 [json_name = "summary"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          codewalker.v1.Codewalker.StepSummary, codewalker.v1.Codewalker.StepSummary.Builder, codewalker.v1.Codewalker.StepSummaryOrBuilder> 
+          getSummaryFieldBuilder() {
+        if (summaryBuilder_ == null) {
+          summaryBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              codewalker.v1.Codewalker.StepSummary, codewalker.v1.Codewalker.StepSummary.Builder, codewalker.v1.Codewalker.StepSummaryOrBuilder>(
+                  getSummary(),
+                  getParentForChildren(),
+                  isClean());
+          summary_ = null;
+        }
+        return summaryBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:codewalker.v1.SummaryReady)
+    }
+
+    // @@protoc_insertion_point(class_scope:codewalker.v1.SummaryReady)
+    private static final codewalker.v1.Codewalker.SummaryReady DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new codewalker.v1.Codewalker.SummaryReady();
+    }
+
+    public static codewalker.v1.Codewalker.SummaryReady getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SummaryReady>
+        PARSER = new com.google.protobuf.AbstractParser<SummaryReady>() {
+      @java.lang.Override
+      public SummaryReady parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SummaryReady> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SummaryReady> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public codewalker.v1.Codewalker.SummaryReady getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -41878,6 +42747,11 @@ public final class Codewalker {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_codewalker_v1_NarrateEvent_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_codewalker_v1_SummaryReady_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_codewalker_v1_SummaryReady_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_codewalker_v1_NarrateToken_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -42057,165 +42931,168 @@ public final class Codewalker {
       "DirectionH\000R\tdirection\022\031\n\007step_id\030\003 \001(\tH" +
       "\000R\006stepId\022;\n\013follow_edge\030\004 \001(\0162\030.codewal" +
       "ker.v1.EdgeLabelH\000R\nfollowEdgeB\r\n\013destin" +
-      "ation\"\274\001\n\014NarrateEvent\0223\n\005token\030\001 \001(\0132\033." +
+      "ation\"\200\002\n\014NarrateEvent\0223\n\005token\030\001 \001(\0132\033." +
       "codewalker.v1.NarrateTokenH\000R\005token\0229\n\010c" +
       "omplete\030\002 \001(\0132\033.codewalker.v1.StepComple" +
       "teH\000R\010complete\0223\n\005error\030\003 \001(\0132\033.codewalk" +
-      "er.v1.ServiceErrorH\000R\005errorB\007\n\005event\"\"\n\014" +
-      "NarrateToken\022\022\n\004text\030\001 \001(\tR\004text\"\371\001\n\014Ste" +
-      "pComplete\022\027\n\007step_id\030\001 \001(\tR\006stepId\0228\n\tne" +
-      "w_terms\030\002 \003(\0132\033.codewalker.v1.GlossaryTe" +
-      "rmR\010newTerms\022@\n\017available_edges\030\003 \003(\0132\027." +
-      "codewalker.v1.StepEdgeR\016availableEdges\022\036" +
-      "\n\nbreadcrumb\030\004 \003(\tR\nbreadcrumb\0224\n\007summar" +
-      "y\030\005 \001(\0132\032.codewalker.v1.StepSummaryR\007sum" +
-      "mary\"\200\002\n\013StepSummary\022\032\n\010breaking\030\001 \001(\tR\010" +
-      "breaking\022\022\n\004risk\030\002 \001(\tR\004risk\022!\n\014what_cha" +
-      "nged\030\003 \001(\tR\013whatChanged\022!\n\014side_effects\030" +
-      "\004 \001(\tR\013sideEffects\022\024\n\005tests\030\005 \001(\tR\005tests" +
-      "\022%\n\016reviewer_focus\030\006 \001(\tR\rreviewerFocus\022" +
-      "\036\n\nsuggestion\030\007 \001(\tR\nsuggestion\022\036\n\nconfi" +
-      "dence\030\010 \001(\tR\nconfidence\"a\n\017RephraseReque" +
-      "st\022\035\n\nsession_id\030\001 \001(\tR\tsessionId\022/\n\004mod" +
-      "e\030\002 \001(\0162\033.codewalker.v1.RephraseModeR\004mo" +
-      "de\"\210\001\n\014GlossaryTerm\022\022\n\004term\030\001 \001(\tR\004term\022" +
-      "\036\n\ndefinition\030\002 \001(\tR\ndefinition\022\027\n\007step_" +
-      "id\030\003 \001(\tR\006stepId\022+\n\004kind\030\004 \001(\0162\027.codewal" +
-      "ker.v1.TermKindR\004kind\"F\n\021ExpandTermReque" +
-      "st\022\035\n\nsession_id\030\001 \001(\tR\tsessionId\022\022\n\004ter" +
-      "m\030\002 \001(\tR\004term\"\345\001\n\030OpenReviewSessionReque" +
-      "st\022\020\n\003url\030\001 \001(\tR\003url\022\037\n\013forge_token\030\002 \001(" +
-      "\tR\nforgeToken\022I\n\020experience_level\030\003 \001(\0162" +
-      "\036.codewalker.v1.ExperienceLevelR\017experie" +
-      "nceLevel\022&\n\017omit_raw_source\030\004 \001(\010R\romitR" +
-      "awSource\022#\n\rfile_ordering\030\005 \001(\tR\014fileOrd" +
-      "ering\"\300\002\n\013ReviewReady\022\035\n\nsession_id\030\001 \001(" +
-      "\tR\tsessionId\022@\n\rforge_context\030\002 \001(\0132\033.co" +
-      "dewalker.v1.ForgeContextR\014forgeContext\022)" +
-      "\n\005steps\030\003 \003(\0132\023.codewalker.v1.StepR\005step" +
-      "s\0227\n\010glossary\030\004 \003(\0132\033.codewalker.v1.Glos" +
-      "saryTermR\010glossary\022\037\n\013total_steps\030\005 \001(\rR" +
-      "\ntotalSteps\022\"\n\rentry_step_id\030\006 \001(\tR\013entr" +
-      "yStepId\022\'\n\017effective_level\030\007 \001(\rR\016effect" +
-      "iveLevel\"\370\002\n\014ForgeContext\0223\n\004kind\030\001 \001(\0162" +
-      "\037.codewalker.v1.ForgeContextKindR\004kind\022\024" +
-      "\n\005forge\030\002 \001(\tR\005forge\022\024\n\005owner\030\003 \001(\tR\005own" +
-      "er\022\022\n\004repo\030\004 \001(\tR\004repo\022\031\n\010base_ref\030\005 \001(\t" +
-      "R\007baseRef\022\031\n\010head_ref\030\006 \001(\tR\007headRef\022\033\n\t" +
-      "pr_number\030\007 \001(\005R\010prNumber\022\031\n\010pr_title\030\010 " +
-      "\001(\tR\007prTitle\022%\n\016pr_description\030\t \001(\tR\rpr" +
-      "Description\022\033\n\tpr_author\030\n \001(\tR\010prAuthor" +
-      "\022\020\n\003url\030\013 \001(\tR\003url\022/\n\005files\030\014 \003(\0132\031.code" +
-      "walker.v1.ReviewFileR\005files\"\203\002\n\nReviewFi" +
-      "le\022\033\n\tfile_path\030\001 \001(\tR\010filePath\022\032\n\010langu" +
-      "age\030\002 \001(\tR\010language\0221\n\006change\030\003 \001(\0162\031.co" +
-      "dewalker.v1.ChangeKindR\006change\022\037\n\013hunks_" +
-      "total\030\004 \001(\rR\nhunksTotal\022\037\n\013lines_added\030\005" +
-      " \001(\rR\nlinesAdded\022#\n\rlines_removed\030\006 \001(\rR" +
-      "\014linesRemoved\022\"\n\rentry_step_id\030\007 \001(\tR\013en" +
-      "tryStepId\"\202\002\n\010HunkSpan\022\033\n\tfile_path\030\001 \001(" +
-      "\tR\010filePath\022\033\n\told_start\030\002 \001(\rR\010oldStart" +
-      "\022\033\n\told_lines\030\003 \001(\rR\010oldLines\022\033\n\tnew_sta" +
-      "rt\030\004 \001(\rR\010newStart\022\033\n\tnew_lines\030\005 \001(\rR\010n" +
-      "ewLines\022\031\n\010raw_diff\030\006 \001(\tR\007rawDiff\022%\n\016co" +
-      "ntext_before\030\007 \001(\tR\rcontextBefore\022#\n\rcon" +
-      "text_after\030\010 \001(\tR\014contextAfter\"p\n\014Servic" +
-      "eError\022,\n\004code\030\001 \001(\0162\030.codewalker.v1.Err" +
-      "orCodeR\004code\022\030\n\007message\030\002 \001(\tR\007message\022\030" +
-      "\n\007details\030\003 \001(\tR\007details\"\023\n\021GetVersionRe" +
-      "quest\"\214\001\n\022GetVersionResponse\022\030\n\007version\030" +
-      "\001 \001(\tR\007version\022\037\n\013proto_major\030\002 \001(\rR\npro" +
-      "toMajor\022;\n\032min_compatible_proto_major\030\003 " +
-      "\001(\rR\027minCompatibleProtoMajor\"\031\n\027ListFile" +
-      "OrderersRequest\"R\n\030ListFileOrderersRespo" +
-      "nse\0226\n\010orderers\030\001 \003(\0132\032.codewalker.v1.Fi" +
-      "leOrdererR\010orderers\"C\n\013FileOrderer\022\022\n\004na" +
-      "me\030\001 \001(\tR\004name\022 \n\013description\030\002 \001(\tR\013des" +
-      "cription\"x\n\027ListPullRequestsRequest\022\022\n\004h" +
-      "ost\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(\tR\005owner\022\022\n" +
-      "\004repo\030\003 \001(\tR\004repo\022\037\n\013forge_token\030\004 \001(\tR\n" +
-      "forgeToken\"b\n\030ListPullRequestsResponse\022F" +
-      "\n\rpull_requests\030\001 \003(\0132!.codewalker.v1.Pu" +
-      "llRequestSummaryR\014pullRequests\"\207\001\n\022PullR" +
-      "equestSummary\022\026\n\006number\030\001 \001(\005R\006number\022\024\n" +
-      "\005title\030\002 \001(\tR\005title\022\026\n\006author\030\003 \001(\tR\006aut" +
-      "hor\022\020\n\003url\030\004 \001(\tR\003url\022\031\n\010head_ref\030\005 \001(\tR" +
-      "\007headRef\"\234\001\n\025FetchFileAtRefRequest\022\022\n\004ho" +
-      "st\030\001 \001(\tR\004host\022\024\n\005owner\030\002 \001(\tR\005owner\022\022\n\004" +
-      "repo\030\003 \001(\tR\004repo\022\022\n\004path\030\004 \001(\tR\004path\022\020\n\003" +
-      "ref\030\005 \001(\tR\003ref\022\037\n\013forge_token\030\006 \001(\tR\nfor" +
-      "geToken\"2\n\026FetchFileAtRefResponse\022\030\n\007con" +
-      "tent\030\001 \001(\014R\007content*b\n\013SessionKind\022\034\n\030SE" +
-      "SSION_KIND_UNSPECIFIED\020\000\022\034\n\030SESSION_KIND" +
-      "_WALKTHROUGH\020\001\022\027\n\023SESSION_KIND_REVIEW\020\002*" +
-      "\361\001\n\010StepKind\022\031\n\025STEP_KIND_UNSPECIFIED\020\000\022" +
-      "\023\n\017STEP_KIND_ENTRY\020\001\022\030\n\024STEP_KIND_ASSIGN" +
-      "MENT\020\002\022\031\n\025STEP_KIND_CONDITIONAL\020\003\022\022\n\016STE" +
-      "P_KIND_LOOP\020\004\022\022\n\016STEP_KIND_CALL\020\005\022\024\n\020STE" +
-      "P_KIND_RETURN\020\006\022\032\n\026STEP_KIND_ERROR_HANDL" +
-      "E\020\007\022\022\n\016STEP_KIND_EXIT\020\010\022\022\n\016STEP_KIND_HUN" +
-      "K\020\t*\355\001\n\tEdgeLabel\022\032\n\026EDGE_LABEL_UNSPECIF" +
-      "IED\020\000\022\023\n\017EDGE_LABEL_NEXT\020\001\022\032\n\026EDGE_LABEL" +
-      "_TRUE_BRANCH\020\002\022\033\n\027EDGE_LABEL_FALSE_BRANC" +
-      "H\020\003\022\023\n\017EDGE_LABEL_CASE\020\004\022\030\n\024EDGE_LABEL_L" +
-      "OOP_BODY\020\005\022\030\n\024EDGE_LABEL_LOOP_EXIT\020\006\022\030\n\024" +
-      "EDGE_LABEL_EXCEPTION\020\007\022\023\n\017EDGE_LABEL_CAL" +
-      "L\020\010*l\n\017SimpleDirection\022 \n\034SIMPLE_DIRECTI" +
-      "ON_UNSPECIFIED\020\000\022\034\n\030SIMPLE_DIRECTION_FOR" +
-      "WARD\020\001\022\031\n\025SIMPLE_DIRECTION_BACK\020\002*\225\001\n\014Re" +
-      "phraseMode\022\035\n\031REPHRASE_MODE_UNSPECIFIED\020" +
-      "\000\022\031\n\025REPHRASE_MODE_SIMPLER\020\001\022\030\n\024REPHRASE" +
-      "_MODE_DEEPER\020\002\022\031\n\025REPHRASE_MODE_ANALOGY\020" +
-      "\003\022\026\n\022REPHRASE_MODE_TLDR\020\004*\201\001\n\010TermKind\022\031" +
-      "\n\025TERM_KIND_UNSPECIFIED\020\000\022\026\n\022TERM_KIND_L" +
-      "ANGUAGE\020\001\022\025\n\021TERM_KIND_PATTERN\020\002\022\024\n\020TERM" +
-      "_KIND_DOMAIN\020\003\022\025\n\021TERM_KIND_LIBRARY\020\004*\223\001" +
-      "\n\020ForgeContextKind\022\"\n\036FORGE_CONTEXT_KIND" +
-      "_UNSPECIFIED\020\000\022\031\n\025FORGE_CONTEXT_KIND_PR\020" +
-      "\001\022\035\n\031FORGE_CONTEXT_KIND_COMMIT\020\002\022!\n\035FORG" +
-      "E_CONTEXT_KIND_COMPARISON\020\003*\214\001\n\nChangeKi" +
-      "nd\022\033\n\027CHANGE_KIND_UNSPECIFIED\020\000\022\025\n\021CHANG" +
-      "E_KIND_ADDED\020\001\022\030\n\024CHANGE_KIND_MODIFIED\020\002" +
-      "\022\027\n\023CHANGE_KIND_DELETED\020\003\022\027\n\023CHANGE_KIND" +
-      "_RENAMED\020\004*\207\001\n\017ExperienceLevel\022 \n\034EXPERI" +
-      "ENCE_LEVEL_UNSPECIFIED\020\000\022\033\n\027EXPERIENCE_L" +
-      "EVEL_JUNIOR\020\001\022\030\n\024EXPERIENCE_LEVEL_MID\020\002\022" +
-      "\033\n\027EXPERIENCE_LEVEL_SENIOR\020\003*\340\002\n\tErrorCo" +
-      "de\022\032\n\026ERROR_CODE_UNSPECIFIED\020\000\022 \n\034ERROR_" +
-      "CODE_SESSION_NOT_FOUND\020\001\022\033\n\027ERROR_CODE_P" +
-      "ARSE_FAILED\020\002\022\032\n\026ERROR_CODE_INVALID_REF\020" +
-      "\003\022\030\n\024ERROR_CODE_LLM_ERROR\020\004\022\037\n\033ERROR_COD" +
-      "E_UNSUPPORTED_LANG\020\005\022!\n\035ERROR_CODE_INVAL" +
-      "ID_NAVIGATION\020\006\022 \n\034ERROR_CODE_UNSUPPORTE" +
-      "D_FORGE\020\007\022 \n\034ERROR_CODE_FORGE_AUTH_FAILE" +
-      "D\020\010\022\036\n\032ERROR_CODE_FORGE_NOT_FOUND\020\t\022\032\n\026E" +
-      "RROR_CODE_INVALID_URL\020\n2\315\007\n\nCodeWalker\022Q" +
-      "\n\nGetVersion\022 .codewalker.v1.GetVersionR" +
-      "equest\032!.codewalker.v1.GetVersionRespons" +
-      "e\022O\n\013OpenSession\022!.codewalker.v1.OpenSes" +
-      "sionRequest\032\033.codewalker.v1.SessionEvent" +
-      "0\001\022I\n\010Navigate\022\036.codewalker.v1.NavigateR" +
-      "equest\032\033.codewalker.v1.NarrateEvent0\001\022I\n" +
-      "\010Rephrase\022\036.codewalker.v1.RephraseReques" +
-      "t\032\033.codewalker.v1.NarrateEvent0\001\022M\n\nExpa" +
-      "ndTerm\022 .codewalker.v1.ExpandTermRequest" +
-      "\032\033.codewalker.v1.NarrateEvent0\001\022W\n\014Close" +
-      "Session\022\".codewalker.v1.CloseSessionRequ" +
-      "est\032#.codewalker.v1.CloseSessionResponse" +
-      "\022W\n\014ListSessions\022\".codewalker.v1.ListSes" +
-      "sionsRequest\032#.codewalker.v1.ListSession" +
-      "sResponse\022[\n\021OpenReviewSession\022\'.codewal" +
-      "ker.v1.OpenReviewSessionRequest\032\033.codewa" +
-      "lker.v1.SessionEvent0\001\022c\n\020ListFileOrdere" +
-      "rs\022&.codewalker.v1.ListFileOrderersReque" +
-      "st\032\'.codewalker.v1.ListFileOrderersRespo" +
-      "nse\022c\n\020ListPullRequests\022&.codewalker.v1." +
-      "ListPullRequestsRequest\032\'.codewalker.v1." +
-      "ListPullRequestsResponse\022]\n\016FetchFileAtR" +
-      "ef\022$.codewalker.v1.FetchFileAtRefRequest" +
-      "\032%.codewalker.v1.FetchFileAtRefResponseB" +
-      "1Z/github.com/yourorg/codewalker/gen/cod" +
-      "ewalker/v1b\006proto3"
+      "er.v1.ServiceErrorH\000R\005error\022B\n\rsummary_r" +
+      "eady\030\004 \001(\0132\033.codewalker.v1.SummaryReadyH" +
+      "\000R\014summaryReadyB\007\n\005event\"D\n\014SummaryReady" +
+      "\0224\n\007summary\030\001 \001(\0132\032.codewalker.v1.StepSu" +
+      "mmaryR\007summary\"\"\n\014NarrateToken\022\022\n\004text\030\001" +
+      " \001(\tR\004text\"\371\001\n\014StepComplete\022\027\n\007step_id\030\001" +
+      " \001(\tR\006stepId\0228\n\tnew_terms\030\002 \003(\0132\033.codewa" +
+      "lker.v1.GlossaryTermR\010newTerms\022@\n\017availa" +
+      "ble_edges\030\003 \003(\0132\027.codewalker.v1.StepEdge" +
+      "R\016availableEdges\022\036\n\nbreadcrumb\030\004 \003(\tR\nbr" +
+      "eadcrumb\0224\n\007summary\030\005 \001(\0132\032.codewalker.v" +
+      "1.StepSummaryR\007summary\"\200\002\n\013StepSummary\022\032" +
+      "\n\010breaking\030\001 \001(\tR\010breaking\022\022\n\004risk\030\002 \001(\t" +
+      "R\004risk\022!\n\014what_changed\030\003 \001(\tR\013whatChange" +
+      "d\022!\n\014side_effects\030\004 \001(\tR\013sideEffects\022\024\n\005" +
+      "tests\030\005 \001(\tR\005tests\022%\n\016reviewer_focus\030\006 \001" +
+      "(\tR\rreviewerFocus\022\036\n\nsuggestion\030\007 \001(\tR\ns" +
+      "uggestion\022\036\n\nconfidence\030\010 \001(\tR\nconfidenc" +
+      "e\"a\n\017RephraseRequest\022\035\n\nsession_id\030\001 \001(\t" +
+      "R\tsessionId\022/\n\004mode\030\002 \001(\0162\033.codewalker.v" +
+      "1.RephraseModeR\004mode\"\210\001\n\014GlossaryTerm\022\022\n" +
+      "\004term\030\001 \001(\tR\004term\022\036\n\ndefinition\030\002 \001(\tR\nd" +
+      "efinition\022\027\n\007step_id\030\003 \001(\tR\006stepId\022+\n\004ki" +
+      "nd\030\004 \001(\0162\027.codewalker.v1.TermKindR\004kind\"" +
+      "F\n\021ExpandTermRequest\022\035\n\nsession_id\030\001 \001(\t" +
+      "R\tsessionId\022\022\n\004term\030\002 \001(\tR\004term\"\345\001\n\030Open" +
+      "ReviewSessionRequest\022\020\n\003url\030\001 \001(\tR\003url\022\037" +
+      "\n\013forge_token\030\002 \001(\tR\nforgeToken\022I\n\020exper" +
+      "ience_level\030\003 \001(\0162\036.codewalker.v1.Experi" +
+      "enceLevelR\017experienceLevel\022&\n\017omit_raw_s" +
+      "ource\030\004 \001(\010R\romitRawSource\022#\n\rfile_order" +
+      "ing\030\005 \001(\tR\014fileOrdering\"\300\002\n\013ReviewReady\022" +
+      "\035\n\nsession_id\030\001 \001(\tR\tsessionId\022@\n\rforge_" +
+      "context\030\002 \001(\0132\033.codewalker.v1.ForgeConte" +
+      "xtR\014forgeContext\022)\n\005steps\030\003 \003(\0132\023.codewa" +
+      "lker.v1.StepR\005steps\0227\n\010glossary\030\004 \003(\0132\033." +
+      "codewalker.v1.GlossaryTermR\010glossary\022\037\n\013" +
+      "total_steps\030\005 \001(\rR\ntotalSteps\022\"\n\rentry_s" +
+      "tep_id\030\006 \001(\tR\013entryStepId\022\'\n\017effective_l" +
+      "evel\030\007 \001(\rR\016effectiveLevel\"\370\002\n\014ForgeCont" +
+      "ext\0223\n\004kind\030\001 \001(\0162\037.codewalker.v1.ForgeC" +
+      "ontextKindR\004kind\022\024\n\005forge\030\002 \001(\tR\005forge\022\024" +
+      "\n\005owner\030\003 \001(\tR\005owner\022\022\n\004repo\030\004 \001(\tR\004repo" +
+      "\022\031\n\010base_ref\030\005 \001(\tR\007baseRef\022\031\n\010head_ref\030" +
+      "\006 \001(\tR\007headRef\022\033\n\tpr_number\030\007 \001(\005R\010prNum" +
+      "ber\022\031\n\010pr_title\030\010 \001(\tR\007prTitle\022%\n\016pr_des" +
+      "cription\030\t \001(\tR\rprDescription\022\033\n\tpr_auth" +
+      "or\030\n \001(\tR\010prAuthor\022\020\n\003url\030\013 \001(\tR\003url\022/\n\005" +
+      "files\030\014 \003(\0132\031.codewalker.v1.ReviewFileR\005" +
+      "files\"\203\002\n\nReviewFile\022\033\n\tfile_path\030\001 \001(\tR" +
+      "\010filePath\022\032\n\010language\030\002 \001(\tR\010language\0221\n" +
+      "\006change\030\003 \001(\0162\031.codewalker.v1.ChangeKind" +
+      "R\006change\022\037\n\013hunks_total\030\004 \001(\rR\nhunksTota" +
+      "l\022\037\n\013lines_added\030\005 \001(\rR\nlinesAdded\022#\n\rli" +
+      "nes_removed\030\006 \001(\rR\014linesRemoved\022\"\n\rentry" +
+      "_step_id\030\007 \001(\tR\013entryStepId\"\202\002\n\010HunkSpan" +
+      "\022\033\n\tfile_path\030\001 \001(\tR\010filePath\022\033\n\told_sta" +
+      "rt\030\002 \001(\rR\010oldStart\022\033\n\told_lines\030\003 \001(\rR\010o" +
+      "ldLines\022\033\n\tnew_start\030\004 \001(\rR\010newStart\022\033\n\t" +
+      "new_lines\030\005 \001(\rR\010newLines\022\031\n\010raw_diff\030\006 " +
+      "\001(\tR\007rawDiff\022%\n\016context_before\030\007 \001(\tR\rco" +
+      "ntextBefore\022#\n\rcontext_after\030\010 \001(\tR\014cont" +
+      "extAfter\"p\n\014ServiceError\022,\n\004code\030\001 \001(\0162\030" +
+      ".codewalker.v1.ErrorCodeR\004code\022\030\n\007messag" +
+      "e\030\002 \001(\tR\007message\022\030\n\007details\030\003 \001(\tR\007detai" +
+      "ls\"\023\n\021GetVersionRequest\"\214\001\n\022GetVersionRe" +
+      "sponse\022\030\n\007version\030\001 \001(\tR\007version\022\037\n\013prot" +
+      "o_major\030\002 \001(\rR\nprotoMajor\022;\n\032min_compati" +
+      "ble_proto_major\030\003 \001(\rR\027minCompatibleProt" +
+      "oMajor\"\031\n\027ListFileOrderersRequest\"R\n\030Lis" +
+      "tFileOrderersResponse\0226\n\010orderers\030\001 \003(\0132" +
+      "\032.codewalker.v1.FileOrdererR\010orderers\"C\n" +
+      "\013FileOrderer\022\022\n\004name\030\001 \001(\tR\004name\022 \n\013desc" +
+      "ription\030\002 \001(\tR\013description\"x\n\027ListPullRe" +
+      "questsRequest\022\022\n\004host\030\001 \001(\tR\004host\022\024\n\005own" +
+      "er\030\002 \001(\tR\005owner\022\022\n\004repo\030\003 \001(\tR\004repo\022\037\n\013f" +
+      "orge_token\030\004 \001(\tR\nforgeToken\"b\n\030ListPull" +
+      "RequestsResponse\022F\n\rpull_requests\030\001 \003(\0132" +
+      "!.codewalker.v1.PullRequestSummaryR\014pull" +
+      "Requests\"\207\001\n\022PullRequestSummary\022\026\n\006numbe" +
+      "r\030\001 \001(\005R\006number\022\024\n\005title\030\002 \001(\tR\005title\022\026\n" +
+      "\006author\030\003 \001(\tR\006author\022\020\n\003url\030\004 \001(\tR\003url\022" +
+      "\031\n\010head_ref\030\005 \001(\tR\007headRef\"\234\001\n\025FetchFile" +
+      "AtRefRequest\022\022\n\004host\030\001 \001(\tR\004host\022\024\n\005owne" +
+      "r\030\002 \001(\tR\005owner\022\022\n\004repo\030\003 \001(\tR\004repo\022\022\n\004pa" +
+      "th\030\004 \001(\tR\004path\022\020\n\003ref\030\005 \001(\tR\003ref\022\037\n\013forg" +
+      "e_token\030\006 \001(\tR\nforgeToken\"2\n\026FetchFileAt" +
+      "RefResponse\022\030\n\007content\030\001 \001(\014R\007content*b\n" +
+      "\013SessionKind\022\034\n\030SESSION_KIND_UNSPECIFIED" +
+      "\020\000\022\034\n\030SESSION_KIND_WALKTHROUGH\020\001\022\027\n\023SESS" +
+      "ION_KIND_REVIEW\020\002*\361\001\n\010StepKind\022\031\n\025STEP_K" +
+      "IND_UNSPECIFIED\020\000\022\023\n\017STEP_KIND_ENTRY\020\001\022\030" +
+      "\n\024STEP_KIND_ASSIGNMENT\020\002\022\031\n\025STEP_KIND_CO" +
+      "NDITIONAL\020\003\022\022\n\016STEP_KIND_LOOP\020\004\022\022\n\016STEP_" +
+      "KIND_CALL\020\005\022\024\n\020STEP_KIND_RETURN\020\006\022\032\n\026STE" +
+      "P_KIND_ERROR_HANDLE\020\007\022\022\n\016STEP_KIND_EXIT\020" +
+      "\010\022\022\n\016STEP_KIND_HUNK\020\t*\355\001\n\tEdgeLabel\022\032\n\026E" +
+      "DGE_LABEL_UNSPECIFIED\020\000\022\023\n\017EDGE_LABEL_NE" +
+      "XT\020\001\022\032\n\026EDGE_LABEL_TRUE_BRANCH\020\002\022\033\n\027EDGE" +
+      "_LABEL_FALSE_BRANCH\020\003\022\023\n\017EDGE_LABEL_CASE" +
+      "\020\004\022\030\n\024EDGE_LABEL_LOOP_BODY\020\005\022\030\n\024EDGE_LAB" +
+      "EL_LOOP_EXIT\020\006\022\030\n\024EDGE_LABEL_EXCEPTION\020\007" +
+      "\022\023\n\017EDGE_LABEL_CALL\020\010*l\n\017SimpleDirection" +
+      "\022 \n\034SIMPLE_DIRECTION_UNSPECIFIED\020\000\022\034\n\030SI" +
+      "MPLE_DIRECTION_FORWARD\020\001\022\031\n\025SIMPLE_DIREC" +
+      "TION_BACK\020\002*\225\001\n\014RephraseMode\022\035\n\031REPHRASE" +
+      "_MODE_UNSPECIFIED\020\000\022\031\n\025REPHRASE_MODE_SIM" +
+      "PLER\020\001\022\030\n\024REPHRASE_MODE_DEEPER\020\002\022\031\n\025REPH" +
+      "RASE_MODE_ANALOGY\020\003\022\026\n\022REPHRASE_MODE_TLD" +
+      "R\020\004*\201\001\n\010TermKind\022\031\n\025TERM_KIND_UNSPECIFIE" +
+      "D\020\000\022\026\n\022TERM_KIND_LANGUAGE\020\001\022\025\n\021TERM_KIND" +
+      "_PATTERN\020\002\022\024\n\020TERM_KIND_DOMAIN\020\003\022\025\n\021TERM" +
+      "_KIND_LIBRARY\020\004*\223\001\n\020ForgeContextKind\022\"\n\036" +
+      "FORGE_CONTEXT_KIND_UNSPECIFIED\020\000\022\031\n\025FORG" +
+      "E_CONTEXT_KIND_PR\020\001\022\035\n\031FORGE_CONTEXT_KIN" +
+      "D_COMMIT\020\002\022!\n\035FORGE_CONTEXT_KIND_COMPARI" +
+      "SON\020\003*\214\001\n\nChangeKind\022\033\n\027CHANGE_KIND_UNSP" +
+      "ECIFIED\020\000\022\025\n\021CHANGE_KIND_ADDED\020\001\022\030\n\024CHAN" +
+      "GE_KIND_MODIFIED\020\002\022\027\n\023CHANGE_KIND_DELETE" +
+      "D\020\003\022\027\n\023CHANGE_KIND_RENAMED\020\004*\207\001\n\017Experie" +
+      "nceLevel\022 \n\034EXPERIENCE_LEVEL_UNSPECIFIED" +
+      "\020\000\022\033\n\027EXPERIENCE_LEVEL_JUNIOR\020\001\022\030\n\024EXPER" +
+      "IENCE_LEVEL_MID\020\002\022\033\n\027EXPERIENCE_LEVEL_SE" +
+      "NIOR\020\003*\340\002\n\tErrorCode\022\032\n\026ERROR_CODE_UNSPE" +
+      "CIFIED\020\000\022 \n\034ERROR_CODE_SESSION_NOT_FOUND" +
+      "\020\001\022\033\n\027ERROR_CODE_PARSE_FAILED\020\002\022\032\n\026ERROR" +
+      "_CODE_INVALID_REF\020\003\022\030\n\024ERROR_CODE_LLM_ER" +
+      "ROR\020\004\022\037\n\033ERROR_CODE_UNSUPPORTED_LANG\020\005\022!" +
+      "\n\035ERROR_CODE_INVALID_NAVIGATION\020\006\022 \n\034ERR" +
+      "OR_CODE_UNSUPPORTED_FORGE\020\007\022 \n\034ERROR_COD" +
+      "E_FORGE_AUTH_FAILED\020\010\022\036\n\032ERROR_CODE_FORG" +
+      "E_NOT_FOUND\020\t\022\032\n\026ERROR_CODE_INVALID_URL\020" +
+      "\n2\315\007\n\nCodeWalker\022Q\n\nGetVersion\022 .codewal" +
+      "ker.v1.GetVersionRequest\032!.codewalker.v1" +
+      ".GetVersionResponse\022O\n\013OpenSession\022!.cod" +
+      "ewalker.v1.OpenSessionRequest\032\033.codewalk" +
+      "er.v1.SessionEvent0\001\022I\n\010Navigate\022\036.codew" +
+      "alker.v1.NavigateRequest\032\033.codewalker.v1" +
+      ".NarrateEvent0\001\022I\n\010Rephrase\022\036.codewalker" +
+      ".v1.RephraseRequest\032\033.codewalker.v1.Narr" +
+      "ateEvent0\001\022M\n\nExpandTerm\022 .codewalker.v1" +
+      ".ExpandTermRequest\032\033.codewalker.v1.Narra" +
+      "teEvent0\001\022W\n\014CloseSession\022\".codewalker.v" +
+      "1.CloseSessionRequest\032#.codewalker.v1.Cl" +
+      "oseSessionResponse\022W\n\014ListSessions\022\".cod" +
+      "ewalker.v1.ListSessionsRequest\032#.codewal" +
+      "ker.v1.ListSessionsResponse\022[\n\021OpenRevie" +
+      "wSession\022\'.codewalker.v1.OpenReviewSessi" +
+      "onRequest\032\033.codewalker.v1.SessionEvent0\001" +
+      "\022c\n\020ListFileOrderers\022&.codewalker.v1.Lis" +
+      "tFileOrderersRequest\032\'.codewalker.v1.Lis" +
+      "tFileOrderersResponse\022c\n\020ListPullRequest" +
+      "s\022&.codewalker.v1.ListPullRequestsReques" +
+      "t\032\'.codewalker.v1.ListPullRequestsRespon" +
+      "se\022]\n\016FetchFileAtRef\022$.codewalker.v1.Fet" +
+      "chFileAtRefRequest\032%.codewalker.v1.Fetch" +
+      "FileAtRefResponseB1Z/github.com/yourorg/" +
+      "codewalker/gen/codewalker/v1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -42310,135 +43187,141 @@ public final class Codewalker {
     internal_static_codewalker_v1_NarrateEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_NarrateEvent_descriptor,
-        new java.lang.String[] { "Token", "Complete", "Error", "Event", });
-    internal_static_codewalker_v1_NarrateToken_descriptor =
+        new java.lang.String[] { "Token", "Complete", "Error", "SummaryReady", "Event", });
+    internal_static_codewalker_v1_SummaryReady_descriptor =
       getDescriptor().getMessageTypes().get(15);
+    internal_static_codewalker_v1_SummaryReady_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_codewalker_v1_SummaryReady_descriptor,
+        new java.lang.String[] { "Summary", });
+    internal_static_codewalker_v1_NarrateToken_descriptor =
+      getDescriptor().getMessageTypes().get(16);
     internal_static_codewalker_v1_NarrateToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_NarrateToken_descriptor,
         new java.lang.String[] { "Text", });
     internal_static_codewalker_v1_StepComplete_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_codewalker_v1_StepComplete_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_StepComplete_descriptor,
         new java.lang.String[] { "StepId", "NewTerms", "AvailableEdges", "Breadcrumb", "Summary", });
     internal_static_codewalker_v1_StepSummary_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_codewalker_v1_StepSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_StepSummary_descriptor,
         new java.lang.String[] { "Breaking", "Risk", "WhatChanged", "SideEffects", "Tests", "ReviewerFocus", "Suggestion", "Confidence", });
     internal_static_codewalker_v1_RephraseRequest_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_codewalker_v1_RephraseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_RephraseRequest_descriptor,
         new java.lang.String[] { "SessionId", "Mode", });
     internal_static_codewalker_v1_GlossaryTerm_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_codewalker_v1_GlossaryTerm_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_GlossaryTerm_descriptor,
         new java.lang.String[] { "Term", "Definition", "StepId", "Kind", });
     internal_static_codewalker_v1_ExpandTermRequest_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_codewalker_v1_ExpandTermRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ExpandTermRequest_descriptor,
         new java.lang.String[] { "SessionId", "Term", });
     internal_static_codewalker_v1_OpenReviewSessionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_codewalker_v1_OpenReviewSessionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_OpenReviewSessionRequest_descriptor,
         new java.lang.String[] { "Url", "ForgeToken", "ExperienceLevel", "OmitRawSource", "FileOrdering", });
     internal_static_codewalker_v1_ReviewReady_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_codewalker_v1_ReviewReady_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ReviewReady_descriptor,
         new java.lang.String[] { "SessionId", "ForgeContext", "Steps", "Glossary", "TotalSteps", "EntryStepId", "EffectiveLevel", });
     internal_static_codewalker_v1_ForgeContext_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_codewalker_v1_ForgeContext_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ForgeContext_descriptor,
         new java.lang.String[] { "Kind", "Forge", "Owner", "Repo", "BaseRef", "HeadRef", "PrNumber", "PrTitle", "PrDescription", "PrAuthor", "Url", "Files", });
     internal_static_codewalker_v1_ReviewFile_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_codewalker_v1_ReviewFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ReviewFile_descriptor,
         new java.lang.String[] { "FilePath", "Language", "Change", "HunksTotal", "LinesAdded", "LinesRemoved", "EntryStepId", });
     internal_static_codewalker_v1_HunkSpan_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_codewalker_v1_HunkSpan_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_HunkSpan_descriptor,
         new java.lang.String[] { "FilePath", "OldStart", "OldLines", "NewStart", "NewLines", "RawDiff", "ContextBefore", "ContextAfter", });
     internal_static_codewalker_v1_ServiceError_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_codewalker_v1_ServiceError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ServiceError_descriptor,
         new java.lang.String[] { "Code", "Message", "Details", });
     internal_static_codewalker_v1_GetVersionRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_codewalker_v1_GetVersionRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_GetVersionRequest_descriptor,
         new java.lang.String[] { });
     internal_static_codewalker_v1_GetVersionResponse_descriptor =
-      getDescriptor().getMessageTypes().get(28);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_codewalker_v1_GetVersionResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_GetVersionResponse_descriptor,
         new java.lang.String[] { "Version", "ProtoMajor", "MinCompatibleProtoMajor", });
     internal_static_codewalker_v1_ListFileOrderersRequest_descriptor =
-      getDescriptor().getMessageTypes().get(29);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_codewalker_v1_ListFileOrderersRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ListFileOrderersRequest_descriptor,
         new java.lang.String[] { });
     internal_static_codewalker_v1_ListFileOrderersResponse_descriptor =
-      getDescriptor().getMessageTypes().get(30);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_codewalker_v1_ListFileOrderersResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ListFileOrderersResponse_descriptor,
         new java.lang.String[] { "Orderers", });
     internal_static_codewalker_v1_FileOrderer_descriptor =
-      getDescriptor().getMessageTypes().get(31);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_codewalker_v1_FileOrderer_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_FileOrderer_descriptor,
         new java.lang.String[] { "Name", "Description", });
     internal_static_codewalker_v1_ListPullRequestsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(32);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_codewalker_v1_ListPullRequestsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ListPullRequestsRequest_descriptor,
         new java.lang.String[] { "Host", "Owner", "Repo", "ForgeToken", });
     internal_static_codewalker_v1_ListPullRequestsResponse_descriptor =
-      getDescriptor().getMessageTypes().get(33);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_codewalker_v1_ListPullRequestsResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_ListPullRequestsResponse_descriptor,
         new java.lang.String[] { "PullRequests", });
     internal_static_codewalker_v1_PullRequestSummary_descriptor =
-      getDescriptor().getMessageTypes().get(34);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_codewalker_v1_PullRequestSummary_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_PullRequestSummary_descriptor,
         new java.lang.String[] { "Number", "Title", "Author", "Url", "HeadRef", });
     internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor =
-      getDescriptor().getMessageTypes().get(35);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_codewalker_v1_FetchFileAtRefRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_FetchFileAtRefRequest_descriptor,
         new java.lang.String[] { "Host", "Owner", "Repo", "Path", "Ref", "ForgeToken", });
     internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor =
-      getDescriptor().getMessageTypes().get(36);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_codewalker_v1_FetchFileAtRefResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_codewalker_v1_FetchFileAtRefResponse_descriptor,
